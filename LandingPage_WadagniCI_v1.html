@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Romuald WADAGNI — Présidentielle Bénin 12 Avril 2026 · Mobilisation Diaspora Béninoise de Côte d'Ivoire · VoteConnect SARL × LFA-CI">
+<meta property="og:title" content="WADAGNI 2026 — Diaspora Bénin · Côte d'Ivoire">
+<meta property="og:description" content="Rejoignez la mobilisation. Le Bénin vote le 12 Avril 2026.">
+<title>WADAGNI 2026 · Diaspora Bénin CI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap');
+
+:root {
+  --vrt: #006b3c;
+  --vrt-l: #008751;
+  --vrt-xl: #00a862;
+  --or: #FCD116;
+  --or-d: #c9a80e;
+  --rge: #E8112D;
+  --fond: #f7f4ec;
+  --fond2: #efeae0;
+  --encre: #0e1a0e;
+  --encre2: #2a3a2a;
+  --gris: #7a8a7a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--fond);
+  color: var(--encre);
+  overflow-x: hidden;
+}
+
+/* ══ BARRE DRAPEAU FIXE ══ */
+.drapeau-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--vrt) 33.3%, var(--or) 33.3%, var(--or) 66.6%, var(--rge) 66.6%);
+  z-index: 1000;
+}
+
+/* ══ NAV ══ */
+nav {
+  position: fixed;
+  top: 6px; left: 0; right: 0;
+  background: rgba(247,244,236,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,107,60,0.12);
+  z-index: 999;
+  padding: 0 32px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--vrt);
+  font-weight: 700;
+}
+.nav-flags { font-size: 20px; letter-spacing: 4px; }
+.nav-cta {
+  background: var(--vrt);
+  color: #fff;
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--vrt-xl); }
+
+/* ══ HERO ══ */
+.hero {
+  min-height: 100vh;
+  padding-top: 66px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--encre);
+}
+
+/* Motif géométrique fond */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,107,60,0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(252,209,22,0.08) 0%, transparent 60%);
+}
+
+/* Bande verte verticale gauche */
+.hero-bande {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 8px;
+  background: linear-gradient(180deg, var(--vrt) 50%, var(--or) 50%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 80px 60px 80px 80px;
+  max-width: 1100px;
+}
+
+.hero-eyebrow {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--or);
+}
+
+.hero-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 10vw, 110px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 0.85;
+  letter-spacing: -3px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+.hero-titre .nom { color: var(--or); display: block; }
+.hero-titre .annee {
+  font-size: 0.45em;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 8px;
+  display: block;
+  margin-top: 8px;
+}
+
+.hero-slogan {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.70);
+  margin-bottom: 48px;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+.hero-slogan span { color: var(--or); font-style: normal; font-weight: 600; }
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 56px;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+.hero-stat .n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--or);
+  line-height: 1;
+}
+.hero-stat .l {
+  font-size: 11px;
+  color: rgba(255,255,255,0.40);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.4s both;
+}
+.btn-pr {
+  background: var(--or);
+  color: var(--encre);
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-pr:hover { background: #fff; transform: translateY(-2px); }
+.btn-sc {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.75);
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.btn-sc:hover { border-color: var(--or); color: var(--or); }
+
+/* Date badge -->
+.hero-date {
+  position: absolute;
+  right: 60px;
+  bottom: 80px;
+  text-align: center;
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+.hero-date .d-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--rge);
+  line-height: 0.8;
+}
+.hero-date .d-mois {
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.50);
+  display: block;
+  margin-top: 8px;
+}
+.hero-date .d-annee {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: rgba(255,255,255,0.30);
+  display: block;
+}
+
+/* ══ SECTIONS GÉNÉRALES ══ */
+.section { padding: 100px 60px; }
+.section-inner { max-width: 1040px; margin: 0 auto; }
+.s-eyebrow {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--vrt);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.s-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--vrt); }
+.s-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 600;
+  color: var(--encre);
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+.s-titre em { color: var(--vrt); font-style: italic; }
+.s-body {
+  font-size: 16px;
+  color: var(--encre2);
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+/* ══ SECTION URGENCE ══ */
+.urgence {
+  background: var(--rge);
+  padding: 28px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.urgence-txt {
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+}
+.urgence-badge {
+  background: #fff;
+  color: var(--rge);
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  text-transform: uppercase;
+}
+
+/* ══ PROGRAMME ══ */
+.programme { background: #fff; }
+.prog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+@media(max-width:768px){ .prog-grid { grid-template-columns: 1fr; } }
+.prog-card {
+  border: 1px solid rgba(0,107,60,0.12);
+  padding: 36px 28px;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.prog-card:hover { border-color: var(--vrt); transform: translateY(-4px); }
+.prog-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--or);
+}
+.prog-ico { font-size: 36px; margin-bottom: 20px; }
+.prog-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--encre);
+  margin-bottom: 12px;
+}
+.prog-desc { font-size: 14.5px; color: var(--encre2); line-height: 1.7; }
+.prog-detail {
+  margin-top: 16px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--vrt);
+}
+
+/* ══ POURQUOI VOTER ══ */
+.pourquoi { background: var(--fond2); }
+.raisons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 48px;
+}
+@media(max-width:640px){ .raisons { grid-template-columns: 1fr; } }
+.raison {
+  background: #fff;
+  padding: 28px;
+  border-left: 4px solid var(--vrt);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.raison-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--or);
+  line-height: 0.8;
+  flex-shrink: 0;
+}
+.raison-body .r-titre {
+  font-weight: 600;
+  font-size: 15.5px;
+  color: var(--encre);
+  margin-bottom: 6px;
+}
+.raison-body .r-desc { font-size: 14px; color: var(--gris); line-height: 1.6; }
+
+/* ══ COMMENT VOTER ══ */
+.comment { background: var(--encre); }
+.comment .s-titre { color: #fff; }
+.comment .s-titre em { color: var(--or); }
+.etapes {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 48px;
+  max-width: 720px;
+}
+.etape {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+.etape:last-child { border-bottom: none; }
+.etape-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--vrt-l);
+  line-height: 0.8;
+  flex-shrink: 0;
+  min-width: 60px;
+}
+.etape-body .e-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.etape-body .e-desc { font-size: 15px; color: rgba(255,255,255,0.50); line-height: 1.7; }
+.etape-body .e-tag {
+  display: inline-block;
+  margin-top: 10px;
+  background: rgba(252,209,22,0.12);
+  border: 1px solid rgba(252,209,22,0.25);
+  color: var(--or);
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 3px 12px;
+  text-transform: uppercase;
+}
+
+/* ══ TCL CASHBACK ══ */
+.tcl { background: var(--fond); }
+.tcl-box {
+  margin-top: 48px;
+  background: var(--encre);
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.tcl-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--vrt) 33%, var(--or) 33%, var(--or) 66%, var(--rge) 66%);
+}
+.tcl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+@media(max-width:768px){ .tcl-grid { grid-template-columns: 1fr; } }
+.tcl-item { text-align: center; }
+.tcl-pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.tcl-item:nth-child(1) .tcl-pct { color: var(--vrt-xl); }
+.tcl-item:nth-child(2) .tcl-pct { color: var(--or); }
+.tcl-item:nth-child(3) .tcl-pct { color: var(--rge); }
+.tcl-item .tcl-titre { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.tcl-item .tcl-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+.tcl-sep { width: 1px; background: rgba(255,255,255,0.06); }
+
+/* ══ INSCRIPTION ══ */
+.inscription { background: var(--vrt); position: relative; overflow: hidden; }
+.inscription::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 30px,
+    rgba(255,255,255,0.03) 30px, rgba(255,255,255,0.03) 31px
+  );
+}
+.inscription .s-eyebrow { color: rgba(255,255,255,0.60); }
+.inscription .s-eyebrow::before { background: rgba(255,255,255,0.40); }
+.inscription .s-titre { color: #fff; }
+.inscription .s-titre em { color: var(--or); }
+.inscription .s-body { color: rgba(255,255,255,0.75); }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
+}
+@media(max-width:600px){ .form-grid { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.60);
+}
+input, select {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  border-radius: 2px;
+}
+input::placeholder { color: rgba(255,255,255,0.30); }
+input:focus, select:focus { border-color: var(--or); }
+select option { background: var(--encre); color: #fff; }
+.form-submit {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-submit {
+  background: var(--or);
+  color: var(--encre);
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: none;
+  padding: 16px 36px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-submit:hover { background: #fff; }
+.form-note { font-size: 12px; color: rgba(255,255,255,0.40); line-height: 1.5; }
+
+/* Message de succès */
+.form-success {
+  display: none;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid var(--or);
+  padding: 24px 28px;
+  margin-top: 20px;
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
+}
+.form-success p {
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.form-success strong { color: var(--or); }
+
+/* ══ CONTACT ══ */
+.contact-sect { background: var(--fond2); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+@media(max-width:768px){ .contact-grid { grid-template-columns: 1fr; } }
+.contact-card {
+  background: #fff;
+  padding: 32px;
+  border-top: 3px solid var(--vrt);
+  text-align: center;
+}
+.contact-card .c-ico { font-size: 36px; margin-bottom: 16px; }
+.contact-card .c-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--encre);
+  margin-bottom: 8px;
+}
+.contact-card .c-val {
+  font-family: 'Courier Prime', monospace;
+  font-size: 14px;
+  color: var(--vrt);
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+}
+.contact-card .c-note { font-size: 12px; color: var(--gris); }
+.contact-card a { color: var(--vrt); text-decoration: none; }
+.contact-card a:hover { color: var(--vrt-xl); }
+
+/* ══ FOOTER ══ */
+footer {
+  background: var(--encre);
+  padding: 60px;
+}
+.foot-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.foot-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--or);
+}
+.foot-logo span { display: block; font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.35); margin-top: 4px; text-transform: uppercase; }
+.foot-links { display: flex; flex-direction: column; gap: 8px; }
+.foot-links a { font-size: 13px; color: rgba(255,255,255,0.40); text-decoration: none; transition: color 0.2s; }
+.foot-links a:hover { color: var(--or); }
+.foot-bot {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 48px;
+  padding-top: 24px;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.foot-bot p { font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.18); text-transform: uppercase; }
+
+/* ══ BOT BUBBLE ══ */
+.bot-bubble {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.bot-label {
+  background: var(--encre);
+  color: var(--or);
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.bot-bubble:hover .bot-label { opacity: 1; }
+.bot-btn {
+  width: 60px;
+  height: 60px;
+  background: var(--vrt);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(0,107,60,0.40);
+  transition: transform 0.2s, background 0.2s;
+  border: 3px solid var(--or);
+}
+.bot-btn:hover { transform: scale(1.1); background: var(--vrt-xl); }
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:768px) {
+  .section { padding: 60px 24px; }
+  .hero-inner { padding: 60px 24px; }
+  .hero-stats { gap: 28px; flex-wrap: wrap; }
+  .hero-date { display: none; }
+  nav { padding: 0 20px; }
+  .tcl-box { padding: 36px 24px; }
+  footer { padding: 40px 24px; }
+  .urgence { flex-direction: column; gap: 10px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- Barre drapeau -->
+<div class="drapeau-bar"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo">Wadagni 2026 · CI</div>
+  <div class="nav-flags">🇧🇯 🇨🇮</div>
+  <a href="#inscription" class="nav-cta">Je m'inscris</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bande"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Présidentielle Bénin · Diaspora de Côte d'Ivoire</div>
+    <h1 class="hero-titre">
+      <span class="nom">Wadagni</span>
+      "Plus loin,<br>ensemble"
+      <span class="annee">2026</span>
+    </h1>
+    <p class="hero-slogan">La diaspora béninoise de Côte d'Ivoire<br>se mobilise pour le <span>12 Avril 2026</span>.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">300K+</div><div class="l">Béninois en CI</div></div>
+      <div class="hero-stat"><div class="n">14</div><div class="l">Jours de campagne</div></div>
+      <div class="hero-stat"><div class="n">12/04</div><div class="l">Jour du vote</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#inscription" class="btn-pr">Rejoindre la mobilisation</a>
+      <a href="#comment-voter" class="btn-sc">Comment voter →</a>
+    </div>
+  </div>
+  <div class="hero-date">
+    <div class="d-num">12</div>
+    <span class="d-mois">Avril</span>
+    <span class="d-annee">2026</span>
+  </div>
+</section>
+
+<!-- ══ URGENCE ══ -->
+<div class="urgence">
+  <span class="urgence-badge">⏰ J-17</span>
+  <span class="urgence-txt">Le vote ferme à 17h le 12 Avril — Préparez vos documents maintenant</span>
+  <span class="urgence-badge">🗳️ Bénin Vote</span>
+</div>
+
+<!-- ══ PROGRAMME ══ -->
+<section class="section programme" id="programme">
+  <div class="section-inner">
+    <div class="s-eyebrow">Programme</div>
+    <h2 class="s-titre">Romuald WADAGNI —<br><em>dauphin de Patrice TALON</em></h2>
+    <p class="s-body">Ministre de l'Économie et des Finances pendant 10 ans, architecte de la croissance béninoise (7%+ annuel), Romuald WADAGNI porte le programme <strong>"Plus loin, ensemble"</strong> : redistribuer les fruits de la croissance, accélérer le développement des régions, et ouvrir l'avenir à la jeunesse.</p>
+    <div class="prog-grid">
+      <div class="prog-card">
+        <div class="prog-ico">📊</div>
+        <div class="prog-titre">Économie & Redistribution</div>
+        <div class="prog-desc">Consolider les acquis de 10 ans de croissance et redistribuer les richesses vers les populations. Réduction de la pauvreté comme priorité nationale.</div>
+        <div class="prog-detail">▸ Taux de croissance 7%+ maintenu</div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-ico">🌍</div>
+        <div class="prog-titre">Développement Régional</div>
+        <div class="prog-desc">Développement accéléré des 6 départements du Bénin, avec un accent particulier sur les zones rurales et les infrastructures de base.</div>
+        <div class="prog-detail">▸ 6 départements prioritaires</div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-ico">🎓</div>
+        <div class="prog-titre">Jeunesse & Innovation</div>
+        <div class="prog-desc">La jeunesse béninoise au cœur du projet politique. Emploi, formation, innovation technologique et entrepreneuriat comme moteurs du Bénin de demain.</div>
+        <div class="prog-detail">▸ Innovation tech & emplois jeunes</div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-ico">🏥</div>
+        <div class="prog-titre">Santé pour tous</div>
+        <div class="prog-desc">Chaque malade pris en charge à son arrivée, sans attendre les formalités administratives. La santé comme droit fondamental.</div>
+        <div class="prog-detail">▸ Accès immédiat aux soins</div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-ico">🛡️</div>
+        <div class="prog-titre">Sécurité & Stabilité</div>
+        <div class="prog-desc">Renforcement des forces armées face aux menaces terroristes au Nord. Garantie des libertés individuelles et ouverture de l'espace civique.</div>
+        <div class="prog-detail">▸ Équipements militaires modernisés</div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-ico">🌐</div>
+        <div class="prog-titre">Diaspora & Liens</div>
+        <div class="prog-desc">La diaspora béninoise partout dans le monde est une ressource précieuse. Wadagni s'engage à renforcer les liens et valoriser la contribution des Béninois de l'extérieur.</div>
+        <div class="prog-detail">▸ Diaspora acteur du développement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POURQUOI VOTER ══ -->
+<section class="section pourquoi" id="pourquoi">
+  <div class="section-inner">
+    <div class="s-eyebrow">Pourquoi voter</div>
+    <h2 class="s-titre">Votre voix depuis Abidjan<br><em>fait la différence</em></h2>
+    <div class="raisons">
+      <div class="raison">
+        <div class="raison-num">01</div>
+        <div class="raison-body">
+          <div class="r-titre">La diaspora a changé des élections au Bénin</div>
+          <div class="r-desc">La voix des Béninois de l'étranger a historiquement influé sur les scrutins. 300 000+ Béninois en Côte d'Ivoire représentent une force électorale significative.</div>
+        </div>
+      </div>
+      <div class="raison">
+        <div class="raison-num">02</div>
+        <div class="raison-body">
+          <div class="r-titre">Vos familles au pays comptent sur vous</div>
+          <div class="r-desc">Chaque franc envoyé au pays, chaque appel téléphonique, chaque retour au pays — votre engagement citoyen est la suite logique de votre amour pour le Bénin.</div>
+        </div>
+      </div>
+      <div class="raison">
+        <div class="raison-num">03</div>
+        <div class="raison-body">
+          <div class="r-titre">La stabilité du Bénin protège vos intérêts</div>
+          <div class="r-desc">Un Bénin stable et prospère sous WADAGNI, c'est un retour au pays facilité, des opportunités pour vos enfants, et une fierté renforcée d'être Béninois partout dans le monde.</div>
+        </div>
+      </div>
+      <div class="raison">
+        <div class="raison-num">04</div>
+        <div class="raison-body">
+          <div class="r-titre">L'organisation est là — vous n'êtes pas seul</div>
+          <div class="r-desc">VoteConnect SARL et LFA-CI ont déployé un dispositif complet à Abidjan pour vous accompagner : informations, localisation de bureaux de vote, assistance 7j/7.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMMENT VOTER ══ -->
+<section class="section comment" id="comment-voter">
+  <div class="section-inner">
+    <div class="s-eyebrow" style="color:rgba(255,255,255,0.45);">Guide pratique</div>
+    <h2 class="s-titre">Comment voter<br><em>depuis Abidjan ?</em></h2>
+    <div class="etapes">
+      <div class="etape">
+        <div class="etape-num">1</div>
+        <div class="etape-body">
+          <div class="e-titre">Préparez votre Carte d'Électeur Béninoise</div>
+          <div class="e-desc">Document indispensable pour voter. Vérifiez qu'elle est en cours de validité. Si vous l'avez perdue ou qu'elle est expirée, contactez le Consulat du Bénin à Abidjan immédiatement.</div>
+          <span class="e-tag">📋 Document obligatoire</span>
+        </div>
+      </div>
+      <div class="etape">
+        <div class="etape-num">2</div>
+        <div class="etape-body">
+          <div class="e-titre">Munissez-vous d'une pièce d'identité béninoise</div>
+          <div class="e-desc">CNI béninoise ou Passeport béninois en cours de validité. Ces deux documents + votre Carte d'Électeur suffisent pour voter.</div>
+          <span class="e-tag">🪪 CNI ou Passeport béninois</span>
+        </div>
+      </div>
+      <div class="etape">
+        <div class="etape-num">3</div>
+        <div class="etape-body">
+          <div class="e-titre">Localisez votre bureau de vote</div>
+          <div class="e-desc">Contactez le Consulat du Bénin en Côte d'Ivoire pour connaître l'adresse exacte de votre bureau de vote à Abidjan. Renseignez-vous aussi auprès de nos équipes — nous vous aidons gratuitement.</div>
+          <span class="e-tag">📍 Consulat Bénin · Abidjan</span>
+        </div>
+      </div>
+      <div class="etape">
+        <div class="etape-num">4</div>
+        <div class="etape-body">
+          <div class="e-titre">Votez tôt le matin du 12 Avril</div>
+          <div class="e-desc">Les bureaux ouvrent généralement à 7h00 et ferment à 17h00. Arrivez tôt pour éviter les files d'attente et vous assurer de voter avant toute fermeture anticipée.</div>
+          <span class="e-tag">⏰ Ouverture 7h · Fermeture 17h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TCL CASHBACK ══ -->
+<section class="section tcl" id="tcl">
+  <div class="section-inner">
+    <div class="s-eyebrow">Dispositif CROIRE · TCL</div>
+    <h2 class="s-titre">Vos achats quotidiens<br><em>financent votre communauté</em></h2>
+    <p class="s-body">Grâce au Dispositif TCL de VoteConnect SARL, chaque achat quotidien chez un commerçant béninois conventionné génère automatiquement un CashBack reversé à votre association communautaire — sans dépense supplémentaire.</p>
+    <div class="tcl-box">
+      <div class="tcl-grid">
+        <div class="tcl-item">
+          <div class="tcl-pct">2,5%</div>
+          <div class="tcl-titre">CashBack CROIRE</div>
+          <div class="tcl-desc">Reversé automatiquement à votre association de la diaspora béninoise désignée. 24h après chaque transaction.</div>
+        </div>
+        <div class="tcl-sep"></div>
+        <div class="tcl-item">
+          <div class="tcl-pct">20+</div>
+          <div class="tcl-titre">Commerçants béninois</div>
+          <div class="tcl-desc">Conventionnés dans le réseau TCL à Adjamé, Yopougon et Abobo. Payez Wave — comme d'habitude.</div>
+        </div>
+        <div class="tcl-sep"></div>
+        <div class="tcl-item">
+          <div class="tcl-pct">0</div>
+          <div class="tcl-titre">Franc supplémentaire</div>
+          <div class="tcl-desc">Vous continuez à acheter normalement. Le mécanisme est automatique et transparent. Aucun effort requis.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INSCRIPTION ══ -->
+<section class="section inscription" id="inscription">
+  <div class="section-inner">
+    <div class="s-eyebrow">Rejoindre la mobilisation</div>
+    <h2 class="s-titre">Inscrivez-vous —<br><em>nous vous accompagnons</em></h2>
+    <p class="s-body">Laissez vos coordonnées. Notre équipe vous contacte sous 24h pour vous aider à vous inscrire, trouver votre bureau de vote, et rester informé jusqu'au 12 Avril.</p>
+    <form id="form-inscription" onsubmit="handleSubmit(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" placeholder="Votre prénom" required>
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" placeholder="Votre nom" required>
+        </div>
+        <div class="form-group">
+          <label for="whatsapp">Numéro WhatsApp</label>
+          <input type="tel" id="whatsapp" placeholder="+225 07 XX XX XX XX" required>
+        </div>
+        <div class="form-group">
+          <label for="quartier">Quartier à Abidjan</label>
+          <select id="quartier" required>
+            <option value="" disabled selected>Choisissez votre quartier</option>
+            <option value="Adjamé">Adjamé</option>
+            <option value="Yopougon">Yopougon</option>
+            <option value="Abobo">Abobo</option>
+            <option value="Cocody">Cocody</option>
+            <option value="Marcory">Marcory</option>
+            <option value="Treichville">Treichville</option>
+            <option value="Koumassi">Koumassi</option>
+            <option value="Plateau">Plateau</option>
+            <option value="Yamoussoukro">Yamoussoukro</option>
+            <option value="Bouaké">Bouaké</option>
+            <option value="Autre">Autre ville CI</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="ville_benin">Ville / Département d'origine au Bénin</label>
+          <input type="text" id="ville_benin" placeholder="Ex: Cotonou, Parakou, Abomey...">
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">M'inscrire dans la mobilisation →</button>
+          <p class="form-note">Vos données sont strictement confidentielles.<br>Utilisation réservée à la mobilisation électorale.</p>
+        </div>
+      </div>
+    </form>
+    <div class="form-success" id="form-success">
+      <p>✅ <strong>Inscription enregistrée !</strong> Merci [PRENOM].</p>
+      <p style="margin-top:8px">Un membre de notre équipe vous contacte sur WhatsApp dans les <strong>24 heures</strong> pour vous communiquer les informations pratiques sur votre bureau de vote à Abidjan.</p>
+      <p style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.55)">📲 En attendant, contactez-nous directement : <strong style="color:var(--or)">+225 07 67 56 09 08</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="section contact-sect" id="contact">
+  <div class="section-inner">
+    <div class="s-eyebrow">Contact</div>
+    <h2 class="s-titre">Besoin d'aide ?<br><em>Nous sommes là.</em></h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="c-ico">💬</div>
+        <div class="c-titre">WhatsApp Admin</div>
+        <a href="https://wa.me/2250767560908" class="c-val">+225 07 67 56 09 08</a>
+        <div class="c-note">Disponible 7j/7 · 8h-20h<br>Réponse sous 2h maximum</div>
+      </div>
+      <div class="contact-card">
+        <div class="c-ico">💳</div>
+        <div class="c-titre">Wave Business</div>
+        <span class="c-val">+225 07 67 81 43 33</span>
+        <div class="c-note">Paiements TCL<br>VoteConnect SARL</div>
+      </div>
+      <div class="contact-card">
+        <div class="c-ico">🤖</div>
+        <div class="c-titre">Bot CHALLENGER</div>
+        <a href="https://t.me/ChallengeFinancierbot" class="c-val">@ChallengeFinancierbot</a>
+        <div class="c-note">Assistant IA 24h/24<br>Infos vote diaspora Bénin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-logo">
+        WADAGNI 2026
+        <span>Diaspora Bénin · Côte d'Ivoire</span>
+      </div>
+    </div>
+    <div class="foot-links">
+      <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:10px;">Liens</div>
+      <a href="#programme">Programme</a>
+      <a href="#comment-voter">Comment voter</a>
+      <a href="#inscription">S'inscrire</a>
+      <a href="https://coachmorgans.github.io/challengefinancier/" target="_blank">ChallengeFinancier™</a>
+      <a href="https://coachmorgans.github.io/essai/" target="_blank">L'Essai Autobiographique</a>
+    </div>
+    <div class="foot-links">
+      <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:10px;">Partenaires</div>
+      <a href="https://wa.me/2250767560908">VoteConnect SARL</a>
+      <a href="#">LFA-CI · Les Frères Africains</a>
+      <a href="https://coachmorgans.github.io/tcl/" target="_blank">Portail TCL</a>
+      <a href="https://t.me/ChallengeFinancierbot" target="_blank">Bot CHALLENGER</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p>© 2026 VoteConnect SARL · RCCM CI-ABJ-03-2025-B12-03666 · Cocody-Angré Djibi 3, Abidjan</p>
+    <p>"Une recharge égale un impact. Chaque appel, un avenir." 🇨🇮 🇧🇯</p>
+  </div>
+</footer>
+
+<!-- Bot WhatsApp bubble -->
+<div class="bot-bubble">
+  <div class="bot-label">CHALLENGER · Assistant IA</div>
+  <a href="https://t.me/ChallengeFinancierbot" class="bot-btn" target="_blank">🤖</a>
+</div>
+
+<script>
+// Compte à rebours
+function updateCountdown() {
+  const vote = new Date('2026-04-12T07:00:00');
+  const now = new Date();
+  const diff = vote - now;
+  if (diff > 0) {
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const urgent = document.querySelector('.urgence-badge');
+    if (urgent) urgent.textContent = '⏰ J-' + days;
+  }
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// Formulaire
+function handleSubmit(e) {
+  e.preventDefault();
+  const prenom = document.getElementById('prenom').value;
+  const nom = document.getElementById('nom').value;
+  const wa = document.getElementById('whatsapp').value;
+  const quartier = document.getElementById('quartier').value;
+  const ville = document.getElementById('ville_benin').value;
+
+  // Message WhatsApp admin
+  const msg = encodeURIComponent(
+    '🇧🇯 NOUVELLE INSCRIPTION — Campagne Wadagni CI\n\n' +
+    '👤 ' + prenom + ' ' + nom + '\n' +
+    '📱 WhatsApp : ' + wa + '\n' +
+    '📍 Quartier Abidjan : ' + quartier + '\n' +
+    '🏠 Origine Bénin : ' + (ville || 'Non précisé') + '\n\n' +
+    'Source : Landing Page Wadagni-CI · VoteConnect SARL'
+  );
+
+  // Ouvrir WhatsApp admin avec les infos pré-remplies
+  window.open('https://wa.me/2250767560908?text=' + msg, '_blank');
+
+  // Afficher succès
+  const form = document.getElementById('form-inscription');
+  const success = document.getElementById('form-success');
+  form.style.display = 'none';
+  success.style.display = 'block';
+  success.querySelector('p').innerHTML =
+    '✅ <strong>Inscription enregistrée !</strong> Merci ' + prenom + '.';
+}
+</script>
+</body>
+</html>
