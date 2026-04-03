@@ -3,1071 +3,1542 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Romuald WADAGNI — Présidentielle Bénin 12 Avril 2026 · Mobilisation Diaspora Béninoise de Côte d'Ivoire · VoteConnect SARL × LFA-CI">
-<meta property="og:title" content="WADAGNI 2026 — Diaspora Bénin · Côte d'Ivoire">
-<meta property="og:description" content="Rejoignez la mobilisation. Le Bénin vote le 12 Avril 2026.">
-<title>WADAGNI 2026 · Diaspora Bénin CI</title>
+<title>Vers Plus de Pouvoir Local — NGD · Penser Global, Agir Local · UEMOA · CEMAC · CEDEAO</title>
+<meta name="description" content="Le Marché Commun Citoyen — UEMOA, CEMAC, CEDEAO. Coaching Live YouTube & Telegram. Web Radio King 24h/24. Mi Sikah. 2026–2035.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap');
-
+/* ═══════════════════════════════════════════════════════
+   VARIABLES — palette distincte de la LP GR
+   Or/Terre → symbolise le pouvoir local, l'ancrage
+═══════════════════════════════════════════════════════ */
 :root {
-  --vrt: #006b3c;
-  --vrt-l: #008751;
-  --vrt-xl: #00a862;
-  --or: #FCD116;
-  --or-d: #c9a80e;
-  --rge: #E8112D;
-  --fond: #f7f4ec;
-  --fond2: #efeae0;
-  --encre: #0e1a0e;
-  --encre2: #2a3a2a;
-  --gris: #7a8a7a;
+  --or:        #c9a84c;
+  --or-dark:   #7a5a10;
+  --or-pale:   #f5e9c8;
+  --or-light:  #fffdf5;
+  --brun:      #3d2b00;
+  --vert:      #1a7a3c;
+  --vert-pale: #e8f5ee;
+  --rouge:     #c0392b;   /* alerte CEMAC/CEDEAO */
+  --bleu:      #1a4fa0;   /* partenariat Ghana/Nigeria */
+  --noir:      #0d0d0d;
+  --gris:      #5a5a5a;
+  --gris-clair:#f4f4f2;
+  --blanc:     #ffffff;
+  --radius:    12px;
+  --shadow:    0 4px 24px rgba(0,0,0,0.12);
+  --px:        5vw;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
+html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: 'Outfit', sans-serif;
-  background: var(--fond);
-  color: var(--encre);
-  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--noir); background: var(--blanc);
+  line-height: 1.6; overflow-x: hidden;
 }
+img { max-width: 100%; display: block; }
+h1,h2,h3,h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.01em; }
+a { text-decoration: none; }
 
-/* ══ BARRE DRAPEAU FIXE ══ */
-.drapeau-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 6px;
-  background: linear-gradient(90deg, var(--vrt) 33.3%, var(--or) 33.3%, var(--or) 66.6%, var(--rge) 66.6%);
-  z-index: 1000;
-}
-
-/* ══ NAV ══ */
+/* ═══════════════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════════════ */
 nav {
-  position: fixed;
-  top: 6px; left: 0; right: 0;
-  background: rgba(247,244,236,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,107,60,0.12);
-  z-index: 999;
-  padding: 0 32px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: sticky; top: 0; z-index: 200;
+  background: var(--brun);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--px); height: 52px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 .nav-logo {
-  font-family: 'Courier Prime', monospace;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--vrt);
-  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 0.95rem; color: var(--blanc);
+  display: flex; align-items: center; gap: 7px;
+  flex-shrink: 1; overflow: hidden; min-width: 0;
 }
-.nav-flags { font-size: 20px; letter-spacing: 4px; }
-.nav-cta {
-  background: var(--vrt);
-  color: #fff;
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 8px 18px;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: background 0.2s;
+.nav-logo .badge-ppl {
+  background: var(--or); color: var(--brun);
+  font-size: 0.72rem; font-weight: 800;
+  padding: 2px 8px; border-radius: 4px; flex-shrink: 0;
 }
-.nav-cta:hover { background: var(--vrt-xl); }
+.nav-logo .nav-titre {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.lang-switch {
+  display: flex; gap: 2px;
+  background: rgba(255,255,255,0.12); border-radius: 20px; padding: 3px 5px;
+}
+.lang-switch button {
+  background: none; border: none; color: rgba(255,255,255,0.7);
+  font-size: 0.72rem; font-weight: 700; cursor: pointer;
+  padding: 2px 6px; border-radius: 12px; transition: all .2s;
+}
+.lang-switch button.active { background: var(--or); color: var(--brun); }
 
-/* ══ HERO ══ */
+/* SOUS-NAV */
+.subnav {
+  position: sticky; top: 52px; z-index: 199;
+  background: var(--or-dark);
+  border-bottom: 2px solid var(--or);
+  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.subnav::-webkit-scrollbar { display: none; }
+.subnav-inner {
+  display: flex; align-items: center;
+  padding: 0 var(--px); min-width: max-content;
+}
+.subnav-inner a {
+  color: rgba(255,255,255,0.80); font-size: 0.78rem; font-weight: 600;
+  padding: 10px 14px; white-space: nowrap; display: block;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+  transition: color .15s, border-color .15s;
+}
+.subnav-inner a:hover { color: var(--or); border-color: var(--or); }
+.subnav-inner .sn-live { color: var(--or); font-weight: 800; }
+@media (min-width: 900px) {
+  nav { height: 60px; }
+  .subnav { display: none; }
+  .nav-desktop-links {
+    display: flex; align-items: center; gap: 18px; margin: 0 auto 0 20px;
+  }
+  .nav-desktop-links a {
+    color: rgba(255,255,255,0.82); font-size: 0.82rem; font-weight: 500; transition: color .2s;
+  }
+  .nav-desktop-links a:hover { color: var(--or); }
+  .nav-logo { font-size: 1rem; }
+}
+.nav-desktop-links { display: none; }
+
+/* ═══════════════════════════════════════════════════════
+   HERO — mobile first
+═══════════════════════════════════════════════════════ */
 .hero {
-  min-height: 100vh;
-  padding-top: 66px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  background: var(--encre);
+  background: linear-gradient(160deg, var(--brun) 0%, #5a3d00 55%, var(--or-dark) 100%);
+  color: var(--blanc); padding: 44px var(--px) 48px;
+  position: relative; overflow: hidden;
 }
-
-/* Motif géométrique fond */
 .hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,107,60,0.35) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(252,209,22,0.08) 0%, transparent 60%);
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
-
-/* Bande verte verticale gauche */
-.hero-bande {
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 8px;
-  background: linear-gradient(180deg, var(--vrt) 50%, var(--or) 50%);
-}
-
 .hero-inner {
-  position: relative;
-  z-index: 1;
-  padding: 80px 60px 80px 80px;
-  max-width: 1100px;
+  max-width: 1060px; margin: 0 auto; position: relative;
+  display: flex; flex-direction: column; gap: 28px;
 }
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px; width: fit-content; max-width: 100%;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 20px; padding: 6px 14px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--or-pale);
+}
+.hero h1 {
+  font-size: clamp(1.9rem, 8vw, 3.2rem);
+  font-weight: 700; line-height: 1.08; margin: 14px 0 16px;
+}
+.hero h1 em { color: var(--or); font-style: normal; }
+.hero-lead {
+  font-size: clamp(0.88rem, 2.8vw, 1.02rem);
+  color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 24px;
+}
+.hero-lead strong { color: var(--or); }
+.hero-btns { display: flex; flex-direction: column; gap: 11px; }
+.hero-btns a { width: 100%; text-align: center; }
 
-.hero-eyebrow {
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--or);
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  animation: fadeUp 0.8s ease both;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--or);
-}
-
-.hero-titre {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(52px, 10vw, 110px);
-  font-weight: 700;
-  color: #fff;
-  line-height: 0.85;
-  letter-spacing: -3px;
-  margin-bottom: 24px;
-  animation: fadeUp 0.8s ease 0.1s both;
-}
-.hero-titre .nom { color: var(--or); display: block; }
-.hero-titre .annee {
-  font-size: 0.45em;
-  font-weight: 300;
-  color: rgba(255,255,255,0.35);
-  letter-spacing: 8px;
-  display: block;
-  margin-top: 8px;
-}
-
-.hero-slogan {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(20px, 3.5vw, 32px);
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(255,255,255,0.70);
-  margin-bottom: 48px;
-  animation: fadeUp 0.8s ease 0.2s both;
-}
-.hero-slogan span { color: var(--or); font-style: normal; font-weight: 600; }
-
-.hero-stats {
-  display: flex;
-  gap: 48px;
-  margin-bottom: 56px;
-  animation: fadeUp 0.8s ease 0.3s both;
-}
-.hero-stat .n {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
-  font-weight: 700;
-  color: var(--or);
-  line-height: 1;
-}
-.hero-stat .l {
-  font-size: 11px;
-  color: rgba(255,255,255,0.40);
-  letter-spacing: 1px;
-  margin-top: 4px;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  animation: fadeUp 0.8s ease 0.4s both;
-}
-.btn-pr {
-  background: var(--or);
-  color: var(--encre);
-  font-family: 'Courier Prime', monospace;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 16px 32px;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.2s;
-  border: none;
-  cursor: pointer;
-}
-.btn-pr:hover { background: #fff; transform: translateY(-2px); }
-.btn-sc {
-  border: 1px solid rgba(255,255,255,0.25);
-  color: rgba(255,255,255,0.75);
-  font-family: 'Courier Prime', monospace;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding: 16px 32px;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.2s;
-}
-.btn-sc:hover { border-color: var(--or); color: var(--or); }
-
-/* Date badge -->
-.hero-date {
-  position: absolute;
-  right: 60px;
-  bottom: 80px;
-  text-align: center;
-  animation: fadeUp 0.8s ease 0.5s both;
-}
-.hero-date .d-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 80px;
-  font-weight: 700;
-  color: var(--rge);
-  line-height: 0.8;
-}
-.hero-date .d-mois {
-  font-family: 'Courier Prime', monospace;
-  font-size: 13px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.50);
-  display: block;
-  margin-top: 8px;
-}
-.hero-date .d-annee {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  color: rgba(255,255,255,0.30);
-  display: block;
-}
-
-/* ══ SECTIONS GÉNÉRALES ══ */
-.section { padding: 100px 60px; }
-.section-inner { max-width: 1040px; margin: 0 auto; }
-.s-eyebrow {
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--vrt);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.s-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--vrt); }
-.s-titre {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 5vw, 54px);
-  font-weight: 600;
-  color: var(--encre);
-  line-height: 1.1;
-  margin-bottom: 32px;
-}
-.s-titre em { color: var(--vrt); font-style: italic; }
-.s-body {
-  font-size: 16px;
-  color: var(--encre2);
-  line-height: 1.8;
-  max-width: 680px;
-}
-
-/* ══ SECTION URGENCE ══ */
-.urgence {
-  background: var(--rge);
-  padding: 28px 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.urgence-txt {
-  font-family: 'Courier Prime', monospace;
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: 700;
-}
-.urgence-badge {
-  background: #fff;
-  color: var(--rge);
-  font-family: 'Courier Prime', monospace;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 6px 16px;
-  text-transform: uppercase;
-}
-
-/* ══ PROGRAMME ══ */
-.programme { background: #fff; }
-.prog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 48px;
-}
-@media(max-width:768px){ .prog-grid { grid-template-columns: 1fr; } }
-.prog-card {
-  border: 1px solid rgba(0,107,60,0.12);
-  padding: 36px 28px;
-  position: relative;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.prog-card:hover { border-color: var(--vrt); transform: translateY(-4px); }
-.prog-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--or);
-}
-.prog-ico { font-size: 36px; margin-bottom: 20px; }
-.prog-titre {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--encre);
-  margin-bottom: 12px;
-}
-.prog-desc { font-size: 14.5px; color: var(--encre2); line-height: 1.7; }
-.prog-detail {
-  margin-top: 16px;
-  font-family: 'Courier Prime', monospace;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: var(--vrt);
-}
-
-/* ══ POURQUOI VOTER ══ */
-.pourquoi { background: var(--fond2); }
-.raisons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 48px;
-}
-@media(max-width:640px){ .raisons { grid-template-columns: 1fr; } }
-.raison {
-  background: #fff;
-  padding: 28px;
-  border-left: 4px solid var(--vrt);
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-}
-.raison-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 44px;
-  font-weight: 700;
-  color: var(--or);
-  line-height: 0.8;
-  flex-shrink: 0;
-}
-.raison-body .r-titre {
-  font-weight: 600;
-  font-size: 15.5px;
-  color: var(--encre);
-  margin-bottom: 6px;
-}
-.raison-body .r-desc { font-size: 14px; color: var(--gris); line-height: 1.6; }
-
-/* ══ COMMENT VOTER ══ */
-.comment { background: var(--encre); }
-.comment .s-titre { color: #fff; }
-.comment .s-titre em { color: var(--or); }
-.etapes {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-top: 48px;
-  max-width: 720px;
-}
-.etape {
-  display: flex;
-  gap: 28px;
-  align-items: flex-start;
-  padding: 28px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  position: relative;
-}
-.etape:last-child { border-bottom: none; }
-.etape-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 56px;
-  font-weight: 700;
-  color: var(--vrt-l);
-  line-height: 0.8;
-  flex-shrink: 0;
-  min-width: 60px;
-}
-.etape-body .e-titre {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 8px;
-}
-.etape-body .e-desc { font-size: 15px; color: rgba(255,255,255,0.50); line-height: 1.7; }
-.etape-body .e-tag {
-  display: inline-block;
-  margin-top: 10px;
-  background: rgba(252,209,22,0.12);
-  border: 1px solid rgba(252,209,22,0.25);
-  color: var(--or);
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  padding: 3px 12px;
-  text-transform: uppercase;
-}
-
-/* ══ TCL CASHBACK ══ */
-.tcl { background: var(--fond); }
-.tcl-box {
-  margin-top: 48px;
-  background: var(--encre);
-  padding: 60px;
-  position: relative;
-  overflow: hidden;
-}
-.tcl-box::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--vrt) 33%, var(--or) 33%, var(--or) 66%, var(--rge) 66%);
-}
-.tcl-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-}
-@media(max-width:768px){ .tcl-grid { grid-template-columns: 1fr; } }
-.tcl-item { text-align: center; }
-.tcl-pct {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 12px;
-}
-.tcl-item:nth-child(1) .tcl-pct { color: var(--vrt-xl); }
-.tcl-item:nth-child(2) .tcl-pct { color: var(--or); }
-.tcl-item:nth-child(3) .tcl-pct { color: var(--rge); }
-.tcl-item .tcl-titre { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
-.tcl-item .tcl-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
-.tcl-sep { width: 1px; background: rgba(255,255,255,0.06); }
-
-/* ══ INSCRIPTION ══ */
-.inscription { background: var(--vrt); position: relative; overflow: hidden; }
-.inscription::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -45deg, transparent, transparent 30px,
-    rgba(255,255,255,0.03) 30px, rgba(255,255,255,0.03) 31px
-  );
-}
-.inscription .s-eyebrow { color: rgba(255,255,255,0.60); }
-.inscription .s-eyebrow::before { background: rgba(255,255,255,0.40); }
-.inscription .s-titre { color: #fff; }
-.inscription .s-titre em { color: var(--or); }
-.inscription .s-body { color: rgba(255,255,255,0.75); }
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 40px;
-  max-width: 680px;
-  position: relative;
-  z-index: 1;
-}
-@media(max-width:600px){ .form-grid { grid-template-columns: 1fr; } }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group.full { grid-column: 1 / -1; }
-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.60);
-}
-input, select {
+/* CARTE STATS HERO */
+.hero-card {
   background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.20);
-  color: #fff;
-  font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  padding: 14px 16px;
-  outline: none;
-  transition: border-color 0.2s;
-  width: 100%;
-  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius); padding: 18px 16px;
+  backdrop-filter: blur(8px);
 }
-input::placeholder { color: rgba(255,255,255,0.30); }
-input:focus, select:focus { border-color: var(--or); }
-select option { background: var(--encre); color: #fff; }
-.form-submit {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
+.hcard-zones {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
 }
+.zone-badge {
+  font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+  border-radius: 20px; white-space: nowrap;
+}
+.zb-uemoa  { background: var(--vert); color: var(--blanc); }
+.zb-cemac  { background: var(--rouge); color: var(--blanc); }
+.zb-cedeao { background: var(--bleu); color: var(--blanc); }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 12px; }
+.hstat { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 11px 8px; text-align: center; }
+.hstat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--or); line-height: 1; }
+.hstat-lbl { font-size: 0.66rem; color: rgba(255,255,255,0.60); margin-top: 4px; line-height: 1.3; }
+
+/* Live en cours badge */
+.live-now {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(192,57,43,0.30); border: 1px solid var(--rouge);
+  border-radius: 8px; padding: 8px 12px; margin-top: 4px;
+  font-size: 0.78rem; font-weight: 600; color: #ffaaaa;
+}
+.live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ff4444; flex-shrink: 0;
+  animation: pulse-live 1s infinite;
+}
+@keyframes pulse-live {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.8); }
+}
+
+@media (min-width: 900px) {
+  .hero { padding: 72px var(--px) 72px; }
+  .hero-inner { flex-direction: row; align-items: center; gap: 48px; }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-card { width: 300px; flex-shrink: 0; }
+  .hero-btns { flex-direction: row; }
+  .hero-btns a { width: auto; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   BOUTONS GLOBAUX
+═══════════════════════════════════════════════════════ */
+.btn-or {
+  background: var(--or); color: var(--brun);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem;
+  padding: 13px 24px; border-radius: 8px; border: none; cursor: pointer;
+  display: inline-block; transition: transform .15s, box-shadow .15s;
+}
+.btn-or:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
+.btn-outline-blanc {
+  background: transparent; color: var(--blanc);
+  border: 2px solid rgba(255,255,255,0.5);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.95rem;
+  padding: 11px 22px; border-radius: 8px; display: inline-block;
+  transition: background .2s, border-color .2s;
+}
+.btn-outline-blanc:hover { background: rgba(255,255,255,0.10); border-color: var(--blanc); }
+.btn-rouge {
+  background: var(--rouge); color: var(--blanc);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem;
+  padding: 13px 24px; border-radius: 8px; display: inline-block;
+  transition: opacity .15s;
+}
+.btn-rouge:hover { opacity: 0.88; }
+.btn-bleu {
+  background: var(--bleu); color: var(--blanc);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem;
+  padding: 13px 24px; border-radius: 8px; display: inline-block;
+  transition: opacity .15s;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BANDE ZONES
+═══════════════════════════════════════════════════════ */
+.zones-band {
+  background: var(--gris-clair);
+  border-top: 3px solid var(--or); border-bottom: 3px solid var(--or);
+  padding: 14px var(--px);
+}
+.zones-inner {
+  max-width: 1060px; margin: 0 auto;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+}
+.zone-lbl {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--brun); white-space: nowrap; margin-right: 4px;
+}
+.pays-tag { font-size: 0.82rem; font-weight: 700; color: var(--brun); padding: 3px 6px; }
+.pays-tag.pilote { background: var(--vert); color: var(--blanc); border-radius: 4px; padding: 3px 8px; }
+.pays-tag.cemac  { background: var(--rouge); color: var(--blanc); border-radius: 4px; padding: 3px 8px; }
+.pays-tag.cedeao { background: var(--bleu); color: var(--blanc); border-radius: 4px; padding: 3px 8px; }
+.zone-sep { color: #ccc; font-size: 0.9rem; }
+
+/* ═══════════════════════════════════════════════════════
+   SECTIONS BASE
+═══════════════════════════════════════════════════════ */
+.section { padding: 56px var(--px); }
+.section-inner { max-width: 1060px; margin: 0 auto; }
+.section-kicker {
+  font-family: 'DM Sans', sans-serif; font-size: 0.70rem; font-weight: 700;
+  letter-spacing: 0.10em; text-transform: uppercase; color: var(--or-dark); margin-bottom: 9px;
+}
+.section-title {
+  font-size: clamp(1.35rem, 3.5vw, 1.9rem);
+  font-weight: 700; line-height: 1.15; margin-bottom: 12px;
+}
+.section-sub {
+  font-size: clamp(0.87rem, 2.4vw, 0.96rem);
+  color: var(--gris); line-height: 1.65; margin-bottom: 32px; max-width: 680px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   NARRATIVE — VISION
+═══════════════════════════════════════════════════════ */
+.vision-grid {
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 560px)  { .vision-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px)  { .vision-grid { grid-template-columns: repeat(3,1fr); } }
+
+.vision-card {
+  border-radius: var(--radius); padding: 22px 18px;
+  border: 1.5px solid #e0d8c8;
+  transition: border-color .2s, box-shadow .2s;
+}
+.vision-card:hover { border-color: var(--or); box-shadow: 0 4px 14px rgba(201,168,76,0.15); }
+.vision-icon { font-size: 1.7rem; margin-bottom: 9px; }
+.vision-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--brun); margin-bottom: 5px; }
+.vision-card p  { font-size: 0.83rem; color: var(--gris); line-height: 1.55; }
+
+/* ═══════════════════════════════════════════════════════
+   ALERTE CEMAC + CEDEAO
+═══════════════════════════════════════════════════════ */
+.alerte-section { background: var(--brun); color: var(--blanc); }
+.alerte-section .section-kicker { color: var(--or); }
+.alerte-section .section-title  { color: var(--blanc); }
+.alerte-section .section-sub    { color: rgba(255,255,255,0.72); }
+
+.alerte-grid {
+  display: grid; grid-template-columns: 1fr; gap: 18px;
+}
+@media (min-width: 660px) { .alerte-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .alerte-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+.alerte-card {
+  border-radius: var(--radius); padding: 24px 20px;
+  border: 1.5px solid rgba(255,255,255,0.15);
+}
+.alerte-card.ac-cemac  { background: rgba(192,57,43,0.20); border-color: rgba(192,57,43,0.5); }
+.alerte-card.ac-cedeao { background: rgba(26,79,160,0.20); border-color: rgba(26,79,160,0.5); }
+.alerte-card.ac-uemoa  { background: rgba(26,122,60,0.20); border-color: rgba(26,122,60,0.5); }
+.ac-badge {
+  display: inline-block; font-size: 0.68rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px; margin-bottom: 12px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.ac-badge.cemac  { background: var(--rouge); color: var(--blanc); }
+.ac-badge.cedeao { background: var(--bleu); color: var(--blanc); }
+.ac-badge.uemoa  { background: var(--vert); color: var(--blanc); }
+.alerte-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--or); margin-bottom: 8px; }
+.alerte-card p  { font-size: 0.84rem; color: rgba(255,255,255,0.80); line-height: 1.6; }
+.alerte-pays {
+  margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px;
+}
+.alerte-pays span {
+  font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   COACHING LIVE — SECTION PRINCIPALE
+═══════════════════════════════════════════════════════ */
+.live-section { background: var(--gris-clair); }
+
+.live-hero-card {
+  background: var(--brun); border-radius: var(--radius);
+  overflow: hidden; margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+.live-hero-top {
+  padding: 28px 24px;
+  background: linear-gradient(135deg, #1a0a00, var(--brun));
+  display: flex; flex-direction: column; gap: 16px;
+}
+@media (min-width: 660px) {
+  .live-hero-top { flex-direction: row; align-items: center; }
+}
+.live-logo-wrap { flex-shrink: 0; }
+.live-logo-circle {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--or); display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+}
+.live-info h3 {
+  font-size: 1.2rem; font-weight: 700; color: var(--or); margin-bottom: 4px;
+}
+.live-info p { font-size: 0.85rem; color: rgba(255,255,255,0.78); line-height: 1.5; }
+.live-status {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(192,57,43,0.30); border: 1px solid var(--rouge);
+  border-radius: 20px; padding: 4px 12px; margin-top: 8px;
+  font-size: 0.75rem; font-weight: 700; color: #ffaaaa;
+  width: fit-content;
+}
+.live-hero-btns {
+  padding: 16px 24px;
+  display: flex; flex-direction: column; gap: 10px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+@media (min-width: 560px) { .live-hero-btns { flex-direction: row; } }
+
+/* Grille horaires */
+.horaires-grid {
+  display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 28px;
+}
+@media (min-width: 560px) { .horaires-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .horaires-grid { grid-template-columns: repeat(3,1fr); } }
+
+.horaire-card {
+  background: var(--blanc); border-radius: var(--radius);
+  border: 1.5px solid #e0d8c8; padding: 18px 16px;
+  transition: border-color .2s;
+}
+.horaire-card:hover { border-color: var(--or); }
+.horaire-jour {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1rem;
+  font-weight: 700; color: var(--brun); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.horaire-jour .jour-badge {
+  background: var(--or); color: var(--brun);
+  font-size: 0.7rem; font-weight: 800;
+  padding: 2px 8px; border-radius: 20px;
+}
+.horaire-slot {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.83rem; color: var(--gris);
+  padding: 5px 0; border-bottom: 1px solid #f0e8d8;
+}
+.horaire-slot:last-child { border-bottom: none; }
+.slot-time {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  color: var(--brun); font-size: 0.9rem; min-width: 90px;
+}
+.slot-theme { font-size: 0.78rem; color: var(--gris); flex: 1; }
+.slot-ico { font-size: 0.9rem; flex-shrink: 0; }
+
+/* Accès Live — déverrouillage */
+.acces-live {
+  background: var(--blanc); border-radius: var(--radius);
+  border: 2px solid var(--or); padding: 24px 20px; margin-top: 28px;
+}
+.acces-live h4 {
+  font-size: 1.05rem; font-weight: 700; color: var(--brun); margin-bottom: 8px;
+}
+.acces-live p { font-size: 0.86rem; color: var(--gris); margin-bottom: 16px; line-height: 1.6; }
+.acces-form { display: flex; gap: 10px; flex-wrap: wrap; }
+.acces-form input {
+  flex: 1; min-width: 160px; border: 1.5px solid #e0d8c8;
+  border-radius: 6px; padding: 10px 14px;
+  font-size: 0.88rem; font-family: 'DM Sans', sans-serif;
+  outline: none; transition: border-color .2s;
+}
+.acces-form input:focus { border-color: var(--or); }
+.acces-form input::placeholder { color: rgba(0,0,0,0.35); }
+.btn-deverrouiller {
+  background: var(--or); color: var(--brun);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 0.9rem; padding: 10px 20px; border-radius: 6px;
+  border: none; cursor: pointer; white-space: nowrap;
+  transition: opacity .15s;
+}
+.btn-deverrouiller:hover { opacity: 0.85; }
+.acces-msg { margin-top: 10px; font-size: 0.82rem; display: none; padding: 8px 12px; border-radius: 6px; }
+.acces-msg.ok  { background: #e8f5ee; color: var(--vert); display: block; }
+.acces-msg.err { background: #fce8e8; color: var(--rouge); display: block; }
+.acces-links { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; display: none; }
+.acces-links.visible { display: flex; }
+.acces-lien {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--gris-clair); border-radius: 8px; padding: 12px 14px;
+  font-size: 0.85rem; font-weight: 600; color: var(--brun);
+  border: 1.5px solid #e0d8c8; transition: border-color .2s;
+}
+.acces-lien:hover { border-color: var(--or); }
+.acces-lien .al-ico { font-size: 1.2rem; flex-shrink: 0; }
+
+/* Web Radio */
+.radio-card {
+  background: linear-gradient(135deg, #0a1a3d, var(--bleu));
+  border-radius: var(--radius); padding: 24px 20px; margin-top: 20px;
+  color: var(--blanc);
+}
+.radio-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.radio-logo {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--or); display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; flex-shrink: 0;
+}
+.radio-info h4 { font-size: 1.1rem; font-weight: 700; color: var(--or); }
+.radio-info p  { font-size: 0.8rem; color: rgba(255,255,255,0.70); }
+.radio-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px; padding: 4px 12px; margin-top: 8px;
+  font-size: 0.72rem; font-weight: 700; color: var(--or);
+}
+.radio-btns { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+@media (min-width: 560px) { .radio-btns { flex-direction: row; } }
+.btn-radio {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--or); color: var(--brun);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 0.88rem; padding: 10px 18px; border-radius: 6px;
+  transition: opacity .15s;
+}
+.btn-radio:hover { opacity: 0.85; }
+.btn-radio-out {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: transparent; color: var(--blanc);
+  border: 1.5px solid rgba(255,255,255,0.40);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+  font-size: 0.88rem; padding: 10px 18px; border-radius: 6px;
+  transition: background .2s;
+}
+.btn-radio-out:hover { background: rgba(255,255,255,0.10); }
+
+/* ═══════════════════════════════════════════════════════
+   MARCHÉ COMMUN — MI SIKAH
+═══════════════════════════════════════════════════════ */
+.marche-section { background: var(--blanc); }
+.marche-grid {
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 660px)  { .marche-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .marche-grid { grid-template-columns: repeat(4,1fr); } }
+
+.marche-card {
+  border-radius: var(--radius); padding: 20px 16px;
+  border: 1.5px solid #e0d8c8; text-align: center;
+  transition: border-color .2s, transform .2s;
+}
+.marche-card:hover { border-color: var(--or); transform: translateY(-2px); }
+.marche-icon { font-size: 2rem; margin-bottom: 10px; }
+.marche-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--brun); margin-bottom: 6px; }
+.marche-card p  { font-size: 0.81rem; color: var(--gris); line-height: 1.5; }
+.marche-val {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem;
+  font-weight: 700; color: var(--or); margin: 6px 0 2px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FORMULAIRE ENREGISTREMENT
+═══════════════════════════════════════════════════════ */
+.enreg-section { background: var(--brun); color: var(--blanc); }
+.enreg-section .section-kicker { color: var(--or); }
+.enreg-section .section-title  { color: var(--blanc); }
+.enreg-section .section-sub    { color: rgba(255,255,255,0.72); }
+
+.enreg-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 700px) { .enreg-grid { grid-template-columns: 1fr 1fr; } }
+
+.enreg-card {
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius); padding: 26px 20px;
+}
+.enreg-ico {
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 14px;
+}
+.ico-ci    { background: rgba(26,122,60,0.50); }
+.ico-uemoa { background: rgba(201,168,76,0.30); }
+.enreg-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--or); margin-bottom: 3px; }
+.enreg-card .esub { font-size: 0.78rem; color: rgba(255,255,255,0.52); font-style: italic; margin-bottom: 14px; }
+
+/* Formulaire */
+.enreg-form { border-top: 1px solid rgba(255,255,255,0.14); padding-top: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-full { margin-bottom: 10px; }
+.form-group label, .form-full label {
+  font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.68); letter-spacing: 0.03em;
+}
+.form-group input, .form-group select, .form-full textarea {
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 6px; padding: 9px 11px; color: var(--blanc);
+  font-size: 0.84rem; font-family: 'DM Sans', sans-serif;
+  width: 100%; outline: none; transition: border-color .2s;
+}
+.form-group input::placeholder, .form-full textarea::placeholder { color: rgba(255,255,255,0.35); }
+.form-group input:focus, .form-group select:focus, .form-full textarea:focus { border-color: var(--or); }
+.form-group select { appearance: none; cursor: pointer; }
+.form-group select option { background: var(--brun); color: var(--blanc); }
+.form-msg { font-size: 0.82rem; padding: 8px 12px; border-radius: 6px; margin-bottom: 10px; display: none; }
+.form-msg.success { background: rgba(26,122,60,0.30); color: #7fffab; border: 1px solid rgba(26,122,60,0.5); display: block; }
+.form-msg.error   { background: rgba(220,50,50,0.20); color: #ffaaaa; border: 1px solid rgba(220,50,50,0.4); display: block; }
 .btn-submit {
-  background: var(--or);
-  color: var(--encre);
-  font-family: 'Courier Prime', monospace;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  border: none;
-  padding: 16px 36px;
-  cursor: pointer;
-  transition: all 0.2s;
+  width: 100%; background: var(--or); color: var(--brun);
+  border: none; border-radius: 8px; cursor: pointer;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 0.95rem; padding: 13px 20px; transition: opacity .2s; margin-top: 4px;
 }
-.btn-submit:hover { background: #fff; }
-.form-note { font-size: 12px; color: rgba(255,255,255,0.40); line-height: 1.5; }
+.btn-submit:hover { opacity: 0.88; }
+.btn-submit:disabled { opacity: 0.55; cursor: not-allowed; }
 
-/* Message de succès */
-.form-success {
-  display: none;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid var(--or);
-  padding: 24px 28px;
-  margin-top: 20px;
-  max-width: 680px;
-  position: relative;
-  z-index: 1;
+/* ═══════════════════════════════════════════════════════
+   7 RÉGIONS PILOTES
+═══════════════════════════════════════════════════════ */
+.regions-section { background: var(--or-light); }
+.regions-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
 }
-.form-success p {
-  color: #fff;
-  font-size: 15px;
-  line-height: 1.7;
-}
-.form-success strong { color: var(--or); }
+@media (min-width: 560px) { .regions-grid { grid-template-columns: repeat(3,1fr); } }
+@media (min-width: 900px) { .regions-grid { grid-template-columns: repeat(7,1fr); } }
 
-/* ══ CONTACT ══ */
-.contact-sect { background: var(--fond2); }
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
-  margin-top: 48px;
+.region-card {
+  background: var(--blanc); border-radius: var(--radius);
+  border: 1.5px solid var(--or); padding: 14px 12px; text-align: center;
+  transition: background .2s, transform .2s;
 }
-@media(max-width:768px){ .contact-grid { grid-template-columns: 1fr; } }
-.contact-card {
-  background: #fff;
-  padding: 32px;
-  border-top: 3px solid var(--vrt);
-  text-align: center;
+.region-card:hover { background: var(--or); transform: translateY(-2px); }
+.region-card:hover .region-nom { color: var(--brun); }
+.region-card:hover .region-pop { color: var(--brun); opacity: 0.7; }
+.region-icon { font-size: 1.3rem; margin-bottom: 5px; }
+.region-nom { font-size: 0.78rem; font-weight: 700; color: var(--brun); line-height: 1.3; }
+.region-pop { font-size: 0.68rem; color: var(--gris); margin-top: 3px; }
+.momentum-badge {
+  margin-top: 24px; background: var(--brun); color: var(--or);
+  border-radius: var(--radius); padding: 16px 20px;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.88rem; line-height: 1.5;
 }
-.contact-card .c-ico { font-size: 36px; margin-bottom: 16px; }
-.contact-card .c-titre {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--encre);
-  margin-bottom: 8px;
-}
-.contact-card .c-val {
-  font-family: 'Courier Prime', monospace;
-  font-size: 14px;
-  color: var(--vrt);
-  font-weight: 700;
-  margin-bottom: 6px;
-  display: block;
-}
-.contact-card .c-note { font-size: 12px; color: var(--gris); }
-.contact-card a { color: var(--vrt); text-decoration: none; }
-.contact-card a:hover { color: var(--vrt-xl); }
+.mb-icon { font-size: 1.4rem; flex-shrink: 0; }
 
-/* ══ FOOTER ══ */
-footer {
-  background: var(--encre);
-  padding: 60px;
-}
-.foot-inner {
-  max-width: 1040px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+/* ═══════════════════════════════════════════════════════
+   LP GR — LIEN VERS PORTE D'ENTRÉE
+═══════════════════════════════════════════════════════ */
+.lpgr-section { background: var(--gris-clair); }
+.lpgr-card {
+  background: var(--blanc); border-radius: var(--radius);
+  border: 2px solid var(--vert); padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 16px;
   align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
 }
-.foot-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--or);
+@media (min-width: 700px) {
+  .lpgr-card { flex-direction: row; align-items: center; }
+  .lpgr-text { flex: 1; }
 }
-.foot-logo span { display: block; font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.35); margin-top: 4px; text-transform: uppercase; }
-.foot-links { display: flex; flex-direction: column; gap: 8px; }
-.foot-links a { font-size: 13px; color: rgba(255,255,255,0.40); text-decoration: none; transition: color 0.2s; }
-.foot-links a:hover { color: var(--or); }
-.foot-bot {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  margin-top: 48px;
-  padding-top: 24px;
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+.lpgr-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--vert); margin-bottom: 6px; }
+.lpgr-card p  { font-size: 0.86rem; color: var(--gris); line-height: 1.6; }
+.btn-vert {
+  background: var(--vert); color: var(--blanc);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 0.9rem; padding: 12px 22px; border-radius: 8px;
+  white-space: nowrap; transition: opacity .15s; flex-shrink: 0;
 }
-.foot-bot p { font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.18); text-transform: uppercase; }
+.btn-vert:hover { opacity: 0.88; }
 
-/* ══ BOT BUBBLE ══ */
-.bot-bubble {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════ */
+footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 26px; }
+.footer-inner { max-width: 1060px; margin: 0 auto; }
+.footer-grid {
+  display: grid; grid-template-columns: 1fr; gap: 28px;
+  padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.10); margin-bottom: 22px;
 }
-.bot-label {
-  background: var(--encre);
-  color: var(--or);
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  padding: 6px 14px;
-  border-radius: 2px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s;
+@media (min-width: 560px)  { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px)  { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+.footer-brand .flogo {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700;
+  color: var(--or); margin-bottom: 9px; letter-spacing: 0.02em;
 }
-.bot-bubble:hover .bot-label { opacity: 1; }
-.bot-btn {
-  width: 60px;
-  height: 60px;
-  background: var(--vrt);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  text-decoration: none;
-  box-shadow: 0 4px 24px rgba(0,107,60,0.40);
-  transition: transform 0.2s, background 0.2s;
-  border: 3px solid var(--or);
+.footer-brand p    { font-size: 0.78rem; color: rgba(255,255,255,0.52); line-height: 1.6; }
+.footer-brand .legal { font-size: 0.70rem; color: rgba(255,255,255,0.30); margin-top: 11px; }
+.fcol h5 {
+  font-family: 'DM Sans', sans-serif; font-size: 0.70rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.09em; color: var(--or); margin-bottom: 11px;
 }
-.bot-btn:hover { transform: scale(1.1); background: var(--vrt-xl); }
+.fcol ul { list-style: none; }
+.fcol ul li { margin-bottom: 7px; }
+.fcol ul li a { font-size: 0.78rem; color: rgba(255,255,255,0.65); transition: color .2s; }
+.fcol ul li a:hover { color: var(--or); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 9px; }
+.footer-bottom p { font-size: 0.73rem; color: rgba(255,255,255,0.32); }
+.footer-motto { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--or); letter-spacing: 0.04em; }
 
-/* ══ ANIMATIONS ══ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ═══════════════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════════════ */
+.fu { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+.fu.on { opacity: 1; transform: translateY(0); }
+
+/* Mise en valeur textuelle globale */
+.hi-or   { color: var(--or); font-weight: 700; }
+.hi-rouge { color: #e8a020; font-weight: 700; }
+.hi-vert  { color: var(--vert); font-weight: 700; }
+
+/* Boutons verrouillés */
+.btn-locked {
+  opacity: 0.42; pointer-events: none; cursor: not-allowed;
+  filter: grayscale(0.6); position: relative;
+}
+.btn-locked.unlocked {
+  opacity: 1; pointer-events: auto; cursor: pointer; filter: none;
+}
+.btn-locked-hint {
+  font-size: 0.75rem; color: var(--gris); margin-top: 7px; font-style: italic;
 }
 
-/* ══ RESPONSIVE ══ */
-@media(max-width:768px) {
-  .section { padding: 60px 24px; }
-  .hero-inner { padding: 60px 24px; }
-  .hero-stats { gap: 28px; flex-wrap: wrap; }
-  .hero-date { display: none; }
-  nav { padding: 0 20px; }
-  .tcl-box { padding: 36px 24px; }
-  footer { padding: 40px 24px; }
-  .urgence { flex-direction: column; gap: 10px; text-align: center; }
+/* Compteur Délégations Pays NGD */
+.countdown-delegations {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 10px; padding: 12px; margin-top: 6px;
+}
+.cd-del-label {
+  font-size: 0.68rem; color: var(--or); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 2px; text-align: center;
+}
+.cd-del-dates {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem;
+  font-weight: 700; color: rgba(255,255,255,0.80);
+  text-align: center; margin-bottom: 8px;
+}
+.cd-del-timer {
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+}
+.cd-bloc { display: flex; flex-direction: column; align-items: center; min-width: 36px; }
+.cd-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem; font-weight: 700; color: var(--blanc);
+  background: rgba(255,255,255,0.12); border-radius: 5px;
+  padding: 3px 7px; min-width: 40px; text-align: center; line-height: 1;
+}
+.cd-lbl { font-size: 0.55rem; color: rgba(255,255,255,0.52); margin-top: 2px; }
+.cd-sep { font-size: 1.2rem; font-weight: 700; color: var(--or); align-self: flex-start; margin-top: 5px; }
+.cd-del-next {
+  font-size: 0.66rem; color: rgba(255,255,255,0.60);
+  text-align: center; margin-top: 8px; line-height: 1.4; font-style: italic;
 }
 </style>
 </head>
 <body>
 
-<!-- Barre drapeau -->
-<div class="drapeau-bar"></div>
-
-<!-- Nav -->
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">Wadagni 2026 · CI</div>
-  <div class="nav-flags">🇧🇯 🇨🇮</div>
-  <a href="#inscription" class="nav-cta">Je m'inscris</a>
+  <a href="#top" class="nav-logo">
+    <span class="badge-ppl">PPL</span>
+    <span class="nav-titre"
+          data-fr="Vers Plus de Pouvoir Local"
+          data-en="Toward More Local Power">Vers Plus de Pouvoir Local</span>
+  </a>
+  <div class="nav-desktop-links">
+    <a href="#vision"    data-fr="Vision"        data-en="Vision">Vision</a>
+    <a href="#zones"     data-fr="Zones"          data-en="Zones">Zones</a>
+    <a href="#live"      data-fr="🔴 Live"        data-en="🔴 Live">🔴 Live</a>
+    <a href="#marche"    data-fr="Marché Commun"  data-en="Common Market">Marché Commun</a>
+    <a href="#rejoindre" data-fr="Rejoindre"      data-en="Join">Rejoindre</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+      <button id="btn-en"               onclick="setLang('en')">EN</button>
+    </div>
+  </div>
 </nav>
 
-<!-- ══ HERO ══ -->
-<section class="hero">
-  <div class="hero-bande"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Présidentielle Bénin · Diaspora de Côte d'Ivoire</div>
-    <h1 class="hero-titre">
-      <span class="nom">Wadagni</span>
-      "Plus loin,<br>ensemble"
-      <span class="annee">2026</span>
-    </h1>
-    <p class="hero-slogan">La diaspora béninoise de Côte d'Ivoire<br>se mobilise pour le <span>12 Avril 2026</span>.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="n">300K+</div><div class="l">Béninois en CI</div></div>
-      <div class="hero-stat"><div class="n">14</div><div class="l">Jours de campagne</div></div>
-      <div class="hero-stat"><div class="n">12/04</div><div class="l">Jour du vote</div></div>
-    </div>
-    <div class="hero-btns">
-      <a href="#inscription" class="btn-pr">Rejoindre la mobilisation</a>
-      <a href="#comment-voter" class="btn-sc">Comment voter →</a>
-    </div>
+<!-- SOUS-NAV -->
+<div class="subnav">
+  <div class="subnav-inner">
+    <a href="#vision"    data-fr="Vision"       data-en="Vision">Vision</a>
+    <a href="#zones"     data-fr="Zones"         data-en="Zones">Zones</a>
+    <a href="#live"      class="sn-live">🔴 Coaching Live</a>
+    <a href="#radio"     data-fr="📻 CastingFM"    data-en="📻 CastingFM">📻 CastingFM</a>
+    <a href="#marche"    data-fr="Marché Commun" data-en="Common Market">Marché Commun</a>
+    <a href="#regions"   data-fr="7 Régions"     data-en="7 Regions">7 Régions</a>
+    <a href="#rejoindre" data-fr="Rejoindre"     data-en="Join">Rejoindre</a>
   </div>
-  <div class="hero-date">
-    <div class="d-num">12</div>
-    <span class="d-mois">Avril</span>
-    <span class="d-annee">2026</span>
-  </div>
-</section>
-
-<!-- ══ URGENCE ══ -->
-<div class="urgence">
-  <span class="urgence-badge">⏰ J-17</span>
-  <span class="urgence-txt">Le vote ferme à 17h le 12 Avril — Préparez vos documents maintenant</span>
-  <span class="urgence-badge">🗳️ Bénin Vote</span>
 </div>
 
-<!-- ══ PROGRAMME ══ -->
-<section class="section programme" id="programme">
-  <div class="section-inner">
-    <div class="s-eyebrow">Programme</div>
-    <h2 class="s-titre">Romuald WADAGNI —<br><em>dauphin de Patrice TALON</em></h2>
-    <p class="s-body">Ministre de l'Économie et des Finances pendant 10 ans, architecte de la croissance béninoise (7%+ annuel), Romuald WADAGNI porte le programme <strong>"Plus loin, ensemble"</strong> : redistribuer les fruits de la croissance, accélérer le développement des régions, et ouvrir l'avenir à la jeunesse.</p>
-    <div class="prog-grid">
-      <div class="prog-card">
-        <div class="prog-ico">📊</div>
-        <div class="prog-titre">Économie & Redistribution</div>
-        <div class="prog-desc">Consolider les acquis de 10 ans de croissance et redistribuer les richesses vers les populations. Réduction de la pauvreté comme priorité nationale.</div>
-        <div class="prog-detail">▸ Taux de croissance 7%+ maintenu</div>
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-kicker">
+        <span>🌍</span>
+        <span data-fr="PENSER GLOBAL · AGIR LOCAL"
+              data-en="THINK GLOBAL · ACT LOCAL">PENSER GLOBAL · AGIR LOCAL</span>
       </div>
-      <div class="prog-card">
-        <div class="prog-ico">🌍</div>
-        <div class="prog-titre">Développement Régional</div>
-        <div class="prog-desc">Développement accéléré des 6 départements du Bénin, avec un accent particulier sur les zones rurales et les infrastructures de base.</div>
-        <div class="prog-detail">▸ 6 départements prioritaires</div>
+      <h1 data-fr="<em>Plus de Pouvoir Local</em> pour les Citoyens d'Afrique."
+          data-en="<em>More Local Power</em> for African Citizens.">
+        <em>Plus de Pouvoir Local</em> pour les Citoyens d'Afrique.
+      </h1>
+      <p class="hero-lead"
+         data-fr="Un Marché Commun physique et virtuel, porté par les Citoyens autour du FCFA et du Dispositif Monétaire <strong>Mi Sikah</strong>. Les Municipales/Régionales 2028 en Côte d'Ivoire sont le momentum. <strong>Nouvelles Générations pour le Développement</strong> ouvre la voie."
+         data-en="A physical and virtual Common Market, driven by Citizens around the CFA franc and the <strong>Mi Sikah</strong> Monetary Device. The 2028 Municipal/Regional elections in Côte d'Ivoire are the momentum. <strong>Nouvelles Générations pour le Développement</strong> leads the way.">
+        Un Marché Commun physique et virtuel, porté par les Citoyens autour du FCFA et du Dispositif Monétaire <strong>Mi Sikah</strong>. Les Municipales/Régionales 2028 en Côte d'Ivoire sont le momentum. <strong>Nouvelles Générations pour le Développement</strong> ouvre la voie.
+      </p>
+      <div class="hero-btns">
+        <a href="#rejoindre" class="btn-or" data-fr="🌱 Rejoindre NGD" data-en="🌱 Join NGD">🌱 Rejoindre NGD</a>
+        <a href="#live" class="btn-outline-blanc" data-fr="🔴 Accéder au Live" data-en="🔴 Join the Live">🔴 Accéder au Live</a>
       </div>
-      <div class="prog-card">
-        <div class="prog-ico">🎓</div>
-        <div class="prog-titre">Jeunesse & Innovation</div>
-        <div class="prog-desc">La jeunesse béninoise au cœur du projet politique. Emploi, formation, innovation technologique et entrepreneuriat comme moteurs du Bénin de demain.</div>
-        <div class="prog-detail">▸ Innovation tech & emplois jeunes</div>
+    </div>
+    <div class="hero-card">
+      <div class="hcard-zones">
+        <span class="zone-badge zb-uemoa">UEMOA</span>
+        <span class="zone-badge zb-cemac">CEMAC</span>
+        <span class="zone-badge zb-cedeao">Ghana · Nigeria</span>
       </div>
-      <div class="prog-card">
-        <div class="prog-ico">🏥</div>
-        <div class="prog-titre">Santé pour tous</div>
-        <div class="prog-desc">Chaque malade pris en charge à son arrivée, sans attendre les formalités administratives. La santé comme droit fondamental.</div>
-        <div class="prog-detail">▸ Accès immédiat aux soins</div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-val">7</div><div class="hstat-lbl" data-fr="Régions Pilotes CI" data-en="CI Pilot Regions">Régions Pilotes CI</div></div>
+        <div class="hstat"><div class="hstat-val">2028</div><div class="hstat-lbl" data-fr="Municipales/Régionales" data-en="Municipal/Regional">Municipales/Régionales</div></div>
+        <div class="hstat"><div class="hstat-val">Mi Sikah</div><div class="hstat-lbl" data-fr="Dispositif Monétaire Citoyen" data-en="Citizen Monetary Device">Dispositif Monétaire</div></div>
+        <div class="hstat"><div class="hstat-val">24h/7j</div><div class="hstat-lbl" data-fr="Web Radio King en ligne" data-en="Web Radio King online">Web Radio King</div></div>
       </div>
-      <div class="prog-card">
-        <div class="prog-ico">🛡️</div>
-        <div class="prog-titre">Sécurité & Stabilité</div>
-        <div class="prog-desc">Renforcement des forces armées face aux menaces terroristes au Nord. Garantie des libertés individuelles et ouverture de l'espace civique.</div>
-        <div class="prog-detail">▸ Équipements militaires modernisés</div>
-      </div>
-      <div class="prog-card">
-        <div class="prog-ico">🌐</div>
-        <div class="prog-titre">Diaspora & Liens</div>
-        <div class="prog-desc">La diaspora béninoise partout dans le monde est une ressource précieuse. Wadagni s'engage à renforcer les liens et valoriser la contribution des Béninois de l'extérieur.</div>
-        <div class="prog-detail">▸ Diaspora acteur du développement</div>
+      <div class="countdown-delegations" id="cdDelegations">
+        <div class="cd-del-label" data-fr="⏳ Inscriptions — Délégations Pays NGD" data-en="⏳ Registrations — NGD Country Delegations">⏳ Inscriptions — Délégations Pays NGD</div>
+        <div class="cd-del-dates" data-fr="10 Avril → 30 Juin 2026" data-en="April 10 → June 30, 2026">10 Avril → 30 Juin 2026</div>
+        <div class="cd-del-timer">
+          <div class="cd-bloc"><span class="cd-val" id="dd-j">00</span><span class="cd-lbl" data-fr="Jours" data-en="Days">Jours</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-bloc"><span class="cd-val" id="dd-h">00</span><span class="cd-lbl">H</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-bloc"><span class="cd-val" id="dd-m">00</span><span class="cd-lbl">Min</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-bloc"><span class="cd-val" id="dd-s">00</span><span class="cd-lbl">Sec</span></div>
+        </div>
+        <div class="cd-del-next" data-fr="🎖️ 14 Juillet 2026 · Cérémonie d'Investiture Bureau Exécutif UEMOA-NGD & CEMAC-NGD" data-en="🎖️ July 14, 2026 · Investiture Ceremony UEMOA-NGD & CEMAC-NGD Executive Bureau">🎖️ 14 Juillet 2026 · Cérémonie d'Investiture Bureau Exécutif UEMOA-NGD & CEMAC-NGD</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ POURQUOI VOTER ══ -->
-<section class="section pourquoi" id="pourquoi">
+<!-- BANDE ZONES -->
+<div class="zones-band">
+  <div class="zones-inner">
+    <span class="zone-lbl" data-fr="Communautés :" data-en="Communities:">Communautés :</span>
+    <span class="pays-tag pilote">🇨🇮 CI</span>
+    <span class="pays-tag">🇸🇳 SN</span>
+    <span class="pays-tag">🇧🇯 BJ</span>
+    <span class="pays-tag">🇲🇱 ML</span>
+    <span class="pays-tag">🇧🇫 BF</span>
+    <span class="pays-tag">🇳🇪 NE</span>
+    <span class="pays-tag">🇬🇼 GW</span>
+    <span class="pays-tag">🇹🇬 TG</span>
+    <span class="zone-sep">·</span>
+    <span class="pays-tag cemac">🇨🇲 CM</span>
+    <span class="pays-tag cemac">🇨🇫 CF</span>
+    <span class="pays-tag cemac">🇨🇬 CG</span>
+    <span class="pays-tag cemac">🇬🇦 GA</span>
+    <span class="pays-tag cemac">🇬🇶 GQ</span>
+    <span class="pays-tag cemac">🇹🇩 TD</span>
+    <span class="zone-sep">·</span>
+    <span class="pays-tag cedeao">🇬🇭 GH</span>
+    <span class="pays-tag cedeao">🇳🇬 NG</span>
+  </div>
+</div>
+
+<!-- VISION -->
+<section class="section" id="vision">
   <div class="section-inner">
-    <div class="s-eyebrow">Pourquoi voter</div>
-    <h2 class="s-titre">Votre voix depuis Abidjan<br><em>fait la différence</em></h2>
-    <div class="raisons">
-      <div class="raison">
-        <div class="raison-num">01</div>
-        <div class="raison-body">
-          <div class="r-titre">La diaspora a changé des élections au Bénin</div>
-          <div class="r-desc">La voix des Béninois de l'étranger a historiquement influé sur les scrutins. 300 000+ Béninois en Côte d'Ivoire représentent une force électorale significative.</div>
+    <p class="section-kicker" data-fr="Notre Vision" data-en="Our Vision">Notre Vision</p>
+    <h2 class="section-title"
+        data-fr="Un Marché Commun Citoyen — du local au continental"
+        data-en="A Citizens' Common Market — from local to continental">Un Marché Commun Citoyen — du local au continental</h2>
+    <p class="section-sub"
+       data-fr="Depuis les 7 régions pilotes de Côte d'Ivoire, <strong class='hi-or'>NGD — Nouvelles Générations pour le Développement</strong> construit le modèle d'une gouvernance locale alternative — <strong class='hi-rouge'>économique, financière et démocratique</strong> — exportable à toute l'Afrique francophone et anglophone."
+       data-en="From the 7 pilot regions of Côte d'Ivoire, <strong class='hi-or'>NGD — Nouvelles Générations pour le Développement</strong> builds the model of an alternative local governance — <strong class='hi-rouge'>economic, financial and democratic</strong> — exportable to all of francophone and anglophone Africa.">
+      Depuis les 7 régions pilotes de Côte d'Ivoire, <strong class="hi-or">NGD — Nouvelles Générations pour le Développement</strong> construit le modèle d'une gouvernance locale alternative — <strong class="hi-rouge">économique, financière et démocratique</strong> — exportable à toute l'Afrique francophone et anglophone.
+    </p>
+    <div class="vision-grid">
+      <div class="vision-card fu">
+        <div class="vision-icon">🏪</div>
+        <h4 data-fr="Marché Physique TCL" data-en="TCL Physical Market">Marché Physique TCL</h4>
+        <p data-fr="<strong class='hi-or'>509 Communes et Sous-préfectures</strong> connectées via le Portail TCL — 3 Boutiques en 1. Commerce local, livraison, épargne communautaire <strong class='hi-or'>Mi Sikah</strong>." data-en="<strong class='hi-or'>509 Communes and Sub-prefectures</strong> connected via the TCL Portal — 3 Shops in 1. Local commerce, delivery, <strong class='hi-or'>Mi Sikah</strong> community savings."><strong class="hi-or">509 Communes et Sous-préfectures</strong> connectées via le Portail TCL — 3 Boutiques en 1. Commerce local, livraison, épargne communautaire <strong class="hi-or">Mi Sikah</strong>.</p>
+      </div>
+      <div class="vision-card fu">
+        <div class="vision-icon">💱</div>
+        <h4 data-fr="Dispositif Mi Sikah" data-en="Mi Sikah Device">Dispositif Mi Sikah</h4>
+        <p data-fr="Chaque achat génère <strong class='hi-or'>2.5%</strong> de Cashback à la communauté. <strong class='hi-or'>1 Mi Sikah = 10 000 FCFA</strong>. Souveraineté monétaire citoyenne." data-en="Each purchase generates <strong class='hi-or'>2.5%</strong> Cashback returned to the declared community. <strong class='hi-or'>1 Mi Sikah = 10,000 FCFA</strong>. Citizens' monetary sovereignty.">Chaque achat génère <strong class="hi-or">2.5%</strong> de Cashback à la communauté. <strong class="hi-or">1 Mi Sikah = 10 000 FCFA</strong>. Souveraineté monétaire citoyenne.</p>
+      </div>
+      <div class="vision-card fu">
+        <div class="vision-icon">🗳️</div>
+        <h4 data-fr="Momentum 2028" data-en="2028 Momentum">Momentum 2028</h4>
+        <p data-fr="Les Municipales/Régionales couplées de septembre 2028 en CI sont le levier électoral. 7 régions pilotes, 509 colistiers NGD, partenariat LFA-CI." data-en="The coupled Municipal/Regional elections of September 2028 in CI are the electoral lever. 7 pilot regions, 509 NGD co-candidates, LFA-CI partnership.">Les Municipales/Régionales 2028 en CI — 7 régions pilotes, colistiers NGD, partenariat LFA-CI.</p>
+      </div>
+      <div class="vision-card fu">
+        <div class="vision-icon">📡</div>
+        <h4 data-fr="Coaching & Formation" data-en="Coaching & Training">Coaching & Formation</h4>
+        <p data-fr="YouTube Live, Telegram et <strong class='hi-or'>CastingFM</strong> 24h/24 : formation financière, Bitcoin, gouvernance locale. Accès par code WhatsApp." data-en="YouTube Live, Telegram and <strong class='hi-or'>CastingFM</strong> 24/7: financial training, Bitcoin, local governance. Access by WhatsApp code.">YouTube Live, Telegram et <strong class="hi-or">CastingFM</strong> 24h/24. Formation, Bitcoin, gouvernance. Accès par code WhatsApp.</p>
+      </div>
+      <div class="vision-card fu">
+        <div class="vision-icon">🤝</div>
+        <h4 data-fr="Partenariat CEDEAO" data-en="ECOWAS Partnership">Partenariat CEDEAO</h4>
+        <p data-fr="Ouverture stratégique aux communautés Ghanéennes et Nigérianes résidant en Côte d'Ivoire pour l'intégration du Marché Commun CEDEAO." data-en="Strategic opening to Ghanaian and Nigerian communities residing in Côte d'Ivoire for ECOWAS Common Market integration.">Ouverture aux communautés Ghanéennes et Nigérianes en CI pour l'intégration CEDEAO.</p>
+      </div>
+      <div class="vision-card fu">
+        <div class="vision-icon">₿</div>
+        <h4 data-fr="Souveraineté Bitcoin" data-en="Bitcoin Sovereignty">Souveraineté Bitcoin</h4>
+        <p data-fr="10 000 Consultants Financiers Ruraux formés d'ici 2030. 500 points de service Bitcoin. Intégration dans les assemblées villageoises." data-en="10,000 Rural Financial Consultants trained by 2030. 500 Bitcoin service points. Integration into village assemblies.">10 000 Consultants Financiers Ruraux d'ici 2030. 500 points Bitcoin. Assemblées villageoises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALERTE CEMAC + CEDEAO -->
+<section class="section alerte-section" id="zones">
+  <div class="section-inner">
+    <p class="section-kicker" data-fr="Positionnement Stratégique" data-en="Strategic Positioning">Positionnement Stratégique</p>
+    <h2 class="section-title"
+        data-fr="Au-delà de l'UEMOA — CEMAC, CEDEAO et les Diaspora"
+        data-en="Beyond UEMOA — CEMAC, ECOWAS and the Diaspora">Au-delà de l'UEMOA — CEMAC, CEDEAO et les Diaspora</h2>
+    <p class="section-sub"
+       data-fr="La Côte d'Ivoire est le carrefour de l'Afrique de l'Ouest et Centrale. Les communautés de toutes les zones trouvent ici un modèle de Pouvoir Local à répliquer."
+       data-en="Côte d'Ivoire is the crossroads of West and Central Africa. Communities from all zones find here a Local Power model to replicate.">
+      La Côte d'Ivoire est le carrefour de l'Afrique de l'Ouest et Centrale. Les communautés de toutes les zones trouvent ici un modèle de Pouvoir Local à répliquer.
+    </p>
+    <div class="alerte-grid">
+      <div class="alerte-card ac-uemoa fu">
+        <div class="ac-badge uemoa">UEMOA — Zone Pilote</div>
+        <h3 data-fr="8 États · Phase Active 2026–2030" data-en="8 States · Active Phase 2026–2030">8 États · Phase Active 2026–2030</h3>
+        <p data-fr="La zone UEMOA est le laboratoire fondateur. Le modèle NGD y est déployé en priorité selon les calendriers électoraux de chaque État membre." data-en="The UEMOA zone is the founding laboratory. The NGD model is deployed there first according to each member state's electoral calendar.">La zone UEMOA est le laboratoire fondateur. Déploiement selon les calendriers électoraux de chaque État.</p>
+        <div class="alerte-pays">
+          <span>🇨🇮 CI · Pilote</span><span>🇧🇯 BJ</span><span>🇸🇳 SN</span>
+          <span>🇲🇱 ML</span><span>🇧🇫 BF</span><span>🇳🇪 NE</span>
+          <span>🇬🇼 GW</span><span>🇹🇬 TG</span>
         </div>
       </div>
-      <div class="raison">
-        <div class="raison-num">02</div>
-        <div class="raison-body">
-          <div class="r-titre">Vos familles au pays comptent sur vous</div>
-          <div class="r-desc">Chaque franc envoyé au pays, chaque appel téléphonique, chaque retour au pays — votre engagement citoyen est la suite logique de votre amour pour le Bénin.</div>
+      <div class="alerte-card ac-cemac fu">
+        <div class="ac-badge cemac">⚠️ CEMAC — Alerte Partenariat</div>
+        <h3 data-fr="6 États · Résidents en Côte d'Ivoire" data-en="6 States · Residents in Côte d'Ivoire">6 États · Résidents en Côte d'Ivoire</h3>
+        <p data-fr="Les communautés de la Zone CEMAC résidant en CI sont invitées à rejoindre NGD comme Délégués-Pays CEMAC, pour répliquer le modèle Mi Sikah dans leurs pays d'origine dès 2030–2035." data-en="CEMAC Zone communities residing in CI are invited to join NGD as CEMAC Country Delegates, to replicate the Mi Sikah model in their home countries from 2030–2035.">Les communautés CEMAC résidant en CI : rejoignez NGD comme Délégués-Pays CEMAC. Réplication du modèle Mi Sikah dès 2030–2035.</p>
+        <div class="alerte-pays">
+          <span>🇨🇲 Cameroun</span><span>🇨🇫 Centrafrique</span>
+          <span>🇨🇬 Congo</span><span>🇬🇦 Gabon</span>
+          <span>🇬🇶 Guinée Éq.</span><span>🇹🇩 Tchad</span>
         </div>
       </div>
-      <div class="raison">
-        <div class="raison-num">03</div>
-        <div class="raison-body">
-          <div class="r-titre">La stabilité du Bénin protège vos intérêts</div>
-          <div class="r-desc">Un Bénin stable et prospère sous WADAGNI, c'est un retour au pays facilité, des opportunités pour vos enfants, et une fierté renforcée d'être Béninois partout dans le monde.</div>
-        </div>
-      </div>
-      <div class="raison">
-        <div class="raison-num">04</div>
-        <div class="raison-body">
-          <div class="r-titre">L'organisation est là — vous n'êtes pas seul</div>
-          <div class="r-desc">VoteConnect SARL et LFA-CI ont déployé un dispositif complet à Abidjan pour vous accompagner : informations, localisation de bureaux de vote, assistance 7j/7.</div>
+      <div class="alerte-card ac-cedeao fu">
+        <div class="ac-badge cedeao">🤝 CEDEAO — Partenariat Stratégique</div>
+        <h3 data-fr="Ghana · Nigeria · Intégration Marché Commun" data-en="Ghana · Nigeria · Common Market Integration">Ghana · Nigeria · Intégration Marché Commun</h3>
+        <p data-fr="<strong class='hi-or'>NGD</strong> ouvre un couloir de partenariat avec les communautés Ghanéennes et Nigérianes en CI pour l'intégration progressive dans le Marché Commun CEDEAO via le <strong class='hi-or'>Dispositif Mi Sikah</strong> et le Portail TCL." data-en="<strong class='hi-or'>NGD</strong> opens a partnership corridor with Ghanaian and Nigerian communities in CI for progressive integration into the ECOWAS Common Market via the <strong class='hi-or'>Mi Sikah Device</strong> and TCL Portal."><strong class="hi-or">NGD</strong> ouvre un couloir de partenariat avec les communautés Ghanéennes et Nigérianes en CI via le <strong class="hi-or">Dispositif Mi Sikah</strong> et le Portail TCL.</p>
+        <div class="alerte-pays">
+          <span>🇬🇭 Ghana</span><span>🇳🇬 Nigeria</span>
+          <span>+ Autres CEDEAO</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ COMMENT VOTER ══ -->
-<section class="section comment" id="comment-voter">
+<!-- COACHING LIVE -->
+<section class="section live-section" id="live">
   <div class="section-inner">
-    <div class="s-eyebrow" style="color:rgba(255,255,255,0.45);">Guide pratique</div>
-    <h2 class="s-titre">Comment voter<br><em>depuis Abidjan ?</em></h2>
-    <div class="etapes">
-      <div class="etape">
-        <div class="etape-num">1</div>
-        <div class="etape-body">
-          <div class="e-titre">Préparez votre Carte d'Électeur Béninoise</div>
-          <div class="e-desc">Document indispensable pour voter. Vérifiez qu'elle est en cours de validité. Si vous l'avez perdue ou qu'elle est expirée, contactez le Consulat du Bénin à Abidjan immédiatement.</div>
-          <span class="e-tag">📋 Document obligatoire</span>
+    <p class="section-kicker" data-fr="Coaching & Formation Live" data-en="Live Coaching & Training">Coaching & Formation Live</p>
+    <h2 class="section-title"
+        data-fr="YouTube · Telegram · Chaque semaine"
+        data-en="YouTube · Telegram · Every week">YouTube · Telegram · Chaque semaine</h2>
+    <p class="section-sub"
+       data-fr="Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Accès par code de déverrouillage reçu par WhatsApp ou Telegram après enregistrement NGD."
+       data-en="Coach Morgan's hosts live citizen, financial and political training sessions. Access by unlock code received via WhatsApp or Telegram after NGD registration.">
+      Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Accès par code de déverrouillage reçu par WhatsApp ou Telegram après enregistrement NGD.
+    </p>
+
+    <!-- Carte principale Live -->
+    <div class="live-hero-card">
+      <div class="live-hero-top">
+        <div class="live-logo-wrap">
+          <img src="https://i.ibb.co/VWp3SGvq/Simplice-KOUAME.png" alt="Coach Morgan's"
+               style="width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0;"
+               onerror="this.outerHTML='<div class=\'live-logo-circle\'>🎤</div>'">
+        </div>
+        <div class="live-info">
+          <h3 data-fr="Coaching Live — Coach Morgan's" data-en="Live Coaching — Coach Morgan's">Coaching Live — Coach Morgan's</h3>
+          <p data-fr="Formation citoyenne · Finances décentralisées · Bitcoin · Gouvernance locale · Marché Commun FCFA" data-en="Citizens training · Decentralized finance · Bitcoin · Local governance · FCFA Common Market">Formation citoyenne · Finances décentralisées · Bitcoin · Gouvernance locale · Marché Commun FCFA</p>
+          <div class="live-status">
+            <div class="live-dot"></div>
+            <span data-fr="Ven 19h–20h · Sam 9h–11h / 18h–20h · Dim 9h–11h / 18h–20h" data-en="Fri 7–8pm · Sat 9–11am / 6–8pm · Sun 9–11am / 6–8pm">Ven 19h–20h · Sam 9h–11h / 18h–20h · Dim 9h–11h / 18h–20h</span>
+          </div>
         </div>
       </div>
-      <div class="etape">
-        <div class="etape-num">2</div>
-        <div class="etape-body">
-          <div class="e-titre">Munissez-vous d'une pièce d'identité béninoise</div>
-          <div class="e-desc">CNI béninoise ou Passeport béninois en cours de validité. Ces deux documents + votre Carte d'Électeur suffisent pour voter.</div>
-          <span class="e-tag">🪪 CNI ou Passeport béninois</span>
+      <div class="live-hero-btns">
+        <a href="https://www.youtube.com/@VoteConnect" target="_blank" class="btn-rouge" data-fr="▶ YouTube VoteConnect" data-en="▶ YouTube VoteConnect">▶ YouTube VoteConnect</a>
+        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-bleu" data-fr="📱 Telegram Bot CHALLENGER" data-en="📱 Telegram Bot CHALLENGER">📱 Telegram Bot CHALLENGER</a>
+        <a href="#acces" class="btn-or" data-fr="🔓 Accéder avec mon code" data-en="🔓 Access with my code">🔓 Accéder avec mon code</a>
+      </div>
+    </div>
+
+    <!-- Grille horaires -->
+    <div class="horaires-grid">
+      <div class="horaire-card fu">
+        <div class="horaire-jour">📅 Vendredi <span class="jour-badge">1h</span></div>
+        <div class="horaire-slot">
+          <span class="slot-time">19h00–20h00</span>
+          <span class="slot-ico">🎓</span>
+          <span class="slot-theme" data-fr="Finance décentralisée · Bitcoin · Mi Sikah" data-en="Decentralized finance · Bitcoin · Mi Sikah">Finance décentralisée · Bitcoin · Mi Sikah</span>
         </div>
       </div>
-      <div class="etape">
-        <div class="etape-num">3</div>
-        <div class="etape-body">
-          <div class="e-titre">Localisez votre bureau de vote</div>
-          <div class="e-desc">Contactez le Consulat du Bénin en Côte d'Ivoire pour connaître l'adresse exacte de votre bureau de vote à Abidjan. Renseignez-vous aussi auprès de nos équipes — nous vous aidons gratuitement.</div>
-          <span class="e-tag">📍 Consulat Bénin · Abidjan</span>
+      <div class="horaire-card fu">
+        <div class="horaire-jour">📅 Samedi <span class="jour-badge">4h</span></div>
+        <div class="horaire-slot">
+          <span class="slot-time">09h00–11h00</span>
+          <span class="slot-ico">🌍</span>
+          <span class="slot-theme" data-fr="Gouvernance locale · TCL · Territorialité" data-en="Local governance · TCL · Territoriality">Gouvernance locale · TCL · Territorialité</span>
+        </div>
+        <div class="horaire-slot">
+          <span class="slot-time">18h00–20h00</span>
+          <span class="slot-ico">🗳️</span>
+          <span class="slot-theme" data-fr="Stratégie Municipales 2028 · Colistiers NGD" data-en="2028 Municipal Strategy · NGD co-candidates">Stratégie Municipales 2028 · Colistiers NGD</span>
         </div>
       </div>
-      <div class="etape">
-        <div class="etape-num">4</div>
-        <div class="etape-body">
-          <div class="e-titre">Votez tôt le matin du 12 Avril</div>
-          <div class="e-desc">Les bureaux ouvrent généralement à 7h00 et ferment à 17h00. Arrivez tôt pour éviter les files d'attente et vous assurer de voter avant toute fermeture anticipée.</div>
-          <span class="e-tag">⏰ Ouverture 7h · Fermeture 17h</span>
+      <div class="horaire-card fu">
+        <div class="horaire-jour">📅 Dimanche <span class="jour-badge">4h</span></div>
+        <div class="horaire-slot">
+          <span class="slot-time">09h00–11h00</span>
+          <span class="slot-ico">💰</span>
+          <span class="slot-theme" data-fr="Marché Commun FCFA · Portefeuille Mi Sikah" data-en="FCFA Common Market · Mi Sikah Wallet">Marché Commun FCFA · Portefeuille Mi Sikah</span>
+        </div>
+        <div class="horaire-slot">
+          <span class="slot-time">18h00–20h00</span>
+          <span class="slot-ico">🤝</span>
+          <span class="slot-theme" data-fr="Partenariats CEMAC · CEDEAO · Q&A" data-en="CEMAC · ECOWAS Partnerships · Q&A">Partenariats CEMAC · CEDEAO · Q&A</span>
         </div>
       </div>
+    </div>
+
+    <!-- Accès Live déverrouillage -->
+    <div class="acces-live" id="acces">
+      <h4 data-fr="🔓 Accéder au Live avec votre code" data-en="🔓 Access the Live with your code">🔓 Accéder au Live avec votre code</h4>
+      <p data-fr="Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session. Saisissez-le ici pour accéder aux liens YouTube et Telegram du Live." data-en="After your NGD registration, you receive a code via WhatsApp or Telegram before each session. Enter it here to access the YouTube and Telegram Live links.">Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session. Saisissez-le ici pour accéder aux liens du Live.</p>
+      <div class="acces-form">
+        <input type="text" id="code-live" placeholder="Ex: LIVE-VEN-2026-XXXX" maxlength="20">
+        <button class="btn-deverrouiller" onclick="verifierCodeLive()"
+                data-fr="🔓 Déverrouiller" data-en="🔓 Unlock">🔓 Déverrouiller</button>
+      </div>
+      <div class="acces-msg" id="acces-msg"></div>
+      <div class="acces-links" id="acces-links">
+        <a href="https://www.youtube.com/@VoteConnect" target="_blank" class="acces-lien">
+          <span class="al-ico">▶</span>
+          <span data-fr="YouTube Live — VoteConnect · Coach Morgan's" data-en="YouTube Live — VoteConnect · Coach Morgan's">YouTube Live — VoteConnect · Coach Morgan's</span>
+        </a>
+        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="acces-lien">
+          <span class="al-ico">📱</span>
+          <span data-fr="Telegram — Bot CHALLENGER · Canal NGD" data-en="Telegram — Bot CHALLENGER · NGD Channel">Telegram — Bot CHALLENGER · Canal NGD</span>
+        </a>
+        <a href="https://wa.me/2250767814333" target="_blank" class="acces-lien">
+          <span class="al-ico">💬</span>
+          <span data-fr="WhatsApp Admin — Support Live" data-en="WhatsApp Admin — Live Support">WhatsApp Admin — Support Live</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CastingFM -->
+    <div class="radio-card" id="radio">
+      <div class="radio-header">
+        <div class="radio-logo">
+          <img src="https://i.ibb.co/FLCvf5rk/Whats-App-Image-2026-04-03-at-19-40-11.jpg"
+               alt="CastingFM" style="width:52px;height:52px;border-radius:50%;object-fit:cover;"
+               onerror="this.outerHTML='<span style=\'font-size:1.4rem\'>📻</span>'">
+        </div>
+        <div class="radio-info">
+          <h4>CastingFM</h4>
+          <p data-fr="La voix du Pouvoir Local — UEMOA · CEMAC · CEDEAO" data-en="The voice of Local Power — UEMOA · CEMAC · ECOWAS">La voix du Pouvoir Local — UEMOA · CEMAC · CEDEAO</p>
+          <div class="radio-badge">
+            <div class="live-dot"></div>
+            <span data-fr="EN LIGNE 7j/7 · 24h/24" data-en="ONLINE 7/7 · 24/7">EN LIGNE 7j/7 · 24h/24</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.84rem;color:rgba(255,255,255,0.78);line-height:1.6;"
+         data-fr="Musique africaine, débats citoyens, formation financière, actualités FCFA et Bitcoin, témoignages terrain NGD. Non-stop, depuis Abidjan pour toute l'Afrique."
+         data-en="African music, civic debates, financial training, CFA franc and Bitcoin news, NGD field testimonials. Non-stop, from Abidjan for all of Africa.">
+        Musique africaine, débats citoyens, formation financière, actualités FCFA et Bitcoin, témoignages terrain <strong class="hi-or">NGD</strong>. Non-stop, depuis Abidjan pour toute l'Afrique.
+      </p>
+      <div class="radio-btns">
+        <a href="https://link.radioking.com/castingfm" target="_blank"
+           class="btn-radio btn-locked" id="btn-castingfm"
+           data-fr="📻 Écouter en direct" data-en="📻 Listen live"
+           onclick="return checkLocked(event,'btn-castingfm')">📻 Écouter en direct</a>
+        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-radio-out"
+           data-fr="📱 Programmer sur Telegram" data-en="📱 Schedule on Telegram">📱 Programmer sur Telegram</a>
+      </div>
+      <p class="btn-locked-hint" style="color:rgba(255,255,255,0.55);margin-top:8px;"
+         data-fr="🔒 S'active après votre enregistrement NGD ci-dessous"
+         data-en="🔒 Activates after your NGD registration below">🔒 S'active après votre enregistrement NGD ci-dessous</p>
     </div>
   </div>
 </section>
 
-<!-- ══ TCL CASHBACK ══ -->
-<section class="section tcl" id="tcl">
+<!-- MARCHÉ COMMUN MI SIKAH -->
+<section class="section marche-section" id="marche">
   <div class="section-inner">
-    <div class="s-eyebrow">Dispositif CROIRE · TCL</div>
-    <h2 class="s-titre">Vos achats quotidiens<br><em>financent votre communauté</em></h2>
-    <p class="s-body">Grâce au Dispositif TCL de VoteConnect SARL, chaque achat quotidien chez un commerçant béninois conventionné génère automatiquement un CashBack reversé à votre association communautaire — sans dépense supplémentaire.</p>
-    <div class="tcl-box">
-      <div class="tcl-grid">
-        <div class="tcl-item">
-          <div class="tcl-pct">2,5%</div>
-          <div class="tcl-titre">CashBack CROIRE</div>
-          <div class="tcl-desc">Reversé automatiquement à votre association de la diaspora béninoise désignée. 24h après chaque transaction.</div>
-        </div>
-        <div class="tcl-sep"></div>
-        <div class="tcl-item">
-          <div class="tcl-pct">20+</div>
-          <div class="tcl-titre">Commerçants béninois</div>
-          <div class="tcl-desc">Conventionnés dans le réseau TCL à Adjamé, Yopougon et Abobo. Payez Wave — comme d'habitude.</div>
-        </div>
-        <div class="tcl-sep"></div>
-        <div class="tcl-item">
-          <div class="tcl-pct">0</div>
-          <div class="tcl-titre">Franc supplémentaire</div>
-          <div class="tcl-desc">Vous continuez à acheter normalement. Le mécanisme est automatique et transparent. Aucun effort requis.</div>
-        </div>
+    <p class="section-kicker" data-fr="Dispositif Monétaire Citoyen" data-en="Citizen Monetary Device">Dispositif Monétaire Citoyen</p>
+    <h2 class="section-title"
+        data-fr="Mi Sikah — Le Marché Commun par la Base"
+        data-en="Mi Sikah — The Common Market from the Ground Up">Mi Sikah — Le Marché Commun par la Base</h2>
+    <p class="section-sub"
+       data-fr="Chaque achat quotidien sur le Portail TCL génère du Cashback pour votre communauté. 10 000 FCFA cumulés = 1 Mi Sikah reversé à votre communauté déclarée."
+       data-en="Every daily purchase on the TCL Portal generates Cashback for your community. 10,000 FCFA accumulated = 1 Mi Sikah returned to your declared community.">
+      Chaque achat quotidien sur le Portail TCL génère du Cashback pour votre communauté. <strong class="hi-or">10 000 FCFA cumulés = 1 Mi Sikah</strong> reversé à votre communauté déclarée.
+    </p>
+    <div class="marche-grid">
+      <div class="marche-card fu">
+        <div class="marche-icon">🛒</div>
+        <h4 data-fr="Achat TCL" data-en="TCL Purchase">Achat TCL</h4>
+        <div class="marche-val">100%</div>
+        <p data-fr="Montant dépensé · Produits locaux · Livraison" data-en="Amount spent · Local products · Delivery">Montant dépensé · Produits locaux · Livraison</p>
       </div>
+      <div class="marche-card fu">
+        <div class="marche-icon">💰</div>
+        <h4 data-fr="CashBack Communauté" data-en="Community CashBack">CashBack Communauté</h4>
+        <div class="marche-val">2.5%</div>
+        <p data-fr="Crédité dans votre Portefeuille Mi Sikah après chaque achat" data-en="Credited to your Mi Sikah Wallet after each purchase">Crédité dans votre Portefeuille Mi Sikah après chaque achat</p>
+      </div>
+      <div class="marche-card fu">
+        <div class="marche-icon">🎯</div>
+        <h4 data-fr="Seuil Mi Sikah" data-en="Mi Sikah Threshold">Seuil Mi Sikah</h4>
+        <div class="marche-val">10 000 F</div>
+        <p data-fr="Cumul déclenche le reversement automatique à votre communauté" data-en="Cumulation triggers automatic reversal to your community">Cumul déclenche le reversement automatique à votre communauté</p>
+      </div>
+      <div class="marche-card fu">
+        <div class="marche-icon">🏛️</div>
+        <h4 data-fr="Colistier 2028" data-en="2028 Co-candidate">Colistier 2028</h4>
+        <div class="marche-val">1%</div>
+        <p data-fr="Cashback supplémentaire si vous avez un Colistier NGD dans votre circonscription" data-en="Additional Cashback if you have an NGD Co-candidate in your district">Cashback supplémentaire si Colistier NGD dans votre circonscription</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px;">
+      <a href="https://coachmorgans.github.io/tcl/" target="_blank"
+         class="btn-or btn-locked" id="btn-tcl-w"
+         data-fr="🛒 Accéder au Portail TCL" data-en="🛒 Access TCL Portal"
+         onclick="return checkLocked(event,'btn-tcl-w')">🛒 Accéder au Portail TCL</a>
+      <p class="btn-locked-hint" data-fr="🔒 S'active après votre enregistrement NGD" data-en="🔒 Activates after your NGD registration">🔒 S'active après votre enregistrement NGD</p>
     </div>
   </div>
 </section>
 
-<!-- ══ INSCRIPTION ══ -->
-<section class="section inscription" id="inscription">
+<!-- 7 RÉGIONS PILOTES -->
+<section class="section regions-section" id="regions">
   <div class="section-inner">
-    <div class="s-eyebrow">Rejoindre la mobilisation</div>
-    <h2 class="s-titre">Inscrivez-vous —<br><em>nous vous accompagnons</em></h2>
-    <p class="s-body">Laissez vos coordonnées. Notre équipe vous contacte sous 24h pour vous aider à vous inscrire, trouver votre bureau de vote, et rester informé jusqu'au 12 Avril.</p>
-    <form id="form-inscription" onsubmit="handleSubmit(event)">
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="prenom">Prénom</label>
-          <input type="text" id="prenom" placeholder="Votre prénom" required>
-        </div>
-        <div class="form-group">
-          <label for="nom">Nom</label>
-          <input type="text" id="nom" placeholder="Votre nom" required>
-        </div>
-        <div class="form-group">
-          <label for="whatsapp">Numéro WhatsApp</label>
-          <input type="tel" id="whatsapp" placeholder="+225 07 XX XX XX XX" required>
-        </div>
-        <div class="form-group">
-          <label for="quartier">Quartier à Abidjan</label>
-          <select id="quartier" required>
-            <option value="" disabled selected>Choisissez votre quartier</option>
-            <option value="Adjamé">Adjamé</option>
-            <option value="Yopougon">Yopougon</option>
-            <option value="Abobo">Abobo</option>
-            <option value="Cocody">Cocody</option>
-            <option value="Marcory">Marcory</option>
-            <option value="Treichville">Treichville</option>
-            <option value="Koumassi">Koumassi</option>
-            <option value="Plateau">Plateau</option>
-            <option value="Yamoussoukro">Yamoussoukro</option>
-            <option value="Bouaké">Bouaké</option>
-            <option value="Autre">Autre ville CI</option>
-          </select>
-        </div>
-        <div class="form-group full">
-          <label for="ville_benin">Ville / Département d'origine au Bénin</label>
-          <input type="text" id="ville_benin" placeholder="Ex: Cotonou, Parakou, Abomey...">
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn-submit">M'inscrire dans la mobilisation →</button>
-          <p class="form-note">Vos données sont strictement confidentielles.<br>Utilisation réservée à la mobilisation électorale.</p>
-        </div>
-      </div>
-    </form>
-    <div class="form-success" id="form-success">
-      <p>✅ <strong>Inscription enregistrée !</strong> Merci [PRENOM].</p>
-      <p style="margin-top:8px">Un membre de notre équipe vous contacte sur WhatsApp dans les <strong>24 heures</strong> pour vous communiquer les informations pratiques sur votre bureau de vote à Abidjan.</p>
-      <p style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.55)">📲 En attendant, contactez-nous directement : <strong style="color:var(--or)">+225 07 67 56 09 08</strong></p>
+    <p class="section-kicker" data-fr="Territorialité Citoyenne" data-en="Citizens' Territoriality">Territorialité Citoyenne</p>
+    <h2 class="section-title"
+        data-fr="7 Régions Pilotes — Laboratoires du Pouvoir Local"
+        data-en="7 Pilot Regions — Local Power Laboratories">7 Régions Pilotes — Laboratoires du Pouvoir Local</h2>
+    <p class="section-sub"
+       data-fr="Ces 7 régions de Côte d'Ivoire constituent le laboratoire fondateur du modèle NGD. Chaque citoyen y devient acteur de la gouvernance alternative via TCL, Mi Sikah et la candidature colistier 2028."
+       data-en="These 7 regions of Côte d'Ivoire form the founding laboratory of the NGD model. Each citizen becomes an actor of alternative governance through TCL, Mi Sikah and the 2028 co-candidacy.">
+      Ces 7 régions de Côte d'Ivoire constituent le laboratoire fondateur. Chaque citoyen y devient acteur de la gouvernance alternative — <strong class="hi-or">TCL · Mi Sikah · Candidature 2028</strong>.
+    </p>
+    <div class="regions-grid">
+      <div class="region-card fu"><div class="region-icon">🏙️</div><div class="region-nom">District d'Abidjan</div><div class="region-pop">6 321 017 hab.</div></div>
+      <div class="region-card fu"><div class="region-icon">🏛️</div><div class="region-nom">District de Yamoussoukro</div><div class="region-pop">372 559 hab.</div></div>
+      <div class="region-card fu"><div class="region-icon">🌿</div><div class="region-nom">Région du Bélier (Toumodi)</div><div class="region-pop">123 568 hab.</div></div>
+      <div class="region-card fu"><div class="region-icon">🌳</div><div class="region-nom">Agnéby-Tiassa</div><div class="region-pop">865 951 hab.</div></div>
+      <div class="region-card fu"><div class="region-icon">🌊</div><div class="region-nom">Région de Mé</div><div class="region-pop">726 665 hab.</div></div>
+      <div class="region-card fu"><div class="region-icon">🌉</div><div class="region-nom">Grands-Ponts</div><div class="region-pop">450 007 hab.</div></div>
+      <div class="region-card fu"><div class="region-icon">🌅</div><div class="region-nom">Sud-Comoé</div><div class="region-pop">784 893 hab.</div></div>
+    </div>
+    <div class="momentum-badge">
+      <span class="mb-icon">⚡</span>
+      <span data-fr="MOMENTUM CLÉ : Élections Municipales & Régionales couplées — Septembre 2028 · Côte d'Ivoire · 7 régions pilotes · Colistiers NGD en partenariat LFA-CI"
+            data-en="KEY MOMENTUM: Coupled Municipal & Regional elections — September 2028 · Côte d'Ivoire · 7 pilot regions · NGD co-candidates in LFA-CI partnership">
+        MOMENTUM CLÉ : Élections Municipales & Régionales couplées — Septembre 2028 · Côte d'Ivoire · 7 régions pilotes · Colistiers NGD en partenariat LFA-CI
+      </span>
     </div>
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
-<section class="section contact-sect" id="contact">
+<!-- LIEN LP GR -->
+<section class="section lpgr-section">
   <div class="section-inner">
-    <div class="s-eyebrow">Contact</div>
-    <h2 class="s-titre">Besoin d'aide ?<br><em>Nous sommes là.</em></h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="c-ico">💬</div>
-        <div class="c-titre">WhatsApp Admin</div>
-        <a href="https://wa.me/2250767560908" class="c-val">+225 07 67 56 09 08</a>
-        <div class="c-note">Disponible 7j/7 · 8h-20h<br>Réponse sous 2h maximum</div>
+    <p class="section-kicker" data-fr="Porte d'entrée Principale" data-en="Main Entry Point">Porte d'entrée Principale</p>
+    <div class="lpgr-card">
+      <div class="lpgr-text">
+        <h3 data-fr="La Grande Réappropriation — NGD · Club des 8" data-en="La Grande Réappropriation — NGD · Club of 8">La Grande Réappropriation — NGD · Club des 8</h3>
+        <p data-fr="Accédez à l'écosystème complet VoteConnect : Essai Autobiographique, Portail TCL, LMS ChallengeFinancier™, Bot CHALLENGER. Enregistrement NGD obligatoire pour déverrouiller les 3 plateformes."
+           data-en="Access the complete VoteConnect ecosystem: Autobiographical Essay, TCL Portal, LMS ChallengeFinancier™, Bot CHALLENGER. Mandatory NGD registration to unlock the 3 platforms.">
+          Accédez à l'écosystème complet VoteConnect : Essai Autobiographique, Portail TCL, LMS ChallengeFinancier™, Bot CHALLENGER. Enregistrement NGD obligatoire.
+        </p>
       </div>
-      <div class="contact-card">
-        <div class="c-ico">💳</div>
-        <div class="c-titre">Wave Business</div>
-        <span class="c-val">+225 07 67 81 43 33</span>
-        <div class="c-note">Paiements TCL<br>VoteConnect SARL</div>
-      </div>
-      <div class="contact-card">
-        <div class="c-ico">🤖</div>
-        <div class="c-titre">Bot CHALLENGER</div>
-        <a href="https://t.me/ChallengeFinancierbot" class="c-val">@ChallengeFinancierbot</a>
-        <div class="c-note">Assistant IA 24h/24<br>Infos vote diaspora Bénin</div>
-      </div>
+      <a href="https://coachmorgans.github.io/grande-reappropriation/" target="_blank"
+         class="btn-vert btn-locked" id="btn-lpgr-w"
+         data-fr="🌱 Accéder à la LP GR" data-en="🌱 Access LP GR"
+         onclick="return checkLocked(event,'btn-lpgr-w')">🌱 Accéder à la LP GR</a>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
+<!-- FORMULAIRES ENREGISTREMENT -->
+<section class="section enreg-section" id="rejoindre">
+  <div class="section-inner">
+    <p class="section-kicker" data-fr="Étape Initiale Obligatoire" data-en="Mandatory Initial Step">Étape Initiale Obligatoire</p>
+    <h2 class="section-title" data-fr="Choisissez votre profil — Enregistrez-vous" data-en="Choose your profile — Register">Choisissez votre profil — Enregistrez-vous</h2>
+    <p class="section-sub"
+       data-fr="L'enregistrement déverrouille l'accès au Coaching Live, à la Web Radio <strong class='hi-or'>CastingFM</strong> et à l'écosystème VoteConnect."
+       data-en="Registration unlocks access to Live Coaching, <strong class='hi-or'>CastingFM</strong> Web Radio and the VoteConnect ecosystem.">
+      L'enregistrement déverrouille l'accès au Coaching Live, à la Web Radio <strong class="hi-or">CastingFM</strong> et à l'écosystème VoteConnect.
+    </p>
+    <div class="enreg-grid">
+
+      <!-- Animateur NGD CI -->
+      <div class="enreg-card fu">
+        <div class="enreg-ico ico-ci">🌱</div>
+        <h3 data-fr="Animateur NGD" data-en="NGD Animator">Animateur NGD</h3>
+        <p class="esub" data-fr="Citoyen ivoirien · 7 régions pilotes CI" data-en="Ivorian citizen · 7 CI pilot regions">Citoyen ivoirien · 7 régions pilotes CI</p>
+        <form class="enreg-form" id="form-anim-w" onsubmit="soumettreW(event,'animateur')">
+          <div class="form-row">
+            <div class="form-group">
+              <label data-fr="Prénom *" data-en="First name *">Prénom *</label>
+              <input type="text" name="prenom" placeholder="Votre prénom" required>
+            </div>
+            <div class="form-group">
+              <label data-fr="Nom *" data-en="Last name *">Nom *</label>
+              <input type="text" name="nom" placeholder="Votre nom" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-fr="Téléphone / WhatsApp *" data-en="Phone / WhatsApp *">Téléphone / WhatsApp *</label>
+              <input type="tel" name="telephone" placeholder="07 XX XX XX XX" required>
+            </div>
+            <div class="form-group">
+              <label data-fr="Région pilote *" data-en="Pilot region *">Région pilote *</label>
+              <select name="region" required>
+                <option value="">— Choisir —</option>
+                <option value="District d'Abidjan">District d'Abidjan</option>
+                <option value="District de Yamoussoukro">District de Yamoussoukro</option>
+                <option value="Région du Bélier (Toumodi)">Région du Bélier (Toumodi)</option>
+                <option value="Agnéby-Tiassa">Agnéby-Tiassa</option>
+                <option value="Région de Mé">Région de Mé</option>
+                <option value="Grands-Ponts">Grands-Ponts</option>
+                <option value="Sud-Comoé">Sud-Comoé</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:10px">
+            <label data-fr="Commune / Quartier *" data-en="Commune / District *">Commune / Quartier *</label>
+            <input type="text" name="commune" placeholder="Ex: Cocody, Yopougon..." required>
+          </div>
+          <div class="form-msg" id="msg-anim-w"></div>
+          <button type="submit" class="btn-submit" id="sub-anim-w">
+            <span class="btn-text" data-fr="🌱 S'enregistrer comme Animateur NGD" data-en="🌱 Register as NGD Animator">🌱 S'enregistrer comme Animateur NGD</span>
+            <span class="btn-loading" style="display:none">⏳ Enregistrement...</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Délégué-Pays UEMOA/CEMAC/CEDEAO -->
+      <div class="enreg-card fu">
+        <div class="enreg-ico ico-uemoa">🌍</div>
+        <h3 data-fr="Délégué-Pays NGD" data-en="NGD Country Delegate">Délégué-Pays NGD</h3>
+        <p class="esub"
+           data-fr="UEMOA · CEMAC · CEDEAO — Résident en Côte d'Ivoire"
+           data-en="UEMOA · CEMAC · ECOWAS — Residing in Côte d'Ivoire">
+           UEMOA · CEMAC · CEDEAO — Résident en Côte d'Ivoire</p>
+        <form class="enreg-form" id="form-del-w" onsubmit="soumettreW(event,'delegue')">
+          <div class="form-row">
+            <div class="form-group">
+              <label data-fr="Prénom *" data-en="First name *">Prénom *</label>
+              <input type="text" name="prenom" placeholder="Votre prénom" required>
+            </div>
+            <div class="form-group">
+              <label data-fr="Nom *" data-en="Last name *">Nom *</label>
+              <input type="text" name="nom" placeholder="Votre nom" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-fr="Téléphone / WhatsApp *" data-en="Phone / WhatsApp *">Téléphone / WhatsApp *</label>
+              <input type="tel" name="telephone" placeholder="07 XX XX XX XX" required>
+            </div>
+            <div class="form-group">
+              <label data-fr="Zone d'origine *" data-en="Zone of origin *">Zone d'origine *</label>
+              <select name="zone_origine" required onchange="majPlaceholderVille(this.value)">
+                <option value="">— Choisir votre zone —</option>
+                <optgroup label="🟢 UEMOA">
+                  <option value="Bénin">🇧🇯 Bénin</option>
+                  <option value="Burkina Faso">🇧🇫 Burkina Faso</option>
+                  <option value="Guinée-Bissau">🇬🇼 Guinée-Bissau</option>
+                  <option value="Mali">🇲🇱 Mali</option>
+                  <option value="Niger">🇳🇪 Niger</option>
+                  <option value="Sénégal">🇸🇳 Sénégal</option>
+                  <option value="Togo">🇹🇬 Togo</option>
+                </optgroup>
+                <optgroup label="🔴 CEMAC">
+                  <option value="Cameroun">🇨🇲 Cameroun</option>
+                  <option value="Centrafrique">🇨🇫 Centrafrique</option>
+                  <option value="Congo">🇨🇬 Congo</option>
+                  <option value="Gabon">🇬🇦 Gabon</option>
+                  <option value="Guinée Équatoriale">🇬🇶 Guinée Équatoriale</option>
+                  <option value="Tchad">🇹🇩 Tchad</option>
+                </optgroup>
+                <optgroup label="🔵 CEDEAO">
+                  <option value="Ghana">🇬🇭 Ghana</option>
+                  <option value="Nigeria">🇳🇬 Nigeria</option>
+                  <option value="Autre CEDEAO">Autre CEDEAO</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-fr="Ville / Département d'origine *" data-en="City / Department of origin *">Ville / Département d'origine *</label>
+              <input type="text" name="ville_origine" id="ville-w" placeholder="Ex: Cotonou, Dakar..." required>
+            </div>
+            <div class="form-group">
+              <label data-fr="Quartier à Abidjan *" data-en="District in Abidjan *">Quartier à Abidjan *</label>
+              <select name="quartier_abidjan" required>
+                <option value="">— Votre quartier —</option>
+                <option value="Adjamé">Adjamé</option>
+                <option value="Yopougon">Yopougon</option>
+                <option value="Abobo">Abobo</option>
+                <option value="Cocody">Cocody</option>
+                <option value="Marcory">Marcory</option>
+                <option value="Koumassi">Koumassi</option>
+                <option value="Treichville">Treichville</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-msg" id="msg-del-w"></div>
+          <button type="submit" class="btn-submit" id="sub-del-w">
+            <span class="btn-text" data-fr="🌍 S'enregistrer comme Délégué-Pays NGD" data-en="🌍 Register as NGD Country Delegate">🌍 S'enregistrer comme Délégué-Pays NGD</span>
+            <span class="btn-loading" style="display:none">⏳ Enregistrement...</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="foot-inner">
-    <div>
-      <div class="foot-logo">
-        WADAGNI 2026
-        <span>Diaspora Bénin · Côte d'Ivoire</span>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="flogo">Vers Plus de Pouvoir Local</div>
+        <p data-fr="Penser Global · Agir Local. Le Marché Commun Citoyen — UEMOA, CEMAC, CEDEAO. NGD · VoteConnect · 2026–2035."
+           data-en="Think Global · Act Local. The Citizens' Common Market — UEMOA, CEMAC, ECOWAS. NGD · VoteConnect · 2026–2035.">
+          Penser Global · Agir Local. Le Marché Commun Citoyen — UEMOA, CEMAC, CEDEAO. NGD · VoteConnect · 2026–2035.
+        </p>
+        <div class="legal">VoteConnect SARL · RCCM CI-ABJ-03-2025-B12-03666<br>Cocody-Angré Djibi 3, Abidjan, Côte d'Ivoire</div>
+      </div>
+      <div class="fcol">
+        <h5 data-fr="Plateformes" data-en="Platforms">Plateformes</h5>
+        <ul>
+          <li><a href="https://t.me/ChallengeFinancierbot" target="_blank">🤖 Bot CHALLENGER</a></li>
+          <li><a href="https://coachmorgans.github.io/essai/" target="_blank">📖 Essai Autobiographique</a></li>
+          <li><a href="https://coachmorgans.github.io/tcl/" target="_blank">🛒 Portail TCL</a></li>
+          <li><a href="https://coachmorgans.github.io/lms-cf/" target="_blank">🎓 LMS ChallengeFinancier™</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5 data-fr="Landing Pages" data-en="Landing Pages">Landing Pages</h5>
+        <ul>
+          <li><a href="https://coachmorgans.github.io/grande-reappropriation/" target="_blank">La Grande Réappropriation</a></li>
+          <li><a href="https://coachmorgans.github.io/challengefinancier/" target="_blank">ChallengeFinancier™</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5>Contact & Live</h5>
+        <ul>
+          <li><a href="https://wa.me/2250767814333" target="_blank">💬 WhatsApp Admin</a></li>
+          <li><a href="https://www.youtube.com/@VoteConnect" target="_blank">▶ YouTube VoteConnect</a></li>
+          <li><a href="https://youtube.com/@LFA-TV-h5z" target="_blank">▶ YouTube LFA TV</a></li>
+          <li><a href="https://t.me/ChallengeFinancierbot" target="_blank">📱 Telegram</a></li>
+        </ul>
       </div>
     </div>
-    <div class="foot-links">
-      <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:10px;">Liens</div>
-      <a href="#programme">Programme</a>
-      <a href="#comment-voter">Comment voter</a>
-      <a href="#inscription">S'inscrire</a>
-      <a href="https://coachmorgans.github.io/challengefinancier/" target="_blank">ChallengeFinancier™</a>
-      <a href="https://coachmorgans.github.io/essai/" target="_blank">L'Essai Autobiographique</a>
+    <div class="footer-bottom">
+      <p>© 2026 VoteConnect SARL · NGD · <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
+      <div class="footer-motto" data-fr="Penser Global · Agir Local · Une Afrique UNIE" data-en="Think Global · Act Local · A UNITED Africa">Penser Global · Agir Local · Une Afrique UNIE</div>
     </div>
-    <div class="foot-links">
-      <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:10px;">Partenaires</div>
-      <a href="https://wa.me/2250767560908">VoteConnect SARL</a>
-      <a href="#">LFA-CI · Les Frères Africains</a>
-      <a href="https://coachmorgans.github.io/tcl/" target="_blank">Portail TCL</a>
-      <a href="https://t.me/ChallengeFinancierbot" target="_blank">Bot CHALLENGER</a>
-    </div>
-  </div>
-  <div class="foot-bot">
-    <p>© 2026 VoteConnect SARL · RCCM CI-ABJ-03-2025-B12-03666 · Cocody-Angré Djibi 3, Abidjan</p>
-    <p>"Une recharge égale un impact. Chaque appel, un avenir." 🇨🇮 🇧🇯</p>
   </div>
 </footer>
 
-<!-- Bot WhatsApp bubble -->
-<div class="bot-bubble">
-  <div class="bot-label">CHALLENGER · Assistant IA</div>
-  <a href="https://t.me/ChallengeFinancierbot" class="bot-btn" target="_blank">🤖</a>
-</div>
-
 <script>
-// Compte à rebours
-function updateCountdown() {
-  const vote = new Date('2026-04-12T07:00:00');
-  const now = new Date();
-  const diff = vote - now;
-  if (diff > 0) {
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const urgent = document.querySelector('.urgence-badge');
-    if (urgent) urgent.textContent = '⏰ J-' + days;
+/* ─── CONFIG ──────────────────────────────────────────── */
+const GS_URL  = 'https://script.google.com/macros/s/AKfycbzdqCRk06C35clJhQcDS1AN3eZvzq4JO5UjsRU1E7y1pDfTu-xHt6ppSM6pD0UnGn10/exec';
+const SOURCE  = 'LP_WADAGNI';
+
+// Codes Live valides
+const CODES_LIVE_VALIDES = [
+  'LIVE-VEN-2026-NGD1',
+  'LIVE-SAM-2026-NGD2',
+  'LIVE-DIM-2026-NGD3',
+  'LIVE-PPL-2026-OPEN'
+];
+
+/* ─── COMPTEUR DÉLÉGATIONS PAYS NGD ──────────────────── */
+const DATE_FIN_DELEGATIONS = new Date('2026-06-30T23:59:59');
+
+function majCompteurDelegations() {
+  const now  = new Date();
+  const diff = DATE_FIN_DELEGATIONS - now;
+  if (diff <= 0) {
+    const el = document.getElementById('cdDelegations');
+    if (el) el.innerHTML = '<div class="cd-del-next">🎖️ Inscriptions clôturées — 14 Juillet 2026 : Cérémonie d\'Investiture Bureau Exécutif UEMOA-NGD & CEMAC-NGD</div>';
+    return;
+  }
+  const j = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  const f = n => String(n).padStart(2,'0');
+  const dj = document.getElementById('dd-j');
+  const dh = document.getElementById('dd-h');
+  const dm = document.getElementById('dd-m');
+  const ds = document.getElementById('dd-s');
+  if (dj) dj.textContent = f(j);
+  if (dh) dh.textContent = f(h);
+  if (dm) dm.textContent = f(m);
+  if (ds) ds.textContent = f(s);
+}
+majCompteurDelegations();
+setInterval(majCompteurDelegations, 1000);
+
+/* ─── BOUTONS VERROUILLÉS ─────────────────────────────── */
+function debloquerBoutons() {
+  ['btn-tcl-w','btn-lpgr-w','btn-castingfm'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.classList.add('unlocked');
+  });
+  // Cacher les hints
+  document.querySelectorAll('.btn-locked-hint').forEach(el => el.style.display = 'none');
+  sessionStorage.setItem('ppl_registered', '1');
+}
+
+function checkLocked(e, id) {
+  const btn = document.getElementById(id);
+  if (btn && !btn.classList.contains('unlocked')) {
+    e.preventDefault();
+    document.getElementById('rejoindre').scrollIntoView({ behavior:'smooth', block:'start' });
+    return false;
+  }
+  return true;
+}
+
+// Restaurer si déjà inscrit
+if (sessionStorage.getItem('ppl_registered') === '1') {
+  document.addEventListener('DOMContentLoaded', debloquerBoutons);
+}
+
+/* ─── LANGUE ──────────────────────────────────────────── */
+let lang = 'fr';
+function setLang(l) {
+  lang = l;
+  document.getElementById('btn-fr').classList.toggle('active', l==='fr');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-fr]').forEach(el => {
+    const t = el.getAttribute('data-'+l);
+    if (t) el.innerHTML = t;
+  });
+}
+
+/* ─── VÉRIFICATION CODE LIVE ──────────────────────────── */
+function verifierCodeLive() {
+  const code  = document.getElementById('code-live').value.trim().toUpperCase();
+  const msg   = document.getElementById('acces-msg');
+  const links = document.getElementById('acces-links');
+
+  if (!code) {
+    msg.className = 'acces-msg err';
+    msg.textContent = lang === 'fr' ? '❌ Veuillez saisir votre code.' : '❌ Please enter your code.';
+    return;
+  }
+
+  if (CODES_LIVE_VALIDES.includes(code)) {
+    msg.className = 'acces-msg ok';
+    msg.textContent = lang === 'fr'
+      ? '✅ Code validé ! Accédez au Live ci-dessous.'
+      : '✅ Code validated! Access the Live below.';
+    links.classList.add('visible');
+    sessionStorage.setItem('ppl_live_ok', '1');
+  } else {
+    msg.className = 'acces-msg err';
+    msg.textContent = lang === 'fr'
+      ? '❌ Code incorrect. Vérifiez votre WhatsApp ou Telegram.'
+      : '❌ Incorrect code. Check your WhatsApp or Telegram.';
+    links.classList.remove('visible');
   }
 }
-updateCountdown();
-setInterval(updateCountdown, 60000);
 
-// Formulaire
-function handleSubmit(e) {
-  e.preventDefault();
-  const prenom = document.getElementById('prenom').value;
-  const nom = document.getElementById('nom').value;
-  const wa = document.getElementById('whatsapp').value;
-  const quartier = document.getElementById('quartier').value;
-  const ville = document.getElementById('ville_benin').value;
-
-  // Message WhatsApp admin
-  const msg = encodeURIComponent(
-    '🇧🇯 NOUVELLE INSCRIPTION — Campagne Wadagni CI\n\n' +
-    '👤 ' + prenom + ' ' + nom + '\n' +
-    '📱 WhatsApp : ' + wa + '\n' +
-    '📍 Quartier Abidjan : ' + quartier + '\n' +
-    '🏠 Origine Bénin : ' + (ville || 'Non précisé') + '\n\n' +
-    'Source : Landing Page Wadagni-CI · VoteConnect SARL'
-  );
-
-  // Ouvrir WhatsApp admin avec les infos pré-remplies
-  window.open('https://wa.me/2250767560908?text=' + msg, '_blank');
-
-  // Afficher succès
-  const form = document.getElementById('form-inscription');
-  const success = document.getElementById('form-success');
-  form.style.display = 'none';
-  success.style.display = 'block';
-  success.querySelector('p').innerHTML =
-    '✅ <strong>Inscription enregistrée !</strong> Merci ' + prenom + '.';
+// Restaurer accès si déjà validé
+if (sessionStorage.getItem('ppl_live_ok') === '1') {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('acces-links').classList.add('visible');
+  });
 }
+
+/* ─── PLACEHOLDER VILLE SELON ZONE ───────────────────── */
+const PH_VILLES = {
+  'Bénin':'Ex: Cotonou, Porto-Novo...', 'Burkina Faso':'Ex: Ouagadougou, Bobo...',
+  'Guinée-Bissau':'Ex: Bissau, Bafatá...', 'Mali':'Ex: Bamako, Sikasso...',
+  'Niger':'Ex: Niamey, Zinder...', 'Sénégal':'Ex: Dakar, Saint-Louis...',
+  'Togo':'Ex: Lomé, Sokodé...', 'Cameroun':'Ex: Yaoundé, Douala...',
+  'Centrafrique':'Ex: Bangui...', 'Congo':'Ex: Brazzaville, Pointe-Noire...',
+  'Gabon':'Ex: Libreville, Port-Gentil...', 'Guinée Équatoriale':'Ex: Malabo...',
+  'Tchad':'Ex: N\'Djamena...', 'Ghana':'Ex: Accra, Kumasi...',
+  'Nigeria':'Ex: Lagos, Abuja, Kano...'
+};
+function majPlaceholderVille(zone) {
+  const el = document.getElementById('ville-w');
+  if (el && PH_VILLES[zone]) el.placeholder = PH_VILLES[zone];
+}
+
+/* ─── SOUMISSION FORMULAIRES → CF-DB v3.1 ────────────── */
+async function soumettreW(event, profil) {
+  event.preventDefault();
+  const form    = event.target;
+  const formId  = profil === 'animateur' ? 'form-anim-w' : 'form-del-w';
+  const subId   = profil === 'animateur' ? 'sub-anim-w'  : 'sub-del-w';
+  const msgId   = profil === 'animateur' ? 'msg-anim-w'  : 'msg-del-w';
+  const btn     = document.getElementById(subId);
+  const btnTxt  = btn.querySelector('.btn-text');
+  const btnLoad = btn.querySelector('.btn-loading');
+  const msgEl   = document.getElementById(msgId);
+
+  btn.disabled = true;
+  btnTxt.style.display  = 'none';
+  btnLoad.style.display = 'inline';
+  msgEl.className = 'form-msg';
+  msgEl.textContent = '';
+
+  const fd = new FormData(form);
+  const payload = { profil, source: SOURCE, timestamp: new Date().toISOString() };
+  fd.forEach((v,k) => { payload[k] = v; });
+
+  // Champ zone_origine → pays_origine pour compatibilité CF-DB
+  if (payload.zone_origine) payload.pays_origine = payload.zone_origine;
+
+  try {
+    await fetch(GS_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    msgEl.className = 'form-msg success';
+    msgEl.textContent = profil === 'animateur'
+      ? '✅ Enregistrement Animateur NGD confirmé ! Vous recevrez votre code Live par WhatsApp.'
+      : '✅ Enregistrement Délégué-Pays NGD confirmé ! Vous recevrez votre code Live par WhatsApp.';
+    form.reset();
+    // Déverrouiller accès Live + boutons TCL et LP GR
+    sessionStorage.setItem('ppl_live_ok', '1');
+    debloquerBoutons();
+    setTimeout(() => {
+      document.getElementById('acces-links').classList.add('visible');
+      document.getElementById('live').scrollIntoView({ behavior:'smooth', block:'start' });
+    }, 1800);
+
+  } catch(err) {
+    msgEl.className = 'form-msg error';
+    msgEl.textContent = lang === 'fr'
+      ? '❌ Erreur réseau. Vérifiez votre connexion et réessayez.'
+      : '❌ Network error. Check your connection and try again.';
+  } finally {
+    btn.disabled = false;
+    btnTxt.style.display  = 'inline';
+    btnLoad.style.display = 'none';
+  }
+}
+
+/* ─── ANIMATIONS SCROLL ───────────────────────────────── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), i*70);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
