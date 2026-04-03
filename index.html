@@ -1400,6 +1400,15 @@ function checkLocked(e, id) {
     document.getElementById('rejoindre').scrollIntoView({ behavior:'smooth', block:'start' });
     return false;
   }
+  // ── TRACÉ AUDIENCE CASTINGFM ────────────────────────────
+  if (id === 'btn-castingfm') {
+    tracerAudience('ACCES_CASTINGFM', {
+      canal         : 'CastingFM_RadioKing',
+      lien          : 'https://link.radioking.com/castingfm',
+      horaire_acces : new Date().toLocaleString('fr-CI', { timeZone:'Africa/Abidjan' }),
+      lp_source     : 'LP_WADAGNI'
+    });
+  }
   return true;
 }
 
@@ -1421,6 +1430,31 @@ function setLang(l) {
   });
 }
 
+/* ─── TRACÉ AUDIENCE TEMPS RÉEL → CF-DB v3.1 ─────────────
+   Feuille CONTACTS · route=contact
+   Type : ACCES_LIVE | ACCES_CASTINGFM
+   Données : canal · code_live · timestamp · source
+   Silencieux — aucun affichage utilisateur
+─────────────────────────────────────────────────────────── */
+async function tracerAudience(canal, infos) {
+  try {
+    await fetch(GS_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        route     : 'contact',
+        source    : SOURCE,
+        sujet     : canal,                    // ACCES_LIVE | ACCES_CASTINGFM
+        message   : JSON.stringify(infos),    // détails canal
+        timestamp : new Date().toISOString(),
+        // Téléphone récupéré depuis sessionStorage si disponible
+        telephone : sessionStorage.getItem('ppl_tel') || 'non_identifie',
+        nom_complet: sessionStorage.getItem('ppl_nom') || ''
+      })
+    });
+  } catch(e) { /* silencieux */ }
+}
+
 /* ─── VÉRIFICATION CODE LIVE ──────────────────────────── */
 function verifierCodeLive() {
   const code  = document.getElementById('code-live').value.trim().toUpperCase();
@@ -1440,6 +1474,15 @@ function verifierCodeLive() {
       : '✅ Code validated! Access the Live below.';
     links.classList.add('visible');
     sessionStorage.setItem('ppl_live_ok', '1');
+
+    // ── TRACÉ AUDIENCE COACHING LIVE ──────────────────────
+    tracerAudience('ACCES_LIVE', {
+      code_utilise  : code,
+      canal         : 'YouTube_Telegram_Live',
+      horaire_acces : new Date().toLocaleString('fr-CI', { timeZone:'Africa/Abidjan' }),
+      lp_source     : 'LP_WADAGNI'
+    });
+
   } else {
     msg.className = 'acces-msg err';
     msg.textContent = lang === 'fr'
@@ -1508,6 +1551,10 @@ async function soumettreW(event, profil) {
     msgEl.textContent = profil === 'animateur'
       ? '✅ Enregistrement Animateur NGD confirmé ! Vous recevrez votre code Live par WhatsApp.'
       : '✅ Enregistrement Délégué-Pays NGD confirmé ! Vous recevrez votre code Live par WhatsApp.';
+
+    // Sauvegarder identité pour tracé audience
+    sessionStorage.setItem('ppl_tel', payload.telephone || '');
+    sessionStorage.setItem('ppl_nom', `${payload.prenom||''} ${payload.nom||''}`.trim());
     form.reset();
     // Déverrouiller accès Live + boutons TCL et LP GR
     sessionStorage.setItem('ppl_live_ok', '1');
