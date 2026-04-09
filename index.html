@@ -9,10 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════════════
-   VARIABLES — palette distincte de la LP GR
-   Or/Terre → symbolise le pouvoir local, l'ancrage
-═══════════════════════════════════════════════════════ */
 :root {
   --or:        #c9a84c;
   --or-dark:   #7a5a10;
@@ -21,8 +17,8 @@
   --brun:      #3d2b00;
   --vert:      #1a7a3c;
   --vert-pale: #e8f5ee;
-  --rouge:     #c0392b;   /* alerte CEMAC/CEDEAO */
-  --bleu:      #1a4fa0;   /* partenariat Ghana/Nigeria */
+  --rouge:     #c0392b;
+  --bleu:      #1a4fa0;
   --noir:      #0d0d0d;
   --gris:      #5a5a5a;
   --gris-clair:#f4f4f2;
@@ -33,18 +29,12 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  color: var(--noir); background: var(--blanc);
-  line-height: 1.6; overflow-x: hidden;
-}
+body { font-family: 'DM Sans', sans-serif; color: var(--noir); background: var(--blanc); line-height: 1.6; overflow-x: hidden; }
 img { max-width: 100%; display: block; }
 h1,h2,h3,h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.01em; }
 a { text-decoration: none; }
 
-/* ═══════════════════════════════════════════════════════
-   NAV
-═══════════════════════════════════════════════════════ */
+/* NAV */
 nav {
   position: sticky; top: 0; z-index: 200;
   background: var(--brun);
@@ -58,135 +48,65 @@ nav {
   display: flex; align-items: center; gap: 7px;
   flex-shrink: 1; overflow: hidden; min-width: 0;
 }
-.nav-logo .badge-ppl {
-  background: var(--or); color: var(--brun);
-  font-size: 0.72rem; font-weight: 800;
-  padding: 2px 8px; border-radius: 4px; flex-shrink: 0;
-}
-.nav-logo .nav-titre {
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
+.nav-logo .badge-ppl { background: var(--or); color: var(--brun); font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; flex-shrink: 0; }
+.nav-logo .nav-titre { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.lang-switch {
-  display: flex; gap: 2px;
-  background: rgba(255,255,255,0.12); border-radius: 20px; padding: 3px 5px;
+
+/* Bouton Connexion dans nav */
+.nav-connexion-btn {
+  background: var(--or); color: var(--brun);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 0.78rem; padding: 5px 12px; border-radius: 6px;
+  border: none; cursor: pointer; white-space: nowrap;
+  transition: opacity .15s; flex-shrink: 0;
 }
-.lang-switch button {
-  background: none; border: none; color: rgba(255,255,255,0.7);
-  font-size: 0.72rem; font-weight: 700; cursor: pointer;
-  padding: 2px 6px; border-radius: 12px; transition: all .2s;
-}
+.nav-connexion-btn:hover { opacity: 0.85; }
+
+.lang-switch { display: flex; gap: 2px; background: rgba(255,255,255,0.12); border-radius: 20px; padding: 3px 5px; }
+.lang-switch button { background: none; border: none; color: rgba(255,255,255,0.7); font-size: 0.72rem; font-weight: 700; cursor: pointer; padding: 2px 6px; border-radius: 12px; transition: all .2s; }
 .lang-switch button.active { background: var(--or); color: var(--brun); }
 
 /* SOUS-NAV */
-.subnav {
-  position: sticky; top: 52px; z-index: 199;
-  background: var(--or-dark);
-  border-bottom: 2px solid var(--or);
-  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
-}
+.subnav { position: sticky; top: 52px; z-index: 199; background: var(--or-dark); border-bottom: 2px solid var(--or); overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .subnav::-webkit-scrollbar { display: none; }
-.subnav-inner {
-  display: flex; align-items: center;
-  padding: 0 var(--px); min-width: max-content;
-}
-.subnav-inner a {
-  color: rgba(255,255,255,0.80); font-size: 0.78rem; font-weight: 600;
-  padding: 10px 14px; white-space: nowrap; display: block;
-  border-bottom: 2px solid transparent; margin-bottom: -2px;
-  transition: color .15s, border-color .15s;
-}
+.subnav-inner { display: flex; align-items: center; padding: 0 var(--px); min-width: max-content; }
+.subnav-inner a { color: rgba(255,255,255,0.80); font-size: 0.78rem; font-weight: 600; padding: 10px 14px; white-space: nowrap; display: block; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color .15s, border-color .15s; }
 .subnav-inner a:hover { color: var(--or); border-color: var(--or); }
 .subnav-inner .sn-live { color: var(--or); font-weight: 800; }
 @media (min-width: 900px) {
   nav { height: 60px; }
   .subnav { display: none; }
-  .nav-desktop-links {
-    display: flex; align-items: center; gap: 18px; margin: 0 auto 0 20px;
-  }
-  .nav-desktop-links a {
-    color: rgba(255,255,255,0.82); font-size: 0.82rem; font-weight: 500; transition: color .2s;
-  }
+  .nav-desktop-links { display: flex; align-items: center; gap: 18px; margin: 0 auto 0 20px; }
+  .nav-desktop-links a { color: rgba(255,255,255,0.82); font-size: 0.82rem; font-weight: 500; transition: color .2s; }
   .nav-desktop-links a:hover { color: var(--or); }
   .nav-logo { font-size: 1rem; }
 }
 .nav-desktop-links { display: none; }
 
-/* ═══════════════════════════════════════════════════════
-   HERO — mobile first
-═══════════════════════════════════════════════════════ */
-.hero {
-  background: linear-gradient(160deg, var(--brun) 0%, #5a3d00 55%, var(--or-dark) 100%);
-  color: var(--blanc); padding: 44px var(--px) 48px;
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-.hero-inner {
-  max-width: 1060px; margin: 0 auto; position: relative;
-  display: flex; flex-direction: column; gap: 28px;
-}
-.hero-kicker {
-  display: inline-flex; align-items: center; gap: 8px; width: fit-content; max-width: 100%;
-  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 20px; padding: 6px 14px;
-  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
-  text-transform: uppercase; color: var(--or-pale);
-}
-.hero h1 {
-  font-size: clamp(1.9rem, 8vw, 3.2rem);
-  font-weight: 700; line-height: 1.08; margin: 14px 0 16px;
-}
+/* HERO */
+.hero { background: linear-gradient(160deg, var(--brun) 0%, #5a3d00 55%, var(--or-dark) 100%); color: var(--blanc); padding: 44px var(--px) 48px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.hero-inner { max-width: 1060px; margin: 0 auto; position: relative; display: flex; flex-direction: column; gap: 28px; }
+.hero-kicker { display: inline-flex; align-items: center; gap: 8px; width: fit-content; max-width: 100%; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.20); border-radius: 20px; padding: 6px 14px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--or-pale); }
+.hero h1 { font-size: clamp(1.9rem, 8vw, 3.2rem); font-weight: 700; line-height: 1.08; margin: 14px 0 16px; }
 .hero h1 em { color: var(--or); font-style: normal; }
-.hero-lead {
-  font-size: clamp(0.88rem, 2.8vw, 1.02rem);
-  color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 24px;
-}
+.hero-lead { font-size: clamp(0.88rem, 2.8vw, 1.02rem); color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 24px; }
 .hero-lead strong { color: var(--or); }
 .hero-btns { display: flex; flex-direction: column; gap: 11px; }
 .hero-btns a { width: 100%; text-align: center; }
-
-/* CARTE STATS HERO */
-.hero-card {
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: var(--radius); padding: 18px 16px;
-  backdrop-filter: blur(8px);
-}
-.hcard-zones {
-  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
-}
-.zone-badge {
-  font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
-  border-radius: 20px; white-space: nowrap;
-}
-.zb-uemoa  { background: var(--vert); color: var(--blanc); }
-.zb-cemac  { background: var(--rouge); color: var(--blanc); }
+.hero-card { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius); padding: 18px 16px; backdrop-filter: blur(8px); }
+.hcard-zones { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.zone-badge { font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+.zb-uemoa { background: var(--vert); color: var(--blanc); }
+.zb-cemac { background: var(--rouge); color: var(--blanc); }
 .zb-cedeao { background: var(--bleu); color: var(--blanc); }
 .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 12px; }
 .hstat { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 11px 8px; text-align: center; }
 .hstat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--or); line-height: 1; }
 .hstat-lbl { font-size: 0.66rem; color: rgba(255,255,255,0.60); margin-top: 4px; line-height: 1.3; }
-
-/* Live en cours badge */
-.live-now {
-  display: flex; align-items: center; gap: 8px;
-  background: rgba(192,57,43,0.30); border: 1px solid var(--rouge);
-  border-radius: 8px; padding: 8px 12px; margin-top: 4px;
-  font-size: 0.78rem; font-weight: 600; color: #ffaaaa;
-}
-.live-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: #ff4444; flex-shrink: 0;
-  animation: pulse-live 1s infinite;
-}
-@keyframes pulse-live {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.4; transform: scale(0.8); }
-}
-
+.live-now { display: flex; align-items: center; gap: 8px; background: rgba(192,57,43,0.30); border: 1px solid var(--rouge); border-radius: 8px; padding: 8px 12px; margin-top: 4px; font-size: 0.78rem; font-weight: 600; color: #ffaaaa; }
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff4444; flex-shrink: 0; animation: pulse-live 1s infinite; }
+@keyframes pulse-live { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
 @media (min-width: 900px) {
   .hero { padding: 72px var(--px) 72px; }
   .hero-inner { flex-direction: row; align-items: center; gap: 48px; }
@@ -196,360 +116,308 @@ nav {
   .hero-btns a { width: auto; }
 }
 
-/* ═══════════════════════════════════════════════════════
-   BOUTONS GLOBAUX
-═══════════════════════════════════════════════════════ */
-.btn-or {
-  background: var(--or); color: var(--brun);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem;
-  padding: 13px 24px; border-radius: 8px; border: none; cursor: pointer;
-  display: inline-block; transition: transform .15s, box-shadow .15s;
-}
+/* BOUTONS GLOBAUX */
+.btn-or { background: var(--or); color: var(--brun); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 13px 24px; border-radius: 8px; border: none; cursor: pointer; display: inline-block; transition: transform .15s, box-shadow .15s; }
 .btn-or:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
-.btn-outline-blanc {
-  background: transparent; color: var(--blanc);
-  border: 2px solid rgba(255,255,255,0.5);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.95rem;
-  padding: 11px 22px; border-radius: 8px; display: inline-block;
-  transition: background .2s, border-color .2s;
-}
+.btn-outline-blanc { background: transparent; color: var(--blanc); border: 2px solid rgba(255,255,255,0.5); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 11px 22px; border-radius: 8px; display: inline-block; transition: background .2s, border-color .2s; }
 .btn-outline-blanc:hover { background: rgba(255,255,255,0.10); border-color: var(--blanc); }
-.btn-rouge {
-  background: var(--rouge); color: var(--blanc);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem;
-  padding: 13px 24px; border-radius: 8px; display: inline-block;
-  transition: opacity .15s;
-}
+.btn-rouge { background: var(--rouge); color: var(--blanc); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 13px 24px; border-radius: 8px; display: inline-block; transition: opacity .15s; }
 .btn-rouge:hover { opacity: 0.88; }
-.btn-bleu {
-  background: var(--bleu); color: var(--blanc);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem;
-  padding: 13px 24px; border-radius: 8px; display: inline-block;
-  transition: opacity .15s;
-}
+.btn-bleu { background: var(--bleu); color: var(--blanc); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 13px 24px; border-radius: 8px; display: inline-block; transition: opacity .15s; }
 
-/* ═══════════════════════════════════════════════════════
-   BANDE ZONES
-═══════════════════════════════════════════════════════ */
-.zones-band {
-  background: var(--gris-clair);
-  border-top: 3px solid var(--or); border-bottom: 3px solid var(--or);
-  padding: 14px var(--px);
-}
-.zones-inner {
-  max-width: 1060px; margin: 0 auto;
-  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
-}
-.zone-lbl {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase;
-  color: var(--brun); white-space: nowrap; margin-right: 4px;
-}
+/* BANDE ZONES */
+.zones-band { background: var(--gris-clair); border-top: 3px solid var(--or); border-bottom: 3px solid var(--or); padding: 14px var(--px); }
+.zones-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.zone-lbl { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--brun); white-space: nowrap; margin-right: 4px; }
 .pays-tag { font-size: 0.82rem; font-weight: 700; color: var(--brun); padding: 3px 6px; }
 .pays-tag.pilote { background: var(--vert); color: var(--blanc); border-radius: 4px; padding: 3px 8px; }
 .pays-tag.cemac  { background: var(--rouge); color: var(--blanc); border-radius: 4px; padding: 3px 8px; }
 .pays-tag.cedeao { background: var(--bleu); color: var(--blanc); border-radius: 4px; padding: 3px 8px; }
 .zone-sep { color: #ccc; font-size: 0.9rem; }
 
-/* ═══════════════════════════════════════════════════════
-   SECTIONS BASE
-═══════════════════════════════════════════════════════ */
+/* SECTIONS BASE */
 .section { padding: 56px var(--px); }
 .section-inner { max-width: 1060px; margin: 0 auto; }
-.section-kicker {
-  font-family: 'DM Sans', sans-serif; font-size: 0.70rem; font-weight: 700;
-  letter-spacing: 0.10em; text-transform: uppercase; color: var(--or-dark); margin-bottom: 9px;
-}
-.section-title {
-  font-size: clamp(1.35rem, 3.5vw, 1.9rem);
-  font-weight: 700; line-height: 1.15; margin-bottom: 12px;
-}
-.section-sub {
-  font-size: clamp(0.87rem, 2.4vw, 0.96rem);
-  color: var(--gris); line-height: 1.65; margin-bottom: 32px; max-width: 680px;
-}
+.section-kicker { font-family: 'DM Sans', sans-serif; font-size: 0.70rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--or-dark); margin-bottom: 9px; }
+.section-title { font-size: clamp(1.35rem, 3.5vw, 1.9rem); font-weight: 700; line-height: 1.15; margin-bottom: 12px; }
+.section-sub { font-size: clamp(0.87rem, 2.4vw, 0.96rem); color: var(--gris); line-height: 1.65; margin-bottom: 32px; max-width: 680px; }
 
-/* ═══════════════════════════════════════════════════════
-   NARRATIVE — VISION
-═══════════════════════════════════════════════════════ */
-.vision-grid {
-  display: grid; grid-template-columns: 1fr; gap: 16px;
-}
+/* VISION */
+.vision-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 560px)  { .vision-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 900px)  { .vision-grid { grid-template-columns: repeat(3,1fr); } }
-
-.vision-card {
-  border-radius: var(--radius); padding: 22px 18px;
-  border: 1.5px solid #e0d8c8;
-  transition: border-color .2s, box-shadow .2s;
-}
+.vision-card { border-radius: var(--radius); padding: 22px 18px; border: 1.5px solid #e0d8c8; transition: border-color .2s, box-shadow .2s; }
 .vision-card:hover { border-color: var(--or); box-shadow: 0 4px 14px rgba(201,168,76,0.15); }
 .vision-icon { font-size: 1.7rem; margin-bottom: 9px; }
 .vision-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--brun); margin-bottom: 5px; }
 .vision-card p  { font-size: 0.83rem; color: var(--gris); line-height: 1.55; }
 
-/* ═══════════════════════════════════════════════════════
-   ALERTE CEMAC + CEDEAO
-═══════════════════════════════════════════════════════ */
+/* ALERTE */
 .alerte-section { background: var(--brun); color: var(--blanc); }
 .alerte-section .section-kicker { color: var(--or); }
 .alerte-section .section-title  { color: var(--blanc); }
 .alerte-section .section-sub    { color: rgba(255,255,255,0.72); }
-
-.alerte-grid {
-  display: grid; grid-template-columns: 1fr; gap: 18px;
-}
+.alerte-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 @media (min-width: 660px) { .alerte-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 900px) { .alerte-grid { grid-template-columns: 1fr 1fr 1fr; } }
-
-.alerte-card {
-  border-radius: var(--radius); padding: 24px 20px;
-  border: 1.5px solid rgba(255,255,255,0.15);
-}
+.alerte-card { border-radius: var(--radius); padding: 24px 20px; border: 1.5px solid rgba(255,255,255,0.15); }
 .alerte-card.ac-cemac  { background: rgba(192,57,43,0.20); border-color: rgba(192,57,43,0.5); }
 .alerte-card.ac-cedeao { background: rgba(26,79,160,0.20); border-color: rgba(26,79,160,0.5); }
 .alerte-card.ac-uemoa  { background: rgba(26,122,60,0.20); border-color: rgba(26,122,60,0.5); }
-.ac-badge {
-  display: inline-block; font-size: 0.68rem; font-weight: 700;
-  padding: 3px 10px; border-radius: 20px; margin-bottom: 12px;
-  letter-spacing: 0.06em; text-transform: uppercase;
-}
+.ac-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
 .ac-badge.cemac  { background: var(--rouge); color: var(--blanc); }
 .ac-badge.cedeao { background: var(--bleu); color: var(--blanc); }
 .ac-badge.uemoa  { background: var(--vert); color: var(--blanc); }
 .alerte-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--or); margin-bottom: 8px; }
 .alerte-card p  { font-size: 0.84rem; color: rgba(255,255,255,0.80); line-height: 1.6; }
-.alerte-pays {
-  margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px;
-}
-.alerte-pays span {
-  font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.65);
-  background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 10px;
-}
+.alerte-pays { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+.alerte-pays span { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 10px; }
 
-/* ═══════════════════════════════════════════════════════
-   COACHING LIVE — SECTION PRINCIPALE
-═══════════════════════════════════════════════════════ */
+/* COACHING LIVE */
 .live-section { background: var(--gris-clair); }
-
-.live-hero-card {
-  background: var(--brun); border-radius: var(--radius);
-  overflow: hidden; margin-bottom: 28px;
-  box-shadow: var(--shadow);
-}
-.live-hero-top {
-  padding: 28px 24px;
-  background: linear-gradient(135deg, #1a0a00, var(--brun));
-  display: flex; flex-direction: column; gap: 16px;
-}
-@media (min-width: 660px) {
-  .live-hero-top { flex-direction: row; align-items: center; }
-}
+.live-hero-card { background: var(--brun); border-radius: var(--radius); overflow: hidden; margin-bottom: 28px; box-shadow: var(--shadow); }
+.live-hero-top { padding: 28px 24px; background: linear-gradient(135deg, #1a0a00, var(--brun)); display: flex; flex-direction: column; gap: 16px; }
+@media (min-width: 660px) { .live-hero-top { flex-direction: row; align-items: center; } }
 .live-logo-wrap { flex-shrink: 0; }
-.live-logo-circle {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: var(--or); display: flex; align-items: center; justify-content: center;
-  font-size: 1.8rem;
-}
-.live-info h3 {
-  font-size: 1.2rem; font-weight: 700; color: var(--or); margin-bottom: 4px;
-}
+.live-logo-circle { width: 72px; height: 72px; border-radius: 50%; background: var(--or); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+.live-info h3 { font-size: 1.2rem; font-weight: 700; color: var(--or); margin-bottom: 4px; }
 .live-info p { font-size: 0.85rem; color: rgba(255,255,255,0.78); line-height: 1.5; }
-.live-status {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(192,57,43,0.30); border: 1px solid var(--rouge);
-  border-radius: 20px; padding: 4px 12px; margin-top: 8px;
-  font-size: 0.75rem; font-weight: 700; color: #ffaaaa;
-  width: fit-content;
-}
-.live-hero-btns {
-  padding: 16px 24px;
-  display: flex; flex-direction: column; gap: 10px;
-  border-top: 1px solid rgba(255,255,255,0.10);
-}
+.live-status { display: inline-flex; align-items: center; gap: 6px; background: rgba(192,57,43,0.30); border: 1px solid var(--rouge); border-radius: 20px; padding: 4px 12px; margin-top: 8px; font-size: 0.75rem; font-weight: 700; color: #ffaaaa; width: fit-content; }
+.live-hero-btns { padding: 16px 24px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.10); }
 @media (min-width: 560px) { .live-hero-btns { flex-direction: row; } }
-
-/* Grille horaires */
-.horaires-grid {
-  display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 28px;
-}
+.horaires-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
 @media (min-width: 560px) { .horaires-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 900px) { .horaires-grid { grid-template-columns: repeat(3,1fr); } }
-
-.horaire-card {
-  background: var(--blanc); border-radius: var(--radius);
-  border: 1.5px solid #e0d8c8; padding: 18px 16px;
-  transition: border-color .2s;
-}
+.horaire-card { background: var(--blanc); border-radius: var(--radius); border: 1.5px solid #e0d8c8; padding: 18px 16px; transition: border-color .2s; }
 .horaire-card:hover { border-color: var(--or); }
-.horaire-jour {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 1rem;
-  font-weight: 700; color: var(--brun); margin-bottom: 10px;
-  display: flex; align-items: center; gap: 8px;
-}
-.horaire-jour .jour-badge {
-  background: var(--or); color: var(--brun);
-  font-size: 0.7rem; font-weight: 800;
-  padding: 2px 8px; border-radius: 20px;
-}
-.horaire-slot {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.83rem; color: var(--gris);
-  padding: 5px 0; border-bottom: 1px solid #f0e8d8;
-}
+.horaire-jour { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: var(--brun); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.horaire-jour .jour-badge { background: var(--or); color: var(--brun); font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 20px; }
+.horaire-slot { display: flex; align-items: center; gap: 8px; font-size: 0.83rem; color: var(--gris); padding: 5px 0; border-bottom: 1px solid #f0e8d8; }
 .horaire-slot:last-child { border-bottom: none; }
-.slot-time {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  color: var(--brun); font-size: 0.9rem; min-width: 90px;
-}
+.slot-time { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: var(--brun); font-size: 0.9rem; min-width: 90px; }
 .slot-theme { font-size: 0.78rem; color: var(--gris); flex: 1; }
 .slot-ico { font-size: 0.9rem; flex-shrink: 0; }
-
-/* Accès Live — déverrouillage */
-.acces-live {
-  background: var(--blanc); border-radius: var(--radius);
-  border: 2px solid var(--or); padding: 24px 20px; margin-top: 28px;
-}
-.acces-live h4 {
-  font-size: 1.05rem; font-weight: 700; color: var(--brun); margin-bottom: 8px;
-}
+.acces-live { background: var(--blanc); border-radius: var(--radius); border: 2px solid var(--or); padding: 24px 20px; margin-top: 28px; }
+.acces-live h4 { font-size: 1.05rem; font-weight: 700; color: var(--brun); margin-bottom: 8px; }
 .acces-live p { font-size: 0.86rem; color: var(--gris); margin-bottom: 16px; line-height: 1.6; }
 .acces-form { display: flex; gap: 10px; flex-wrap: wrap; }
-.acces-form input {
-  flex: 1; min-width: 160px; border: 1.5px solid #e0d8c8;
-  border-radius: 6px; padding: 10px 14px;
-  font-size: 0.88rem; font-family: 'DM Sans', sans-serif;
-  outline: none; transition: border-color .2s;
-}
+.acces-form input { flex: 1; min-width: 160px; border: 1.5px solid #e0d8c8; border-radius: 6px; padding: 10px 14px; font-size: 0.88rem; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; }
 .acces-form input:focus { border-color: var(--or); }
 .acces-form input::placeholder { color: rgba(0,0,0,0.35); }
-.btn-deverrouiller {
-  background: var(--or); color: var(--brun);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.9rem; padding: 10px 20px; border-radius: 6px;
-  border: none; cursor: pointer; white-space: nowrap;
-  transition: opacity .15s;
-}
+.btn-deverrouiller { background: var(--or); color: var(--brun); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; white-space: nowrap; transition: opacity .15s; }
 .btn-deverrouiller:hover { opacity: 0.85; }
 .acces-msg { margin-top: 10px; font-size: 0.82rem; display: none; padding: 8px 12px; border-radius: 6px; }
 .acces-msg.ok  { background: #e8f5ee; color: var(--vert); display: block; }
 .acces-msg.err { background: #fce8e8; color: var(--rouge); display: block; }
 .acces-links { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; display: none; }
 .acces-links.visible { display: flex; }
-.acces-lien {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--gris-clair); border-radius: 8px; padding: 12px 14px;
-  font-size: 0.85rem; font-weight: 600; color: var(--brun);
-  border: 1.5px solid #e0d8c8; transition: border-color .2s;
-}
+.acces-lien { display: flex; align-items: center; gap: 10px; background: var(--gris-clair); border-radius: 8px; padding: 12px 14px; font-size: 0.85rem; font-weight: 600; color: var(--brun); border: 1.5px solid #e0d8c8; transition: border-color .2s; }
 .acces-lien:hover { border-color: var(--or); }
 .acces-lien .al-ico { font-size: 1.2rem; flex-shrink: 0; }
-
-/* Web Radio */
-.radio-card {
-  background: linear-gradient(135deg, #0a1a3d, var(--bleu));
-  border-radius: var(--radius); padding: 24px 20px; margin-top: 20px;
-  color: var(--blanc);
-}
+.radio-card { background: linear-gradient(135deg, #0a1a3d, var(--bleu)); border-radius: var(--radius); padding: 24px 20px; margin-top: 20px; color: var(--blanc); }
 .radio-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
-.radio-logo {
-  width: 52px; height: 52px; border-radius: 50%;
-  background: var(--or); display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem; flex-shrink: 0;
-}
+.radio-logo { width: 52px; height: 52px; border-radius: 50%; background: var(--or); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
 .radio-info h4 { font-size: 1.1rem; font-weight: 700; color: var(--or); }
 .radio-info p  { font-size: 0.8rem; color: rgba(255,255,255,0.70); }
-.radio-badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 20px; padding: 4px 12px; margin-top: 8px;
-  font-size: 0.72rem; font-weight: 700; color: var(--or);
-}
+.radio-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 12px; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: var(--or); }
 .radio-btns { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
 @media (min-width: 560px) { .radio-btns { flex-direction: row; } }
-.btn-radio {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--or); color: var(--brun);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.88rem; padding: 10px 18px; border-radius: 6px;
-  transition: opacity .15s;
-}
+.btn-radio { display: inline-flex; align-items: center; gap: 6px; background: var(--or); color: var(--brun); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.88rem; padding: 10px 18px; border-radius: 6px; transition: opacity .15s; }
 .btn-radio:hover { opacity: 0.85; }
-.btn-radio-out {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: transparent; color: var(--blanc);
-  border: 1.5px solid rgba(255,255,255,0.40);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
-  font-size: 0.88rem; padding: 10px 18px; border-radius: 6px;
-  transition: background .2s;
-}
+.btn-radio-out { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--blanc); border: 1.5px solid rgba(255,255,255,0.40); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.88rem; padding: 10px 18px; border-radius: 6px; transition: background .2s; }
 .btn-radio-out:hover { background: rgba(255,255,255,0.10); }
 
-/* ═══════════════════════════════════════════════════════
-   MARCHÉ COMMUN — MI SIKAH
-═══════════════════════════════════════════════════════ */
+/* MARCHÉ MI SIKAH */
 .marche-section { background: var(--blanc); }
-.marche-grid {
-  display: grid; grid-template-columns: 1fr; gap: 16px;
-}
+.marche-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 660px)  { .marche-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1000px) { .marche-grid { grid-template-columns: repeat(4,1fr); } }
-
-.marche-card {
-  border-radius: var(--radius); padding: 20px 16px;
-  border: 1.5px solid #e0d8c8; text-align: center;
-  transition: border-color .2s, transform .2s;
-}
+.marche-card { border-radius: var(--radius); padding: 20px 16px; border: 1.5px solid #e0d8c8; text-align: center; transition: border-color .2s, transform .2s; }
 .marche-card:hover { border-color: var(--or); transform: translateY(-2px); }
 .marche-icon { font-size: 2rem; margin-bottom: 10px; }
 .marche-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--brun); margin-bottom: 6px; }
 .marche-card p  { font-size: 0.81rem; color: var(--gris); line-height: 1.5; }
-.marche-val {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem;
-  font-weight: 700; color: var(--or); margin: 6px 0 2px;
-}
+.marche-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--or); margin: 6px 0 2px; }
 
 /* ═══════════════════════════════════════════════════════
-   FORMULAIRE ENREGISTREMENT
+   SECTION CONNEXION MEMBRE — v2.1 NOUVEAU
+   Positionnée avant #rejoindre (formulaires enregistrement)
+   Principe : "Déjà membre NGD ? Connectez-vous"
+   Vérification : Téléphone + PIN → CF-DB verifier_telephone + verifier_pin
 ═══════════════════════════════════════════════════════ */
+.connexion-section {
+  background: var(--or-light);
+  border-top: 3px solid var(--or);
+  border-bottom: 3px solid var(--or);
+}
+.connexion-section .section-kicker { color: var(--or-dark); }
+
+.connexion-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 8px;
+}
+@media (min-width: 700px) {
+  .connexion-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Carte connexion (gauche) */
+.connexion-card {
+  background: var(--blanc);
+  border: 2px solid var(--or);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.15);
+}
+.connexion-card-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+}
+.connexion-ico {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--or); display: flex; align-items: center;
+  justify-content: center; font-size: 1.4rem; flex-shrink: 0;
+}
+.connexion-card-header h3 {
+  font-size: 1.1rem; font-weight: 700; color: var(--brun);
+  line-height: 1.2;
+}
+.connexion-card-header p {
+  font-size: 0.78rem; color: var(--gris); margin-top: 2px;
+}
+
+.cx-form-group {
+  display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px;
+}
+.cx-form-group label {
+  font-size: 0.72rem; font-weight: 600; color: var(--brun);
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+.cx-form-group input {
+  background: var(--gris-clair); border: 1.5px solid #e0d8c8;
+  border-radius: 6px; padding: 10px 14px; color: var(--noir);
+  font-size: 0.88rem; font-family: 'DM Sans', sans-serif;
+  width: 100%; outline: none; transition: border-color .2s;
+}
+.cx-form-group input:focus { border-color: var(--or); background: var(--blanc); }
+.cx-form-group input::placeholder { color: rgba(0,0,0,0.35); }
+
+.cx-pin-row {
+  display: flex; gap: 8px; justify-content: flex-start; margin-bottom: 14px;
+}
+.cx-pin-digit {
+  width: 48px; height: 56px;
+  background: var(--gris-clair); border: 1.5px solid #e0d8c8;
+  border-radius: 8px; text-align: center;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem;
+  font-weight: 700; color: var(--brun); outline: none;
+  transition: border-color .2s, background .2s;
+  -webkit-text-security: disc;
+  /* Champ numérique mobile */
+  inputmode: numeric;
+}
+.cx-pin-digit:focus { border-color: var(--or); background: var(--blanc); }
+.cx-pin-digit.filled { border-color: var(--or); background: var(--or-pale); }
+
+.btn-connexion {
+  width: 100%; background: var(--brun); color: var(--blanc);
+  border: none; border-radius: 8px; cursor: pointer;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+  font-size: 1rem; padding: 13px 20px; transition: background .2s, opacity .2s;
+  margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-connexion:hover { background: var(--or-dark); }
+.btn-connexion:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.cx-msg {
+  margin-top: 12px; font-size: 0.83rem; padding: 10px 14px;
+  border-radius: 8px; display: none; line-height: 1.5;
+}
+.cx-msg.ok  { background: #e8f5ee; color: #1a5c30; border: 1px solid rgba(26,122,60,0.3); display: block; }
+.cx-msg.err { background: #fce8e8; color: #8b1a1a; border: 1px solid rgba(192,57,43,0.3); display: block; }
+.cx-msg.loading { background: var(--or-pale); color: var(--brun); border: 1px solid rgba(201,168,76,0.4); display: block; }
+
+/* Carte info (droite) */
+.connexion-info-card {
+  background: var(--brun);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  color: var(--blanc);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.connexion-info-card h3 {
+  font-size: 1.05rem; font-weight: 700; color: var(--or); margin-bottom: 4px;
+}
+.cx-info-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.cx-info-item:last-of-type { border-bottom: none; }
+.cx-info-ico { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.cx-info-txt h4 { font-size: 0.88rem; font-weight: 700; color: var(--or); margin-bottom: 3px; }
+.cx-info-txt p  { font-size: 0.80rem; color: rgba(255,255,255,0.70); line-height: 1.5; }
+
+/* Résultat connexion — espace membre déverrouillé */
+.cx-resultat {
+  margin-top: 16px; display: none;
+  background: var(--brun); border-radius: var(--radius);
+  padding: 20px; color: var(--blanc);
+}
+.cx-resultat.visible { display: block; }
+.cx-resultat-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+.cx-resultat-header .cx-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--or); display: flex; align-items: center;
+  justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+}
+.cx-resultat-header h4 { font-size: 1rem; font-weight: 700; color: var(--or); }
+.cx-resultat-header p  { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+.cx-plateformes {
+  display: flex; flex-direction: column; gap: 8px; margin-top: 4px;
+}
+.cx-plateforme-btn {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px; padding: 12px 14px;
+  color: var(--blanc); font-size: 0.85rem; font-weight: 600;
+  transition: background .2s, border-color .2s; cursor: pointer;
+}
+.cx-plateforme-btn:hover { background: rgba(201,168,76,0.15); border-color: var(--or); color: var(--or); }
+.cx-plateforme-btn .cpb-ico { font-size: 1.2rem; flex-shrink: 0; }
+.cx-plateforme-btn .cpb-arrow { margin-left: auto; opacity: 0.5; }
+
+/* Lien reset PIN */
+.cx-reset-link {
+  font-size: 0.78rem; color: var(--gris); text-align: center;
+  margin-top: 10px; cursor: pointer; text-decoration: underline;
+  display: block;
+}
+.cx-reset-link:hover { color: var(--or-dark); }
+
+/* FORMULAIRES ENREGISTREMENT */
 .enreg-section { background: var(--brun); color: var(--blanc); }
 .enreg-section .section-kicker { color: var(--or); }
 .enreg-section .section-title  { color: var(--blanc); }
 .enreg-section .section-sub    { color: rgba(255,255,255,0.72); }
-
 .enreg-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
 @media (min-width: 700px) { .enreg-grid { grid-template-columns: 1fr 1fr; } }
-
-.enreg-card {
-  background: rgba(255,255,255,0.08);
-  border: 1.5px solid rgba(255,255,255,0.14);
-  border-radius: var(--radius); padding: 26px 20px;
-}
-.enreg-ico {
-  width: 48px; height: 48px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem; margin-bottom: 14px;
-}
+.enreg-card { background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.14); border-radius: var(--radius); padding: 26px 20px; }
+.enreg-ico { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 14px; }
 .ico-ci    { background: rgba(26,122,60,0.50); }
 .ico-uemoa { background: rgba(201,168,76,0.30); }
 .enreg-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--or); margin-bottom: 3px; }
 .enreg-card .esub { font-size: 0.78rem; color: rgba(255,255,255,0.52); font-style: italic; margin-bottom: 14px; }
-
-/* Formulaire */
 .enreg-form { border-top: 1px solid rgba(255,255,255,0.14); padding-top: 16px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
 @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
 .form-group { display: flex; flex-direction: column; gap: 4px; }
 .form-full { margin-bottom: 10px; }
-.form-group label, .form-full label {
-  font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.68); letter-spacing: 0.03em;
-}
-.form-group input, .form-group select, .form-full textarea {
-  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 6px; padding: 9px 11px; color: var(--blanc);
-  font-size: 0.84rem; font-family: 'DM Sans', sans-serif;
-  width: 100%; outline: none; transition: border-color .2s;
-}
+.form-group label, .form-full label { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.68); letter-spacing: 0.03em; }
+.form-group input, .form-group select, .form-full textarea { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); border-radius: 6px; padding: 9px 11px; color: var(--blanc); font-size: 0.84rem; font-family: 'DM Sans', sans-serif; width: 100%; outline: none; transition: border-color .2s; }
 .form-group input::placeholder, .form-full textarea::placeholder { color: rgba(255,255,255,0.35); }
 .form-group input:focus, .form-group select:focus, .form-full textarea:focus { border-color: var(--or); }
 .form-group select { appearance: none; cursor: pointer; }
@@ -557,89 +425,44 @@ nav {
 .form-msg { font-size: 0.82rem; padding: 8px 12px; border-radius: 6px; margin-bottom: 10px; display: none; }
 .form-msg.success { background: rgba(26,122,60,0.30); color: #7fffab; border: 1px solid rgba(26,122,60,0.5); display: block; }
 .form-msg.error   { background: rgba(220,50,50,0.20); color: #ffaaaa; border: 1px solid rgba(220,50,50,0.4); display: block; }
-.btn-submit {
-  width: 100%; background: var(--or); color: var(--brun);
-  border: none; border-radius: 8px; cursor: pointer;
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.95rem; padding: 13px 20px; transition: opacity .2s; margin-top: 4px;
-}
+.btn-submit { width: 100%; background: var(--or); color: var(--brun); border: none; border-radius: 8px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 13px 20px; transition: opacity .2s; margin-top: 4px; }
 .btn-submit:hover { opacity: 0.88; }
 .btn-submit:disabled { opacity: 0.55; cursor: not-allowed; }
 
-/* ═══════════════════════════════════════════════════════
-   7 RÉGIONS PILOTES
-═══════════════════════════════════════════════════════ */
+/* 7 RÉGIONS */
 .regions-section { background: var(--or-light); }
-.regions-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-}
+.regions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 @media (min-width: 560px) { .regions-grid { grid-template-columns: repeat(3,1fr); } }
 @media (min-width: 900px) { .regions-grid { grid-template-columns: repeat(7,1fr); } }
-
-.region-card {
-  background: var(--blanc); border-radius: var(--radius);
-  border: 1.5px solid var(--or); padding: 14px 12px; text-align: center;
-  transition: background .2s, transform .2s;
-}
+.region-card { background: var(--blanc); border-radius: var(--radius); border: 1.5px solid var(--or); padding: 14px 12px; text-align: center; transition: background .2s, transform .2s; }
 .region-card:hover { background: var(--or); transform: translateY(-2px); }
 .region-card:hover .region-nom { color: var(--brun); }
 .region-card:hover .region-pop { color: var(--brun); opacity: 0.7; }
 .region-icon { font-size: 1.3rem; margin-bottom: 5px; }
 .region-nom { font-size: 0.78rem; font-weight: 700; color: var(--brun); line-height: 1.3; }
 .region-pop { font-size: 0.68rem; color: var(--gris); margin-top: 3px; }
-.momentum-badge {
-  margin-top: 24px; background: var(--brun); color: var(--or);
-  border-radius: var(--radius); padding: 16px 20px;
-  display: flex; align-items: center; gap: 12px;
-  font-size: 0.88rem; line-height: 1.5;
-}
+.momentum-badge { margin-top: 24px; background: var(--brun); color: var(--or); border-radius: var(--radius); padding: 16px 20px; display: flex; align-items: center; gap: 12px; font-size: 0.88rem; line-height: 1.5; }
 .mb-icon { font-size: 1.4rem; flex-shrink: 0; }
 
-/* ═══════════════════════════════════════════════════════
-   LP GR — LIEN VERS PORTE D'ENTRÉE
-═══════════════════════════════════════════════════════ */
+/* LP GR */
 .lpgr-section { background: var(--gris-clair); }
-.lpgr-card {
-  background: var(--blanc); border-radius: var(--radius);
-  border: 2px solid var(--vert); padding: 28px 24px;
-  display: flex; flex-direction: column; gap: 16px;
-  align-items: flex-start;
-}
-@media (min-width: 700px) {
-  .lpgr-card { flex-direction: row; align-items: center; }
-  .lpgr-text { flex: 1; }
-}
+.lpgr-card { background: var(--blanc); border-radius: var(--radius); border: 2px solid var(--vert); padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+@media (min-width: 700px) { .lpgr-card { flex-direction: row; align-items: center; } .lpgr-text { flex: 1; } }
 .lpgr-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--vert); margin-bottom: 6px; }
 .lpgr-card p  { font-size: 0.86rem; color: var(--gris); line-height: 1.6; }
-.btn-vert {
-  background: var(--vert); color: var(--blanc);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.9rem; padding: 12px 22px; border-radius: 8px;
-  white-space: nowrap; transition: opacity .15s; flex-shrink: 0;
-}
+.btn-vert { background: var(--vert); color: var(--blanc); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 12px 22px; border-radius: 8px; white-space: nowrap; transition: opacity .15s; flex-shrink: 0; }
 .btn-vert:hover { opacity: 0.88; }
 
-/* ═══════════════════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════════════════ */
+/* FOOTER */
 footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 26px; }
 .footer-inner { max-width: 1060px; margin: 0 auto; }
-.footer-grid {
-  display: grid; grid-template-columns: 1fr; gap: 28px;
-  padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.10); margin-bottom: 22px;
-}
+.footer-grid { display: grid; grid-template-columns: 1fr; gap: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.10); margin-bottom: 22px; }
 @media (min-width: 560px)  { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 900px)  { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
-.footer-brand .flogo {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700;
-  color: var(--or); margin-bottom: 9px; letter-spacing: 0.02em;
-}
+.footer-brand .flogo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--or); margin-bottom: 9px; letter-spacing: 0.02em; }
 .footer-brand p    { font-size: 0.78rem; color: rgba(255,255,255,0.52); line-height: 1.6; }
 .footer-brand .legal { font-size: 0.70rem; color: rgba(255,255,255,0.30); margin-top: 11px; }
-.fcol h5 {
-  font-family: 'DM Sans', sans-serif; font-size: 0.70rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.09em; color: var(--or); margin-bottom: 11px;
-}
+.fcol h5 { font-family: 'DM Sans', sans-serif; font-size: 0.70rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--or); margin-bottom: 11px; }
 .fcol ul { list-style: none; }
 .fcol ul li { margin-bottom: 7px; }
 .fcol ul li a { font-size: 0.78rem; color: rgba(255,255,255,0.65); transition: color .2s; }
@@ -648,61 +471,28 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
 .footer-bottom p { font-size: 0.73rem; color: rgba(255,255,255,0.32); }
 .footer-motto { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--or); letter-spacing: 0.04em; }
 
-/* ═══════════════════════════════════════════════════════
-   ANIMATIONS
-═══════════════════════════════════════════════════════ */
+/* ANIMATIONS */
 .fu { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
 .fu.on { opacity: 1; transform: translateY(0); }
-
-/* Mise en valeur textuelle globale */
 .hi-or   { color: var(--or); font-weight: 700; }
 .hi-rouge { color: #e8a020; font-weight: 700; }
 .hi-vert  { color: var(--vert); font-weight: 700; }
 
 /* Boutons verrouillés */
-.btn-locked {
-  opacity: 0.42; pointer-events: none; cursor: not-allowed;
-  filter: grayscale(0.6); position: relative;
-}
-.btn-locked.unlocked {
-  opacity: 1; pointer-events: auto; cursor: pointer; filter: none;
-}
-.btn-locked-hint {
-  font-size: 0.75rem; color: var(--gris); margin-top: 7px; font-style: italic;
-}
+.btn-locked { opacity: 0.42; pointer-events: none; cursor: not-allowed; filter: grayscale(0.6); position: relative; }
+.btn-locked.unlocked { opacity: 1; pointer-events: auto; cursor: pointer; filter: none; }
+.btn-locked-hint { font-size: 0.75rem; color: var(--gris); margin-top: 7px; font-style: italic; }
 
-/* Compteur Délégations Pays NGD */
-.countdown-delegations {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(201,168,76,0.35);
-  border-radius: 10px; padding: 12px; margin-top: 6px;
-}
-.cd-del-label {
-  font-size: 0.68rem; color: var(--or); font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.06em;
-  margin-bottom: 2px; text-align: center;
-}
-.cd-del-dates {
-  font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem;
-  font-weight: 700; color: rgba(255,255,255,0.80);
-  text-align: center; margin-bottom: 8px;
-}
-.cd-del-timer {
-  display: flex; align-items: center; justify-content: center; gap: 4px;
-}
+/* Compteur */
+.countdown-delegations { background: rgba(255,255,255,0.08); border: 1px solid rgba(201,168,76,0.35); border-radius: 10px; padding: 12px; margin-top: 6px; }
+.cd-del-label { font-size: 0.68rem; color: var(--or); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; text-align: center; }
+.cd-del-dates { font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem; font-weight: 700; color: rgba(255,255,255,0.80); text-align: center; margin-bottom: 8px; }
+.cd-del-timer { display: flex; align-items: center; justify-content: center; gap: 4px; }
 .cd-bloc { display: flex; flex-direction: column; align-items: center; min-width: 36px; }
-.cd-val {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.4rem; font-weight: 700; color: var(--blanc);
-  background: rgba(255,255,255,0.12); border-radius: 5px;
-  padding: 3px 7px; min-width: 40px; text-align: center; line-height: 1;
-}
+.cd-val { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--blanc); background: rgba(255,255,255,0.12); border-radius: 5px; padding: 3px 7px; min-width: 40px; text-align: center; line-height: 1; }
 .cd-lbl { font-size: 0.55rem; color: rgba(255,255,255,0.52); margin-top: 2px; }
 .cd-sep { font-size: 1.2rem; font-weight: 700; color: var(--or); align-self: flex-start; margin-top: 5px; }
-.cd-del-next {
-  font-size: 0.66rem; color: rgba(255,255,255,0.60);
-  text-align: center; margin-top: 8px; line-height: 1.4; font-style: italic;
-}
+.cd-del-next { font-size: 0.66rem; color: rgba(255,255,255,0.60); text-align: center; margin-top: 8px; line-height: 1.4; font-style: italic; }
 </style>
 </head>
 <body>
@@ -711,18 +501,20 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
 <nav>
   <a href="#top" class="nav-logo">
     <span class="badge-ppl">PPL</span>
-    <span class="nav-titre"
-          data-fr="Vers Plus de Pouvoir Local"
-          data-en="Toward More Local Power">Vers Plus de Pouvoir Local</span>
+    <span class="nav-titre" data-fr="Vers Plus de Pouvoir Local" data-en="Toward More Local Power">Vers Plus de Pouvoir Local</span>
   </a>
   <div class="nav-desktop-links">
-    <a href="#vision"    data-fr="Vision"        data-en="Vision">Vision</a>
-    <a href="#zones"     data-fr="Zones"          data-en="Zones">Zones</a>
-    <a href="#live"      data-fr="🔴 Live"        data-en="🔴 Live">🔴 Live</a>
-    <a href="#marche"    data-fr="Marché Commun"  data-en="Common Market">Marché Commun</a>
-    <a href="#rejoindre" data-fr="Rejoindre"      data-en="Join">Rejoindre</a>
+    <a href="#vision"    data-fr="Vision"       data-en="Vision">Vision</a>
+    <a href="#zones"     data-fr="Zones"         data-en="Zones">Zones</a>
+    <a href="#live"      data-fr="🔴 Live"       data-en="🔴 Live">🔴 Live</a>
+    <a href="#marche"    data-fr="Marché Commun" data-en="Common Market">Marché Commun</a>
+    <a href="#connexion" data-fr="Connexion"     data-en="Login">Connexion</a>
+    <a href="#rejoindre" data-fr="Rejoindre"     data-en="Join">Rejoindre</a>
   </div>
   <div class="nav-right">
+    <!-- Bouton connexion rapide dans nav -->
+    <button class="nav-connexion-btn" onclick="document.getElementById('connexion').scrollIntoView({behavior:'smooth'})"
+            data-fr="🔓 Connexion Membre" data-en="🔓 Member Login">🔓 Connexion Membre</button>
     <div class="lang-switch">
       <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
       <button id="btn-en"               onclick="setLang('en')">EN</button>
@@ -733,36 +525,36 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
 <!-- SOUS-NAV -->
 <div class="subnav">
   <div class="subnav-inner">
-    <a href="#vision"    data-fr="Vision"       data-en="Vision">Vision</a>
-    <a href="#zones"     data-fr="Zones"         data-en="Zones">Zones</a>
+    <a href="#vision"    data-fr="Vision"         data-en="Vision">Vision</a>
+    <a href="#zones"     data-fr="Zones"           data-en="Zones">Zones</a>
     <a href="#live"      class="sn-live">🔴 Coaching Live</a>
-    <a href="#radio"     data-fr="📻 CastingFM"    data-en="📻 CastingFM">📻 CastingFM</a>
-    <a href="#marche"    data-fr="Marché Commun" data-en="Common Market">Marché Commun</a>
-    <a href="#regions"   data-fr="7 Régions"     data-en="7 Regions">7 Régions</a>
-    <a href="#rejoindre" data-fr="Rejoindre"     data-en="Join">Rejoindre</a>
+    <a href="#radio"     data-fr="📻 CastingFM"   data-en="📻 CastingFM">📻 CastingFM</a>
+    <a href="#marche"    data-fr="Marché Commun"   data-en="Common Market">Marché Commun</a>
+    <a href="#connexion" data-fr="🔓 Connexion"   data-en="🔓 Login">🔓 Connexion</a>
+    <a href="#regions"   data-fr="7 Régions"       data-en="7 Regions">7 Régions</a>
+    <a href="#rejoindre" data-fr="Rejoindre"       data-en="Join">Rejoindre</a>
   </div>
 </div>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-kicker">
         <span>🌍</span>
-        <span data-fr="PENSER GLOBAL · AGIR LOCAL"
-              data-en="THINK GLOBAL · ACT LOCAL">PENSER GLOBAL · AGIR LOCAL</span>
+        <span data-fr="PENSER GLOBAL · AGIR LOCAL" data-en="THINK GLOBAL · ACT LOCAL">PENSER GLOBAL · AGIR LOCAL</span>
       </div>
-      <h1 data-fr="<em>Plus de Pouvoir Local</em> pour les Citoyens d'Afrique."
-          data-en="<em>More Local Power</em> for African Citizens.">
+      <h1 data-fr="<em>Plus de Pouvoir Local</em> pour les Citoyens d'Afrique." data-en="<em>More Local Power</em> for African Citizens.">
         <em>Plus de Pouvoir Local</em> pour les Citoyens d'Afrique.
       </h1>
       <p class="hero-lead"
          data-fr="Un Marché Commun physique et virtuel, porté par les Citoyens autour du FCFA et du Dispositif Monétaire <strong>Mi Sikah</strong>. Les Municipales/Régionales 2028 en Côte d'Ivoire sont le momentum. <strong>Nouvelles Générations pour le Développement</strong> ouvre la voie."
          data-en="A physical and virtual Common Market, driven by Citizens around the CFA franc and the <strong>Mi Sikah</strong> Monetary Device. The 2028 Municipal/Regional elections in Côte d'Ivoire are the momentum. <strong>Nouvelles Générations pour le Développement</strong> leads the way.">
-        Un Marché Commun physique et virtuel, porté par les Citoyens autour du FCFA et du Dispositif Monétaire <strong>Mi Sikah</strong>. Les Municipales/Régionales 2028 en Côte d'Ivoire sont le momentum. <strong>Nouvelles Générations pour le Développement</strong> ouvre la voie.
+        Un Marché Commun physique et virtuel, porté par les Citoyens autour du FCFA et du Dispositif Monétaire <strong>Mi Sikah</strong>. Les Municipales/Régionales 2028 en CI sont le momentum. <strong>Nouvelles Générations pour le Développement</strong> ouvre la voie.
       </p>
       <div class="hero-btns">
-        <a href="#rejoindre" class="btn-or" data-fr="🌱 Rejoindre NGD" data-en="🌱 Join NGD">🌱 Rejoindre NGD</a>
+        <a href="#connexion" class="btn-or" data-fr="🔓 Connexion Membre" data-en="🔓 Member Login">🔓 Connexion Membre</a>
+        <a href="#rejoindre" class="btn-outline-blanc" data-fr="🌱 Rejoindre NGD" data-en="🌱 Join NGD">🌱 Rejoindre NGD</a>
         <a href="#live" class="btn-outline-blanc" data-fr="🔴 Accéder au Live" data-en="🔴 Join the Live">🔴 Accéder au Live</a>
       </div>
     </div>
@@ -801,23 +593,13 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
   <div class="zones-inner">
     <span class="zone-lbl" data-fr="Communautés :" data-en="Communities:">Communautés :</span>
     <span class="pays-tag pilote">🇨🇮 CI</span>
-    <span class="pays-tag">🇸🇳 SN</span>
-    <span class="pays-tag">🇧🇯 BJ</span>
-    <span class="pays-tag">🇲🇱 ML</span>
-    <span class="pays-tag">🇧🇫 BF</span>
-    <span class="pays-tag">🇳🇪 NE</span>
-    <span class="pays-tag">🇬🇼 GW</span>
-    <span class="pays-tag">🇹🇬 TG</span>
+    <span class="pays-tag">🇸🇳 SN</span><span class="pays-tag">🇧🇯 BJ</span><span class="pays-tag">🇲🇱 ML</span>
+    <span class="pays-tag">🇧🇫 BF</span><span class="pays-tag">🇳🇪 NE</span><span class="pays-tag">🇬🇼 GW</span><span class="pays-tag">🇹🇬 TG</span>
     <span class="zone-sep">·</span>
-    <span class="pays-tag cemac">🇨🇲 CM</span>
-    <span class="pays-tag cemac">🇨🇫 CF</span>
-    <span class="pays-tag cemac">🇨🇬 CG</span>
-    <span class="pays-tag cemac">🇬🇦 GA</span>
-    <span class="pays-tag cemac">🇬🇶 GQ</span>
-    <span class="pays-tag cemac">🇹🇩 TD</span>
+    <span class="pays-tag cemac">🇨🇲 CM</span><span class="pays-tag cemac">🇨🇫 CF</span><span class="pays-tag cemac">🇨🇬 CG</span>
+    <span class="pays-tag cemac">🇬🇦 GA</span><span class="pays-tag cemac">🇬🇶 GQ</span><span class="pays-tag cemac">🇹🇩 TD</span>
     <span class="zone-sep">·</span>
-    <span class="pays-tag cedeao">🇬🇭 GH</span>
-    <span class="pays-tag cedeao">🇳🇬 NG</span>
+    <span class="pays-tag cedeao">🇬🇭 GH</span><span class="pays-tag cedeao">🇳🇬 NG</span>
   </div>
 </div>
 
@@ -825,45 +607,17 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
 <section class="section" id="vision">
   <div class="section-inner">
     <p class="section-kicker" data-fr="Notre Vision" data-en="Our Vision">Notre Vision</p>
-    <h2 class="section-title"
-        data-fr="Un Marché Commun Citoyen — du local au continental"
-        data-en="A Citizens' Common Market — from local to continental">Un Marché Commun Citoyen — du local au continental</h2>
-    <p class="section-sub"
-       data-fr="Depuis les 7 régions pilotes de Côte d'Ivoire, <strong class='hi-or'>NGD — Nouvelles Générations pour le Développement</strong> construit le modèle d'une gouvernance locale alternative — <strong class='hi-rouge'>économique, financière et démocratique</strong> — exportable à toute l'Afrique francophone et anglophone."
-       data-en="From the 7 pilot regions of Côte d'Ivoire, <strong class='hi-or'>NGD — Nouvelles Générations pour le Développement</strong> builds the model of an alternative local governance — <strong class='hi-rouge'>economic, financial and democratic</strong> — exportable to all of francophone and anglophone Africa.">
+    <h2 class="section-title" data-fr="Un Marché Commun Citoyen — du local au continental" data-en="A Citizens' Common Market — from local to continental">Un Marché Commun Citoyen — du local au continental</h2>
+    <p class="section-sub" data-fr="Depuis les 7 régions pilotes de Côte d'Ivoire, <strong class='hi-or'>NGD — Nouvelles Générations pour le Développement</strong> construit le modèle d'une gouvernance locale alternative — <strong class='hi-rouge'>économique, financière et démocratique</strong> — exportable à toute l'Afrique francophone et anglophone." data-en="From the 7 pilot regions of Côte d'Ivoire, <strong class='hi-or'>NGD</strong> builds the model of an alternative local governance — <strong class='hi-rouge'>economic, financial and democratic</strong> — exportable to all of Africa.">
       Depuis les 7 régions pilotes de Côte d'Ivoire, <strong class="hi-or">NGD — Nouvelles Générations pour le Développement</strong> construit le modèle d'une gouvernance locale alternative — <strong class="hi-rouge">économique, financière et démocratique</strong> — exportable à toute l'Afrique francophone et anglophone.
     </p>
     <div class="vision-grid">
-      <div class="vision-card fu">
-        <div class="vision-icon">🏪</div>
-        <h4 data-fr="Marché Physique TCL" data-en="TCL Physical Market">Marché Physique TCL</h4>
-        <p data-fr="<strong class='hi-or'>509 Communes et Sous-préfectures</strong> connectées via le Portail TCL — 3 Boutiques en 1. Commerce local, livraison, épargne communautaire <strong class='hi-or'>Mi Sikah</strong>." data-en="<strong class='hi-or'>509 Communes and Sub-prefectures</strong> connected via the TCL Portal — 3 Shops in 1. Local commerce, delivery, <strong class='hi-or'>Mi Sikah</strong> community savings."><strong class="hi-or">509 Communes et Sous-préfectures</strong> connectées via le Portail TCL — 3 Boutiques en 1. Commerce local, livraison, épargne communautaire <strong class="hi-or">Mi Sikah</strong>.</p>
-      </div>
-      <div class="vision-card fu">
-        <div class="vision-icon">💱</div>
-        <h4 data-fr="Dispositif Mi Sikah" data-en="Mi Sikah Device">Dispositif Mi Sikah</h4>
-        <p data-fr="Chaque achat génère <strong class='hi-or'>2.5%</strong> de Cashback à la communauté. <strong class='hi-or'>1 Mi Sikah = 10 000 FCFA</strong>. Souveraineté monétaire citoyenne." data-en="Each purchase generates <strong class='hi-or'>2.5%</strong> Cashback returned to the declared community. <strong class='hi-or'>1 Mi Sikah = 10,000 FCFA</strong>. Citizens' monetary sovereignty.">Chaque achat génère <strong class="hi-or">2.5%</strong> de Cashback à la communauté. <strong class="hi-or">1 Mi Sikah = 10 000 FCFA</strong>. Souveraineté monétaire citoyenne.</p>
-      </div>
-      <div class="vision-card fu">
-        <div class="vision-icon">🗳️</div>
-        <h4 data-fr="Momentum 2028" data-en="2028 Momentum">Momentum 2028</h4>
-        <p data-fr="Les Municipales/Régionales couplées de septembre 2028 en CI sont le levier électoral. 7 régions pilotes, 509 colistiers NGD, partenariat LFA-CI." data-en="The coupled Municipal/Regional elections of September 2028 in CI are the electoral lever. 7 pilot regions, 509 NGD co-candidates, LFA-CI partnership.">Les Municipales/Régionales 2028 en CI — 7 régions pilotes, colistiers NGD, partenariat LFA-CI.</p>
-      </div>
-      <div class="vision-card fu">
-        <div class="vision-icon">📡</div>
-        <h4 data-fr="Coaching & Formation" data-en="Coaching & Training">Coaching & Formation</h4>
-        <p data-fr="YouTube Live, Telegram et <strong class='hi-or'>CastingFM</strong> 24h/24 : formation financière, Bitcoin, gouvernance locale. Accès par code WhatsApp." data-en="YouTube Live, Telegram and <strong class='hi-or'>CastingFM</strong> 24/7: financial training, Bitcoin, local governance. Access by WhatsApp code.">YouTube Live, Telegram et <strong class="hi-or">CastingFM</strong> 24h/24. Formation, Bitcoin, gouvernance. Accès par code WhatsApp.</p>
-      </div>
-      <div class="vision-card fu">
-        <div class="vision-icon">🤝</div>
-        <h4 data-fr="Partenariat CEDEAO" data-en="ECOWAS Partnership">Partenariat CEDEAO</h4>
-        <p data-fr="Ouverture stratégique aux communautés Ghanéennes et Nigérianes résidant en Côte d'Ivoire pour l'intégration du Marché Commun CEDEAO." data-en="Strategic opening to Ghanaian and Nigerian communities residing in Côte d'Ivoire for ECOWAS Common Market integration.">Ouverture aux communautés Ghanéennes et Nigérianes en CI pour l'intégration CEDEAO.</p>
-      </div>
-      <div class="vision-card fu">
-        <div class="vision-icon">₿</div>
-        <h4 data-fr="Souveraineté Bitcoin" data-en="Bitcoin Sovereignty">Souveraineté Bitcoin</h4>
-        <p data-fr="10 000 Consultants Financiers Ruraux formés d'ici 2030. 500 points de service Bitcoin. Intégration dans les assemblées villageoises." data-en="10,000 Rural Financial Consultants trained by 2030. 500 Bitcoin service points. Integration into village assemblies.">10 000 Consultants Financiers Ruraux d'ici 2030. 500 points Bitcoin. Assemblées villageoises.</p>
-      </div>
+      <div class="vision-card fu"><div class="vision-icon">🏪</div><h4 data-fr="Marché Physique TCL" data-en="TCL Physical Market">Marché Physique TCL</h4><p><strong class="hi-or">509 Communes et Sous-préfectures</strong> connectées via le Portail TCL — 3 Boutiques en 1. Commerce local, livraison, épargne communautaire <strong class="hi-or">Mi Sikah</strong>.</p></div>
+      <div class="vision-card fu"><div class="vision-icon">💱</div><h4 data-fr="Dispositif Mi Sikah" data-en="Mi Sikah Device">Dispositif Mi Sikah</h4><p>Chaque achat génère <strong class="hi-or">2.5%</strong> de Cashback à la communauté. <strong class="hi-or">1 Mi Sikah = 10 000 FCFA</strong>. Souveraineté monétaire citoyenne.</p></div>
+      <div class="vision-card fu"><div class="vision-icon">🗳️</div><h4 data-fr="Momentum 2028" data-en="2028 Momentum">Momentum 2028</h4><p>Les Municipales/Régionales 2028 en CI — 7 régions pilotes, 509 colistiers NGD, partenariat LFA-CI.</p></div>
+      <div class="vision-card fu"><div class="vision-icon">📡</div><h4 data-fr="Coaching & Formation" data-en="Coaching & Training">Coaching & Formation</h4><p>YouTube Live, Telegram et <strong class="hi-or">CastingFM</strong> 24h/24. Formation, Bitcoin, gouvernance. Accès par code WhatsApp.</p></div>
+      <div class="vision-card fu"><div class="vision-icon">🤝</div><h4 data-fr="Partenariat CEDEAO" data-en="ECOWAS Partnership">Partenariat CEDEAO</h4><p>Ouverture aux communautés Ghanéennes et Nigérianes en CI pour l'intégration CEDEAO.</p></div>
+      <div class="vision-card fu"><div class="vision-icon">₿</div><h4 data-fr="Souveraineté Bitcoin" data-en="Bitcoin Sovereignty">Souveraineté Bitcoin</h4><p>10 000 Consultants Financiers Ruraux d'ici 2030. 500 points Bitcoin. Assemblées villageoises.</p></div>
     </div>
   </div>
 </section>
@@ -872,43 +626,26 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
 <section class="section alerte-section" id="zones">
   <div class="section-inner">
     <p class="section-kicker" data-fr="Positionnement Stratégique" data-en="Strategic Positioning">Positionnement Stratégique</p>
-    <h2 class="section-title"
-        data-fr="Au-delà de l'UEMOA — CEMAC, CEDEAO et les Diaspora"
-        data-en="Beyond UEMOA — CEMAC, ECOWAS and the Diaspora">Au-delà de l'UEMOA — CEMAC, CEDEAO et les Diaspora</h2>
-    <p class="section-sub"
-       data-fr="La Côte d'Ivoire est le carrefour de l'Afrique de l'Ouest et Centrale. Les communautés de toutes les zones trouvent ici un modèle de Pouvoir Local à répliquer."
-       data-en="Côte d'Ivoire is the crossroads of West and Central Africa. Communities from all zones find here a Local Power model to replicate.">
-      La Côte d'Ivoire est le carrefour de l'Afrique de l'Ouest et Centrale. Les communautés de toutes les zones trouvent ici un modèle de Pouvoir Local à répliquer.
-    </p>
+    <h2 class="section-title" data-fr="Au-delà de l'UEMOA — CEMAC, CEDEAO et les Diaspora" data-en="Beyond UEMOA — CEMAC, ECOWAS and the Diaspora">Au-delà de l'UEMOA — CEMAC, CEDEAO et les Diaspora</h2>
+    <p class="section-sub" data-fr="La Côte d'Ivoire est le carrefour de l'Afrique de l'Ouest et Centrale. Les communautés de toutes les zones trouvent ici un modèle de Pouvoir Local à répliquer." data-en="Côte d'Ivoire is the crossroads of West and Central Africa.">La Côte d'Ivoire est le carrefour de l'Afrique de l'Ouest et Centrale. Les communautés de toutes les zones trouvent ici un modèle de Pouvoir Local à répliquer.</p>
     <div class="alerte-grid">
       <div class="alerte-card ac-uemoa fu">
         <div class="ac-badge uemoa">UEMOA — Zone Pilote</div>
-        <h3 data-fr="8 États · Phase Active 2026–2030" data-en="8 States · Active Phase 2026–2030">8 États · Phase Active 2026–2030</h3>
-        <p data-fr="La zone UEMOA est le laboratoire fondateur. Le modèle NGD y est déployé en priorité selon les calendriers électoraux de chaque État membre." data-en="The UEMOA zone is the founding laboratory. The NGD model is deployed there first according to each member state's electoral calendar.">La zone UEMOA est le laboratoire fondateur. Déploiement selon les calendriers électoraux de chaque État.</p>
-        <div class="alerte-pays">
-          <span>🇨🇮 CI · Pilote</span><span>🇧🇯 BJ</span><span>🇸🇳 SN</span>
-          <span>🇲🇱 ML</span><span>🇧🇫 BF</span><span>🇳🇪 NE</span>
-          <span>🇬🇼 GW</span><span>🇹🇬 TG</span>
-        </div>
+        <h3>8 États · Phase Active 2026–2030</h3>
+        <p>La zone UEMOA est le laboratoire fondateur. Déploiement selon les calendriers électoraux de chaque État.</p>
+        <div class="alerte-pays"><span>🇨🇮 CI · Pilote</span><span>🇧🇯 BJ</span><span>🇸🇳 SN</span><span>🇲🇱 ML</span><span>🇧🇫 BF</span><span>🇳🇪 NE</span><span>🇬🇼 GW</span><span>🇹🇬 TG</span></div>
       </div>
       <div class="alerte-card ac-cemac fu">
         <div class="ac-badge cemac">⚠️ CEMAC — Alerte Partenariat</div>
-        <h3 data-fr="6 États · Résidents en Côte d'Ivoire" data-en="6 States · Residents in Côte d'Ivoire">6 États · Résidents en Côte d'Ivoire</h3>
-        <p data-fr="Les communautés de la Zone CEMAC résidant en CI sont invitées à rejoindre NGD comme Délégués-Pays CEMAC, pour répliquer le modèle Mi Sikah dans leurs pays d'origine dès 2030–2035." data-en="CEMAC Zone communities residing in CI are invited to join NGD as CEMAC Country Delegates, to replicate the Mi Sikah model in their home countries from 2030–2035.">Les communautés CEMAC résidant en CI : rejoignez NGD comme Délégués-Pays CEMAC. Réplication du modèle Mi Sikah dès 2030–2035.</p>
-        <div class="alerte-pays">
-          <span>🇨🇲 Cameroun</span><span>🇨🇫 Centrafrique</span>
-          <span>🇨🇬 Congo</span><span>🇬🇦 Gabon</span>
-          <span>🇬🇶 Guinée Éq.</span><span>🇹🇩 Tchad</span>
-        </div>
+        <h3>6 États · Résidents en Côte d'Ivoire</h3>
+        <p>Les communautés CEMAC résidant en CI : rejoignez NGD comme Délégués-Pays CEMAC. Réplication du modèle Mi Sikah dès 2030–2035.</p>
+        <div class="alerte-pays"><span>🇨🇲 Cameroun</span><span>🇨🇫 Centrafrique</span><span>🇨🇬 Congo</span><span>🇬🇦 Gabon</span><span>🇬🇶 Guinée Éq.</span><span>🇹🇩 Tchad</span></div>
       </div>
       <div class="alerte-card ac-cedeao fu">
         <div class="ac-badge cedeao">🤝 CEDEAO — Partenariat Stratégique</div>
-        <h3 data-fr="Ghana · Nigeria · Intégration Marché Commun" data-en="Ghana · Nigeria · Common Market Integration">Ghana · Nigeria · Intégration Marché Commun</h3>
-        <p data-fr="<strong class='hi-or'>NGD</strong> ouvre un couloir de partenariat avec les communautés Ghanéennes et Nigérianes en CI pour l'intégration progressive dans le Marché Commun CEDEAO via le <strong class='hi-or'>Dispositif Mi Sikah</strong> et le Portail TCL." data-en="<strong class='hi-or'>NGD</strong> opens a partnership corridor with Ghanaian and Nigerian communities in CI for progressive integration into the ECOWAS Common Market via the <strong class='hi-or'>Mi Sikah Device</strong> and TCL Portal."><strong class="hi-or">NGD</strong> ouvre un couloir de partenariat avec les communautés Ghanéennes et Nigérianes en CI via le <strong class="hi-or">Dispositif Mi Sikah</strong> et le Portail TCL.</p>
-        <div class="alerte-pays">
-          <span>🇬🇭 Ghana</span><span>🇳🇬 Nigeria</span>
-          <span>+ Autres CEDEAO</span>
-        </div>
+        <h3>Ghana · Nigeria · Intégration Marché Commun</h3>
+        <p><strong class="hi-or">NGD</strong> ouvre un couloir de partenariat avec les communautés Ghanéennes et Nigérianes en CI via le <strong class="hi-or">Dispositif Mi Sikah</strong> et le Portail TCL.</p>
+        <div class="alerte-pays"><span>🇬🇭 Ghana</span><span>🇳🇬 Nigeria</span><span>+ Autres CEDEAO</span></div>
       </div>
     </div>
   </div>
@@ -918,16 +655,10 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
 <section class="section live-section" id="live">
   <div class="section-inner">
     <p class="section-kicker" data-fr="Coaching & Formation Live" data-en="Live Coaching & Training">Coaching & Formation Live</p>
-    <h2 class="section-title"
-        data-fr="YouTube · Telegram · Chaque semaine"
-        data-en="YouTube · Telegram · Every week">YouTube · Telegram · Chaque semaine</h2>
-    <p class="section-sub"
-       data-fr="Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Accès par code de déverrouillage reçu par WhatsApp ou Telegram après enregistrement NGD."
-       data-en="Coach Morgan's hosts live citizen, financial and political training sessions. Access by unlock code received via WhatsApp or Telegram after NGD registration.">
-      Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Accès par code de déverrouillage reçu par WhatsApp ou Telegram après enregistrement NGD.
+    <h2 class="section-title" data-fr="YouTube · Telegram · Chaque semaine" data-en="YouTube · Telegram · Every week">YouTube · Telegram · Chaque semaine</h2>
+    <p class="section-sub" data-fr="Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Accès par code de déverrouillage reçu par WhatsApp ou Telegram après enregistrement NGD." data-en="Coach Morgan's hosts live citizen, financial and political training sessions. Access by unlock code received via WhatsApp or Telegram after NGD registration.">
+      Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Accès par code reçu par WhatsApp ou Telegram après enregistrement NGD.
     </p>
-
-    <!-- Carte principale Live -->
     <div class="live-hero-card">
       <div class="live-hero-top">
         <div class="live-logo-wrap">
@@ -947,155 +678,238 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
       <div class="live-hero-btns">
         <a href="https://www.youtube.com/@VoteConnect" target="_blank" class="btn-rouge" data-fr="▶ YouTube VoteConnect" data-en="▶ YouTube VoteConnect">▶ YouTube VoteConnect</a>
         <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-bleu" data-fr="📱 Telegram Bot CHALLENGER" data-en="📱 Telegram Bot CHALLENGER">📱 Telegram Bot CHALLENGER</a>
-        <a href="#acces" class="btn-or" data-fr="🔓 Accéder avec mon code" data-en="🔓 Access with my code">🔓 Accéder avec mon code</a>
+        <a href="#connexion" class="btn-or" data-fr="🔓 Connexion Membre" data-en="🔓 Member Login">🔓 Connexion Membre</a>
       </div>
     </div>
-
-    <!-- Grille horaires -->
     <div class="horaires-grid">
       <div class="horaire-card fu">
         <div class="horaire-jour">📅 Vendredi <span class="jour-badge">1h</span></div>
-        <div class="horaire-slot">
-          <span class="slot-time">19h00–20h00</span>
-          <span class="slot-ico">🎓</span>
-          <span class="slot-theme" data-fr="Finance décentralisée · Bitcoin · Mi Sikah" data-en="Decentralized finance · Bitcoin · Mi Sikah">Finance décentralisée · Bitcoin · Mi Sikah</span>
-        </div>
+        <div class="horaire-slot"><span class="slot-time">19h00–20h00</span><span class="slot-ico">🎓</span><span class="slot-theme">Finance décentralisée · Bitcoin · Mi Sikah</span></div>
       </div>
       <div class="horaire-card fu">
         <div class="horaire-jour">📅 Samedi <span class="jour-badge">4h</span></div>
-        <div class="horaire-slot">
-          <span class="slot-time">09h00–11h00</span>
-          <span class="slot-ico">🌍</span>
-          <span class="slot-theme" data-fr="Gouvernance locale · TCL · Territorialité" data-en="Local governance · TCL · Territoriality">Gouvernance locale · TCL · Territorialité</span>
-        </div>
-        <div class="horaire-slot">
-          <span class="slot-time">18h00–20h00</span>
-          <span class="slot-ico">🗳️</span>
-          <span class="slot-theme" data-fr="Stratégie Municipales 2028 · Colistiers NGD" data-en="2028 Municipal Strategy · NGD co-candidates">Stratégie Municipales 2028 · Colistiers NGD</span>
-        </div>
+        <div class="horaire-slot"><span class="slot-time">09h00–11h00</span><span class="slot-ico">🌍</span><span class="slot-theme">Gouvernance locale · TCL · Territorialité</span></div>
+        <div class="horaire-slot"><span class="slot-time">18h00–20h00</span><span class="slot-ico">🗳️</span><span class="slot-theme">Stratégie Municipales 2028 · Colistiers NGD</span></div>
       </div>
       <div class="horaire-card fu">
         <div class="horaire-jour">📅 Dimanche <span class="jour-badge">4h</span></div>
-        <div class="horaire-slot">
-          <span class="slot-time">09h00–11h00</span>
-          <span class="slot-ico">💰</span>
-          <span class="slot-theme" data-fr="Marché Commun FCFA · Portefeuille Mi Sikah" data-en="FCFA Common Market · Mi Sikah Wallet">Marché Commun FCFA · Portefeuille Mi Sikah</span>
-        </div>
-        <div class="horaire-slot">
-          <span class="slot-time">18h00–20h00</span>
-          <span class="slot-ico">🤝</span>
-          <span class="slot-theme" data-fr="Partenariats CEMAC · CEDEAO · Q&A" data-en="CEMAC · ECOWAS Partnerships · Q&A">Partenariats CEMAC · CEDEAO · Q&A</span>
-        </div>
+        <div class="horaire-slot"><span class="slot-time">09h00–11h00</span><span class="slot-ico">💰</span><span class="slot-theme">Marché Commun FCFA · Portefeuille Mi Sikah</span></div>
+        <div class="horaire-slot"><span class="slot-time">18h00–20h00</span><span class="slot-ico">🤝</span><span class="slot-theme">Partenariats CEMAC · CEDEAO · Q&A</span></div>
       </div>
     </div>
-
-    <!-- Accès Live déverrouillage -->
+    <!-- Accès Live code -->
     <div class="acces-live" id="acces">
       <h4 data-fr="🔓 Accéder au Live avec votre code" data-en="🔓 Access the Live with your code">🔓 Accéder au Live avec votre code</h4>
-      <p data-fr="Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session. Saisissez-le ici pour accéder aux liens YouTube et Telegram du Live." data-en="After your NGD registration, you receive a code via WhatsApp or Telegram before each session. Enter it here to access the YouTube and Telegram Live links.">Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session. Saisissez-le ici pour accéder aux liens du Live.</p>
+      <p data-fr="Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session. Saisissez-le ici pour accéder aux liens du Live." data-en="After your NGD registration, you receive a code via WhatsApp or Telegram before each session. Enter it here to access the Live links.">Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session. Saisissez-le ici pour accéder aux liens du Live.</p>
       <div class="acces-form">
         <input type="text" id="code-live" placeholder="Ex: LIVE-VEN-2026-XXXX" maxlength="20">
-        <button class="btn-deverrouiller" onclick="verifierCodeLive()"
-                data-fr="🔓 Déverrouiller" data-en="🔓 Unlock">🔓 Déverrouiller</button>
+        <button class="btn-deverrouiller" onclick="verifierCodeLive()" data-fr="🔓 Déverrouiller" data-en="🔓 Unlock">🔓 Déverrouiller</button>
       </div>
       <div class="acces-msg" id="acces-msg"></div>
       <div class="acces-links" id="acces-links">
-        <a href="https://www.youtube.com/@VoteConnect" target="_blank" class="acces-lien">
-          <span class="al-ico">▶</span>
-          <span data-fr="YouTube Live — VoteConnect · Coach Morgan's" data-en="YouTube Live — VoteConnect · Coach Morgan's">YouTube Live — VoteConnect · Coach Morgan's</span>
-        </a>
-        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="acces-lien">
-          <span class="al-ico">📱</span>
-          <span data-fr="Telegram — Bot CHALLENGER · Canal NGD" data-en="Telegram — Bot CHALLENGER · NGD Channel">Telegram — Bot CHALLENGER · Canal NGD</span>
-        </a>
-        <a href="https://wa.me/2250767814333" target="_blank" class="acces-lien">
-          <span class="al-ico">💬</span>
-          <span data-fr="WhatsApp Admin — Support Live" data-en="WhatsApp Admin — Live Support">WhatsApp Admin — Support Live</span>
-        </a>
+        <a href="https://www.youtube.com/@VoteConnect" target="_blank" class="acces-lien"><span class="al-ico">▶</span><span>YouTube Live — VoteConnect · Coach Morgan's</span></a>
+        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="acces-lien"><span class="al-ico">📱</span><span>Telegram — Bot CHALLENGER · Canal NGD</span></a>
+        <a href="https://wa.me/2250767560908" target="_blank" class="acces-lien"><span class="al-ico">💬</span><span>WhatsApp Admin — Support Live</span></a>
       </div>
     </div>
-
     <!-- CastingFM -->
     <div class="radio-card" id="radio">
       <div class="radio-header">
         <div class="radio-logo">
-          <img src="https://i.ibb.co/FLCvf5rk/Whats-App-Image-2026-04-03-at-19-40-11.jpg"
-               alt="CastingFM" style="width:52px;height:52px;border-radius:50%;object-fit:cover;"
+          <img src="https://i.ibb.co/FLCvf5rk/Whats-App-Image-2026-04-03-at-19-40-11.jpg" alt="CastingFM"
+               style="width:52px;height:52px;border-radius:50%;object-fit:cover;"
                onerror="this.outerHTML='<span style=\'font-size:1.4rem\'>📻</span>'">
         </div>
         <div class="radio-info">
           <h4>CastingFM</h4>
           <p data-fr="La voix du Pouvoir Local — UEMOA · CEMAC · CEDEAO" data-en="The voice of Local Power — UEMOA · CEMAC · ECOWAS">La voix du Pouvoir Local — UEMOA · CEMAC · CEDEAO</p>
-          <div class="radio-badge">
-            <div class="live-dot"></div>
-            <span data-fr="EN LIGNE 7j/7 · 24h/24" data-en="ONLINE 7/7 · 24/7">EN LIGNE 7j/7 · 24h/24</span>
-          </div>
+          <div class="radio-badge"><div class="live-dot"></div><span data-fr="EN LIGNE 7j/7 · 24h/24" data-en="ONLINE 7/7 · 24/7">EN LIGNE 7j/7 · 24h/24</span></div>
         </div>
       </div>
-      <p style="font-size:0.84rem;color:rgba(255,255,255,0.78);line-height:1.6;"
-         data-fr="Musique africaine, débats citoyens, formation financière, actualités FCFA et Bitcoin, témoignages terrain NGD. Non-stop, depuis Abidjan pour toute l'Afrique."
-         data-en="African music, civic debates, financial training, CFA franc and Bitcoin news, NGD field testimonials. Non-stop, from Abidjan for all of Africa.">
+      <p style="font-size:0.84rem;color:rgba(255,255,255,0.78);line-height:1.6;">
         Musique africaine, débats citoyens, formation financière, actualités FCFA et Bitcoin, témoignages terrain <strong class="hi-or">NGD</strong>. Non-stop, depuis Abidjan pour toute l'Afrique.
       </p>
       <div class="radio-btns">
         <a href="https://link.radioking.com/castingfm" target="_blank"
            class="btn-radio btn-locked" id="btn-castingfm"
-           data-fr="📻 Écouter en direct" data-en="📻 Listen live"
            onclick="return checkLocked(event,'btn-castingfm')">📻 Écouter en direct</a>
-        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-radio-out"
-           data-fr="📱 Programmer sur Telegram" data-en="📱 Schedule on Telegram">📱 Programmer sur Telegram</a>
+        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-radio-out">📱 Programmer sur Telegram</a>
       </div>
       <p class="btn-locked-hint" style="color:rgba(255,255,255,0.55);margin-top:8px;"
-         data-fr="🔒 S'active après votre enregistrement NGD ci-dessous"
-         data-en="🔒 Activates after your NGD registration below">🔒 S'active après votre enregistrement NGD ci-dessous</p>
+         data-fr="🔒 S'active après connexion membre ou enregistrement NGD"
+         data-en="🔒 Activates after member login or NGD registration">🔒 S'active après connexion membre ou enregistrement NGD</p>
     </div>
   </div>
 </section>
 
-<!-- MARCHÉ COMMUN MI SIKAH -->
+<!-- MARCHÉ MI SIKAH -->
 <section class="section marche-section" id="marche">
   <div class="section-inner">
     <p class="section-kicker" data-fr="Dispositif Monétaire Citoyen" data-en="Citizen Monetary Device">Dispositif Monétaire Citoyen</p>
-    <h2 class="section-title"
-        data-fr="Mi Sikah — Le Marché Commun par la Base"
-        data-en="Mi Sikah — The Common Market from the Ground Up">Mi Sikah — Le Marché Commun par la Base</h2>
-    <p class="section-sub"
-       data-fr="Chaque achat quotidien sur le Portail TCL génère du Cashback pour votre communauté. 10 000 FCFA cumulés = 1 Mi Sikah reversé à votre communauté déclarée."
-       data-en="Every daily purchase on the TCL Portal generates Cashback for your community. 10,000 FCFA accumulated = 1 Mi Sikah returned to your declared community.">
-      Chaque achat quotidien sur le Portail TCL génère du Cashback pour votre communauté. <strong class="hi-or">10 000 FCFA cumulés = 1 Mi Sikah</strong> reversé à votre communauté déclarée.
-    </p>
+    <h2 class="section-title" data-fr="Mi Sikah — Le Marché Commun par la Base" data-en="Mi Sikah — The Common Market from the Ground Up">Mi Sikah — Le Marché Commun par la Base</h2>
+    <p class="section-sub">Chaque achat quotidien sur le Portail TCL génère du Cashback pour votre communauté. <strong class="hi-or">10 000 FCFA cumulés = 1 Mi Sikah</strong> reversé à votre communauté déclarée.</p>
     <div class="marche-grid">
-      <div class="marche-card fu">
-        <div class="marche-icon">🛒</div>
-        <h4 data-fr="Achat TCL" data-en="TCL Purchase">Achat TCL</h4>
-        <div class="marche-val">100%</div>
-        <p data-fr="Montant dépensé · Produits locaux · Livraison" data-en="Amount spent · Local products · Delivery">Montant dépensé · Produits locaux · Livraison</p>
-      </div>
-      <div class="marche-card fu">
-        <div class="marche-icon">💰</div>
-        <h4 data-fr="CashBack Communauté" data-en="Community CashBack">CashBack Communauté</h4>
-        <div class="marche-val">2.5%</div>
-        <p data-fr="Crédité dans votre Portefeuille Mi Sikah après chaque achat" data-en="Credited to your Mi Sikah Wallet after each purchase">Crédité dans votre Portefeuille Mi Sikah après chaque achat</p>
-      </div>
-      <div class="marche-card fu">
-        <div class="marche-icon">🎯</div>
-        <h4 data-fr="Seuil Mi Sikah" data-en="Mi Sikah Threshold">Seuil Mi Sikah</h4>
-        <div class="marche-val">10 000 F</div>
-        <p data-fr="Cumul déclenche le reversement automatique à votre communauté" data-en="Cumulation triggers automatic reversal to your community">Cumul déclenche le reversement automatique à votre communauté</p>
-      </div>
-      <div class="marche-card fu">
-        <div class="marche-icon">🏛️</div>
-        <h4 data-fr="Colistier 2028" data-en="2028 Co-candidate">Colistier 2028</h4>
-        <div class="marche-val">1%</div>
-        <p data-fr="Cashback supplémentaire si vous avez un Colistier NGD dans votre circonscription" data-en="Additional Cashback if you have an NGD Co-candidate in your district">Cashback supplémentaire si Colistier NGD dans votre circonscription</p>
-      </div>
+      <div class="marche-card fu"><div class="marche-icon">🛒</div><h4>Achat TCL</h4><div class="marche-val">100%</div><p>Montant dépensé · Produits locaux · Livraison</p></div>
+      <div class="marche-card fu"><div class="marche-icon">💰</div><h4>CashBack Communauté</h4><div class="marche-val">2.5%</div><p>Crédité dans votre Portefeuille Mi Sikah après chaque achat</p></div>
+      <div class="marche-card fu"><div class="marche-icon">🎯</div><h4>Seuil Mi Sikah</h4><div class="marche-val">10 000 F</div><p>Cumul déclenche le reversement automatique à votre communauté</p></div>
+      <div class="marche-card fu"><div class="marche-icon">🏛️</div><h4>Colistier 2028</h4><div class="marche-val">1%</div><p>Cashback supplémentaire si Colistier NGD dans votre circonscription</p></div>
     </div>
     <div style="text-align:center;margin-top:28px;">
-      <a href="https://coachmorgans.github.io/tcl/" target="_blank"
+      <a href="https://t.me/ChallengeFinancierbot" target="_blank"
          class="btn-or btn-locked" id="btn-tcl-w"
-         data-fr="🛒 Accéder au Portail TCL" data-en="🛒 Access TCL Portal"
-         onclick="return checkLocked(event,'btn-tcl-w')">🛒 Accéder au Portail TCL</a>
-      <p class="btn-locked-hint" data-fr="🔒 S'active après votre enregistrement NGD" data-en="🔒 Activates after your NGD registration">🔒 S'active après votre enregistrement NGD</p>
+         onclick="return checkLocked(event,'btn-tcl-w')">🛒 Accéder au Portail TCL via Bot</a>
+      <p class="btn-locked-hint" data-fr="🔒 S'active après connexion membre ou enregistrement NGD" data-en="🔒 Activates after member login or NGD registration">🔒 S'active après connexion membre ou enregistrement NGD</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+   SECTION CONNEXION MEMBRE — v2.1
+   Positionnée entre Marché Commun et Formulaires d'enregistrement
+   Principe des deux guichets :
+     - Gauche : formulaire Téléphone + PIN → CF-DB → accès immédiat
+     - Droite  : informations sur les plateformes déverrouillables
+═══════════════════════════════════════════════════════ -->
+<section class="section connexion-section" id="connexion">
+  <div class="section-inner">
+    <p class="section-kicker" data-fr="Déjà Membre NGD ?" data-en="Already an NGD Member?">Déjà Membre NGD ?</p>
+    <h2 class="section-title"
+        data-fr="Connectez-vous — Accédez à votre Écosystème"
+        data-en="Log in — Access your Ecosystem">Connectez-vous — Accédez à votre Écosystème</h2>
+    <p class="section-sub"
+       data-fr="Membres enregistrés sur <strong class='hi-or'>La Grande Réappropriation</strong> ou <strong class='hi-or'>Vers Plus de Pouvoir Local</strong> : connectez-vous avec votre numéro de téléphone et votre code PIN Mi Sikah pour déverrouiller immédiatement l'accès aux 5 plateformes."
+       data-en="Members registered on <strong class='hi-or'>La Grande Réappropriation</strong> or <strong class='hi-or'>Vers Plus de Pouvoir Local</strong>: log in with your phone number and Mi Sikah PIN to immediately unlock access to the 5 platforms.">
+      Membres enregistrés sur <strong class="hi-or">La Grande Réappropriation</strong> ou <strong class="hi-or">Vers Plus de Pouvoir Local</strong> : connectez-vous avec votre numéro de téléphone et votre code PIN Mi Sikah pour déverrouiller immédiatement l'accès aux 5 plateformes.
+    </p>
+
+    <div class="connexion-grid">
+
+      <!-- CARTE GAUCHE — Formulaire de connexion -->
+      <div class="connexion-card">
+        <div class="connexion-card-header">
+          <div class="connexion-ico">🔓</div>
+          <div>
+            <h3 data-fr="Connexion Membre NGD" data-en="NGD Member Login">Connexion Membre NGD</h3>
+            <p data-fr="Animateur NGD · Délégué-Pays NGD" data-en="NGD Animator · NGD Country Delegate">Animateur NGD · Délégué-Pays NGD</p>
+          </div>
+        </div>
+
+        <!-- Champ téléphone -->
+        <div class="cx-form-group">
+          <label data-fr="Téléphone / WhatsApp *" data-en="Phone / WhatsApp *">Téléphone / WhatsApp *</label>
+          <input type="tel" id="cx-tel"
+                 placeholder="07 XX XX XX XX ou +225XXXXXXXXXX"
+                 inputmode="numeric" autocomplete="tel">
+        </div>
+
+        <!-- Code PIN 4 chiffres -->
+        <div class="cx-form-group">
+          <label data-fr="Code PIN Mi Sikah (4 chiffres)" data-en="Mi Sikah PIN code (4 digits)">Code PIN Mi Sikah (4 chiffres)</label>
+          <div class="cx-pin-row">
+            <input type="password" class="cx-pin-digit" id="pin-1" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off">
+            <input type="password" class="cx-pin-digit" id="pin-2" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off">
+            <input type="password" class="cx-pin-digit" id="pin-3" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off">
+            <input type="password" class="cx-pin-digit" id="pin-4" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off">
+          </div>
+        </div>
+
+        <!-- Bouton connexion -->
+        <button class="btn-connexion" id="btn-cx" onclick="connecterMembre()">
+          <span id="cx-btn-txt" data-fr="🔓 Se connecter" data-en="🔓 Log in">🔓 Se connecter</span>
+        </button>
+
+        <!-- Message statut connexion -->
+        <div class="cx-msg" id="cx-msg"></div>
+
+        <!-- Lien reset PIN -->
+        <span class="cx-reset-link" onclick="resetPinLien()"
+              data-fr="🔑 PIN oublié ? Réinitialiser via WhatsApp"
+              data-en="🔑 Forgot PIN? Reset via WhatsApp">🔑 PIN oublié ? Réinitialiser via WhatsApp</span>
+
+        <!-- Résultat : plateformes déverrouillées -->
+        <div class="cx-resultat" id="cx-resultat">
+          <div class="cx-resultat-header">
+            <div class="cx-avatar">👤</div>
+            <div>
+              <h4 id="cx-nom-affiche">Membre NGD</h4>
+              <p id="cx-id-affiche">ID : —</p>
+            </div>
+          </div>
+          <div class="cx-plateformes">
+            <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="cx-plateforme-btn">
+              <span class="cpb-ico">🤖</span>
+              <span data-fr="Bot CHALLENGER — Tour de Contrôle" data-en="Bot CHALLENGER — Control Tower">Bot CHALLENGER — Tour de Contrôle</span>
+              <span class="cpb-arrow">→</span>
+            </a>
+            <a href="https://link.radioking.com/castingfm" target="_blank" class="cx-plateforme-btn" id="cx-btn-casting">
+              <span class="cpb-ico">📻</span>
+              <span data-fr="CastingFM — Radio 24h/7j" data-en="CastingFM — Radio 24/7">CastingFM — Radio 24h/7j</span>
+              <span class="cpb-arrow">→</span>
+            </a>
+            <a href="https://youtube.com/@voteconnect?si=iJhrKcktcZLeHQJb" target="_blank" class="cx-plateforme-btn">
+              <span class="cpb-ico">📺</span>
+              <span data-fr="ChallengeF TV — Coaching Live" data-en="ChallengeF TV — Live Coaching">ChallengeF TV — Coaching Live</span>
+              <span class="cpb-arrow">→</span>
+            </a>
+            <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="cx-plateforme-btn">
+              <span class="cpb-ico">🛒</span>
+              <span data-fr="Portail TCL — 3 Boutiques en 1" data-en="TCL Portal — 3 Shops in 1">Portail TCL — 3 Boutiques en 1</span>
+              <span class="cpb-arrow">→</span>
+            </a>
+            <a href="https://coachmorgans.github.io/lms-cf/" target="_blank" class="cx-plateforme-btn">
+              <span class="cpb-ico">📚</span>
+              <span data-fr="LMS ChallengeFinancier™ — Formation" data-en="LMS ChallengeFinancier™ — Training">LMS ChallengeFinancier™ — Formation</span>
+              <span class="cpb-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARTE DROITE — Informations plateformes -->
+      <div class="connexion-info-card">
+        <h3 data-fr="5 Plateformes déverrouillées à la connexion" data-en="5 Platforms unlocked on login">5 Plateformes déverrouillées à la connexion</h3>
+        <div class="cx-info-item">
+          <div class="cx-info-ico">🤖</div>
+          <div class="cx-info-txt">
+            <h4 data-fr="Bot CHALLENGER" data-en="Bot CHALLENGER">Bot CHALLENGER</h4>
+            <p data-fr="Tour de Contrôle unique — TCL, Mi Sikah, LMS, Essai NGD" data-en="Single Control Tower — TCL, Mi Sikah, LMS, NGD Essay">Tour de Contrôle unique — TCL, Mi Sikah, LMS, Essai NGD</p>
+          </div>
+        </div>
+        <div class="cx-info-item">
+          <div class="cx-info-ico">📻</div>
+          <div class="cx-info-txt">
+            <h4>CastingFM</h4>
+            <p data-fr="Web Radio 24h/7j — UEMOA · CEMAC · CEDEAO" data-en="Web Radio 24/7 — UEMOA · CEMAC · ECOWAS">Web Radio 24h/7j — UEMOA · CEMAC · CEDEAO</p>
+          </div>
+        </div>
+        <div class="cx-info-item">
+          <div class="cx-info-ico">📺</div>
+          <div class="cx-info-txt">
+            <h4 data-fr="ChallengeF TV — Coaching Live" data-en="ChallengeF TV — Live Coaching">ChallengeF TV — Coaching Live</h4>
+            <p data-fr="Ven 19h–20h · Sam 9h–11h / 18h–20h · Dim 9h–11h / 18h–20h" data-en="Fri 7–8pm · Sat 9–11am / 6–8pm · Sun 9–11am / 6–8pm">Ven 19h–20h · Sam 9h–11h / 18h–20h · Dim 9h–11h / 18h–20h</p>
+          </div>
+        </div>
+        <div class="cx-info-item">
+          <div class="cx-info-ico">🛒</div>
+          <div class="cx-info-txt">
+            <h4 data-fr="Portail TCL — 3 Boutiques en 1" data-en="TCL Portal — 3 Shops in 1">Portail TCL — 3 Boutiques en 1</h4>
+            <p data-fr="Recharges · Courses · Resto · Transport · Quincaillerie + CashBack 2,5%" data-en="Top-ups · Groceries · Resto · Transport · Hardware + 2.5% CashBack">Recharges · Courses · Resto · Transport · Quincaillerie + CashBack 2,5%</p>
+          </div>
+        </div>
+        <div class="cx-info-item">
+          <div class="cx-info-ico">📚</div>
+          <div class="cx-info-txt">
+            <h4 data-fr="LMS ChallengeFinancier™" data-en="LMS ChallengeFinancier™">LMS ChallengeFinancier™</h4>
+            <p data-fr="Formation certifiante · Bitcoin · Finances décentralisées" data-en="Certified training · Bitcoin · Decentralized finance">Formation certifiante · Bitcoin · Finances décentralisées</p>
+          </div>
+        </div>
+        <!-- Pas encore inscrit ? -->
+        <div style="margin-top:4px;padding:14px;background:rgba(201,168,76,0.12);border-radius:8px;border:1px solid rgba(201,168,76,0.25);">
+          <p style="font-size:0.83rem;color:rgba(255,255,255,0.75);line-height:1.5;" data-fr="Pas encore membre NGD ? Enregistrez-vous gratuitement ci-dessous pour obtenir votre code PIN Mi Sikah." data-en="Not yet an NGD member? Register for free below to get your Mi Sikah PIN code.">Pas encore membre NGD ? Enregistrez-vous gratuitement ci-dessous pour obtenir votre code PIN Mi Sikah.</p>
+          <a href="#rejoindre" class="btn-or" style="display:inline-block;margin-top:10px;font-size:0.88rem;padding:9px 18px;"
+             data-fr="🌱 S'enregistrer maintenant" data-en="🌱 Register now">🌱 S'enregistrer maintenant</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1104,14 +918,8 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
 <section class="section regions-section" id="regions">
   <div class="section-inner">
     <p class="section-kicker" data-fr="Territorialité Citoyenne" data-en="Citizens' Territoriality">Territorialité Citoyenne</p>
-    <h2 class="section-title"
-        data-fr="7 Régions Pilotes — Laboratoires du Pouvoir Local"
-        data-en="7 Pilot Regions — Local Power Laboratories">7 Régions Pilotes — Laboratoires du Pouvoir Local</h2>
-    <p class="section-sub"
-       data-fr="Ces 7 régions de Côte d'Ivoire constituent le laboratoire fondateur du modèle NGD. Chaque citoyen y devient acteur de la gouvernance alternative via TCL, Mi Sikah et la candidature colistier 2028."
-       data-en="These 7 regions of Côte d'Ivoire form the founding laboratory of the NGD model. Each citizen becomes an actor of alternative governance through TCL, Mi Sikah and the 2028 co-candidacy.">
-      Ces 7 régions de Côte d'Ivoire constituent le laboratoire fondateur. Chaque citoyen y devient acteur de la gouvernance alternative — <strong class="hi-or">TCL · Mi Sikah · Candidature 2028</strong>.
-    </p>
+    <h2 class="section-title" data-fr="7 Régions Pilotes — Laboratoires du Pouvoir Local" data-en="7 Pilot Regions — Local Power Laboratories">7 Régions Pilotes — Laboratoires du Pouvoir Local</h2>
+    <p class="section-sub">Ces 7 régions de Côte d'Ivoire constituent le laboratoire fondateur. Chaque citoyen y devient acteur de la gouvernance alternative — <strong class="hi-or">TCL · Mi Sikah · Candidature 2028</strong>.</p>
     <div class="regions-grid">
       <div class="region-card fu"><div class="region-icon">🏙️</div><div class="region-nom">District d'Abidjan</div><div class="region-pop">6 321 017 hab.</div></div>
       <div class="region-card fu"><div class="region-icon">🏛️</div><div class="region-nom">District de Yamoussoukro</div><div class="region-pop">372 559 hab.</div></div>
@@ -1123,10 +931,7 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
     </div>
     <div class="momentum-badge">
       <span class="mb-icon">⚡</span>
-      <span data-fr="MOMENTUM CLÉ : Élections Municipales & Régionales couplées — Septembre 2028 · Côte d'Ivoire · 7 régions pilotes · Colistiers NGD en partenariat LFA-CI"
-            data-en="KEY MOMENTUM: Coupled Municipal & Regional elections — September 2028 · Côte d'Ivoire · 7 pilot regions · NGD co-candidates in LFA-CI partnership">
-        MOMENTUM CLÉ : Élections Municipales & Régionales couplées — Septembre 2028 · Côte d'Ivoire · 7 régions pilotes · Colistiers NGD en partenariat LFA-CI
-      </span>
+      <span>MOMENTUM CLÉ : Élections Municipales & Régionales couplées — Septembre 2028 · Côte d'Ivoire · 7 régions pilotes · Colistiers NGD en partenariat LFA-CI</span>
     </div>
   </div>
 </section>
@@ -1134,18 +939,16 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
 <!-- LIEN LP GR -->
 <section class="section lpgr-section">
   <div class="section-inner">
-    <p class="section-kicker" data-fr="Porte d'entrée Principale" data-en="Main Entry Point">Porte d'entrée Principale</p>
+    <p class="section-kicker" data-fr="Porte d'entrée Principale CI" data-en="Main CI Entry Point">Porte d'entrée Principale CI</p>
     <div class="lpgr-card">
       <div class="lpgr-text">
         <h3 data-fr="La Grande Réappropriation — NGD · Club des 8" data-en="La Grande Réappropriation — NGD · Club of 8">La Grande Réappropriation — NGD · Club des 8</h3>
-        <p data-fr="Accédez à l'écosystème complet VoteConnect : Essai Autobiographique, Portail TCL, LMS ChallengeFinancier™, Bot CHALLENGER. Enregistrement NGD obligatoire pour déverrouiller les 3 plateformes."
-           data-en="Access the complete VoteConnect ecosystem: Autobiographical Essay, TCL Portal, LMS ChallengeFinancier™, Bot CHALLENGER. Mandatory NGD registration to unlock the 3 platforms.">
+        <p data-fr="Accédez à l'écosystème complet VoteConnect : Essai Autobiographique, Portail TCL, LMS ChallengeFinancier™, Bot CHALLENGER. Enregistrement NGD obligatoire pour déverrouiller les 3 plateformes." data-en="Access the complete VoteConnect ecosystem: Autobiographical Essay, TCL Portal, LMS ChallengeFinancier™, Bot CHALLENGER. Mandatory NGD registration to unlock the 3 platforms.">
           Accédez à l'écosystème complet VoteConnect : Essai Autobiographique, Portail TCL, LMS ChallengeFinancier™, Bot CHALLENGER. Enregistrement NGD obligatoire.
         </p>
       </div>
       <a href="https://coachmorgans.github.io/grande-reappropriation/" target="_blank"
          class="btn-vert btn-locked" id="btn-lpgr-w"
-         data-fr="🌱 Accéder à la LP GR" data-en="🌱 Access LP GR"
          onclick="return checkLocked(event,'btn-lpgr-w')">🌱 Accéder à la LP GR</a>
     </div>
   </div>
@@ -1162,7 +965,6 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
       L'enregistrement déverrouille l'accès au Coaching Live, à la Web Radio <strong class="hi-or">CastingFM</strong> et à l'écosystème VoteConnect.
     </p>
     <div class="enreg-grid">
-
       <!-- Animateur NGD CI -->
       <div class="enreg-card fu">
         <div class="enreg-ico ico-ci">🌱</div>
@@ -1170,22 +972,13 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
         <p class="esub" data-fr="Citoyen ivoirien · 7 régions pilotes CI" data-en="Ivorian citizen · 7 CI pilot regions">Citoyen ivoirien · 7 régions pilotes CI</p>
         <form class="enreg-form" id="form-anim-w" onsubmit="soumettreW(event,'animateur')">
           <div class="form-row">
-            <div class="form-group">
-              <label data-fr="Prénom *" data-en="First name *">Prénom *</label>
-              <input type="text" name="prenom" placeholder="Votre prénom" required>
-            </div>
-            <div class="form-group">
-              <label data-fr="Nom *" data-en="Last name *">Nom *</label>
-              <input type="text" name="nom" placeholder="Votre nom" required>
-            </div>
+            <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" placeholder="Votre prénom" required></div>
+            <div class="form-group"><label>Nom *</label><input type="text" name="nom" placeholder="Votre nom" required></div>
           </div>
           <div class="form-row">
+            <div class="form-group"><label>Téléphone / WhatsApp *</label><input type="tel" name="telephone" placeholder="07 XX XX XX XX" required></div>
             <div class="form-group">
-              <label data-fr="Téléphone / WhatsApp *" data-en="Phone / WhatsApp *">Téléphone / WhatsApp *</label>
-              <input type="tel" name="telephone" placeholder="07 XX XX XX XX" required>
-            </div>
-            <div class="form-group">
-              <label data-fr="Région pilote *" data-en="Pilot region *">Région pilote *</label>
+              <label>Région pilote *</label>
               <select name="region" required>
                 <option value="">— Choisir —</option>
                 <option value="District d'Abidjan">District d'Abidjan</option>
@@ -1199,7 +992,7 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
             </div>
           </div>
           <div class="form-group" style="margin-bottom:10px">
-            <label data-fr="Commune / Quartier *" data-en="Commune / District *">Commune / Quartier *</label>
+            <label>Commune / Quartier *</label>
             <input type="text" name="commune" placeholder="Ex: Cocody, Yopougon..." required>
           </div>
           <div class="form-msg" id="msg-anim-w"></div>
@@ -1209,78 +1002,47 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
           </button>
         </form>
       </div>
-
       <!-- Délégué-Pays UEMOA/CEMAC/CEDEAO -->
       <div class="enreg-card fu">
         <div class="enreg-ico ico-uemoa">🌍</div>
         <h3 data-fr="Délégué-Pays NGD" data-en="NGD Country Delegate">Délégué-Pays NGD</h3>
-        <p class="esub"
-           data-fr="UEMOA · CEMAC · CEDEAO — Résident en Côte d'Ivoire"
-           data-en="UEMOA · CEMAC · ECOWAS — Residing in Côte d'Ivoire">
-           UEMOA · CEMAC · CEDEAO — Résident en Côte d'Ivoire</p>
+        <p class="esub" data-fr="UEMOA · CEMAC · CEDEAO — Résident en Côte d'Ivoire" data-en="UEMOA · CEMAC · ECOWAS — Residing in Côte d'Ivoire">UEMOA · CEMAC · CEDEAO — Résident en Côte d'Ivoire</p>
         <form class="enreg-form" id="form-del-w" onsubmit="soumettreW(event,'delegue')">
           <div class="form-row">
-            <div class="form-group">
-              <label data-fr="Prénom *" data-en="First name *">Prénom *</label>
-              <input type="text" name="prenom" placeholder="Votre prénom" required>
-            </div>
-            <div class="form-group">
-              <label data-fr="Nom *" data-en="Last name *">Nom *</label>
-              <input type="text" name="nom" placeholder="Votre nom" required>
-            </div>
+            <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" placeholder="Votre prénom" required></div>
+            <div class="form-group"><label>Nom *</label><input type="text" name="nom" placeholder="Votre nom" required></div>
           </div>
           <div class="form-row">
+            <div class="form-group"><label>Téléphone / WhatsApp *</label><input type="tel" name="telephone" placeholder="07 XX XX XX XX" required></div>
             <div class="form-group">
-              <label data-fr="Téléphone / WhatsApp *" data-en="Phone / WhatsApp *">Téléphone / WhatsApp *</label>
-              <input type="tel" name="telephone" placeholder="07 XX XX XX XX" required>
-            </div>
-            <div class="form-group">
-              <label data-fr="Zone d'origine *" data-en="Zone of origin *">Zone d'origine *</label>
+              <label>Zone d'origine *</label>
               <select name="zone_origine" required onchange="majPlaceholderVille(this.value)">
                 <option value="">— Choisir votre zone —</option>
                 <optgroup label="🟢 UEMOA">
-                  <option value="Bénin">🇧🇯 Bénin</option>
-                  <option value="Burkina Faso">🇧🇫 Burkina Faso</option>
-                  <option value="Guinée-Bissau">🇬🇼 Guinée-Bissau</option>
-                  <option value="Mali">🇲🇱 Mali</option>
-                  <option value="Niger">🇳🇪 Niger</option>
-                  <option value="Sénégal">🇸🇳 Sénégal</option>
-                  <option value="Togo">🇹🇬 Togo</option>
+                  <option value="Bénin">🇧🇯 Bénin</option><option value="Burkina Faso">🇧🇫 Burkina Faso</option>
+                  <option value="Guinée-Bissau">🇬🇼 Guinée-Bissau</option><option value="Mali">🇲🇱 Mali</option>
+                  <option value="Niger">🇳🇪 Niger</option><option value="Sénégal">🇸🇳 Sénégal</option><option value="Togo">🇹🇬 Togo</option>
                 </optgroup>
                 <optgroup label="🔴 CEMAC">
-                  <option value="Cameroun">🇨🇲 Cameroun</option>
-                  <option value="Centrafrique">🇨🇫 Centrafrique</option>
-                  <option value="Congo">🇨🇬 Congo</option>
-                  <option value="Gabon">🇬🇦 Gabon</option>
-                  <option value="Guinée Équatoriale">🇬🇶 Guinée Équatoriale</option>
-                  <option value="Tchad">🇹🇩 Tchad</option>
+                  <option value="Cameroun">🇨🇲 Cameroun</option><option value="Centrafrique">🇨🇫 Centrafrique</option>
+                  <option value="Congo">🇨🇬 Congo</option><option value="Gabon">🇬🇦 Gabon</option>
+                  <option value="Guinée Équatoriale">🇬🇶 Guinée Équatoriale</option><option value="Tchad">🇹🇩 Tchad</option>
                 </optgroup>
                 <optgroup label="🔵 CEDEAO">
-                  <option value="Ghana">🇬🇭 Ghana</option>
-                  <option value="Nigeria">🇳🇬 Nigeria</option>
+                  <option value="Ghana">🇬🇭 Ghana</option><option value="Nigeria">🇳🇬 Nigeria</option>
                   <option value="Autre CEDEAO">Autre CEDEAO</option>
                 </optgroup>
               </select>
             </div>
           </div>
           <div class="form-row">
+            <div class="form-group"><label>Ville / Département d'origine *</label><input type="text" name="ville_origine" id="ville-w" placeholder="Ex: Cotonou, Dakar..." required></div>
             <div class="form-group">
-              <label data-fr="Ville / Département d'origine *" data-en="City / Department of origin *">Ville / Département d'origine *</label>
-              <input type="text" name="ville_origine" id="ville-w" placeholder="Ex: Cotonou, Dakar..." required>
-            </div>
-            <div class="form-group">
-              <label data-fr="Quartier à Abidjan *" data-en="District in Abidjan *">Quartier à Abidjan *</label>
+              <label>Quartier à Abidjan *</label>
               <select name="quartier_abidjan" required>
                 <option value="">— Votre quartier —</option>
-                <option value="Adjamé">Adjamé</option>
-                <option value="Yopougon">Yopougon</option>
-                <option value="Abobo">Abobo</option>
-                <option value="Cocody">Cocody</option>
-                <option value="Marcory">Marcory</option>
-                <option value="Koumassi">Koumassi</option>
-                <option value="Treichville">Treichville</option>
-                <option value="Plateau">Plateau</option>
-                <option value="Autre">Autre</option>
+                <option>Adjamé</option><option>Yopougon</option><option>Abobo</option><option>Cocody</option>
+                <option>Marcory</option><option>Koumassi</option><option>Treichville</option><option>Plateau</option><option>Autre</option>
               </select>
             </div>
           </div>
@@ -1291,7 +1053,6 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
           </button>
         </form>
       </div>
-
     </div>
   </div>
 </section>
@@ -1302,23 +1063,20 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="flogo">Vers Plus de Pouvoir Local</div>
-        <p data-fr="Penser Global · Agir Local. Le Marché Commun Citoyen — UEMOA, CEMAC, CEDEAO. NGD · VoteConnect · 2026–2035."
-           data-en="Think Global · Act Local. The Citizens' Common Market — UEMOA, CEMAC, ECOWAS. NGD · VoteConnect · 2026–2035.">
-          Penser Global · Agir Local. Le Marché Commun Citoyen — UEMOA, CEMAC, CEDEAO. NGD · VoteConnect · 2026–2035.
-        </p>
+        <p>Penser Global · Agir Local. Le Marché Commun Citoyen — UEMOA, CEMAC, CEDEAO. NGD · VoteConnect · 2026–2035.</p>
         <div class="legal">VoteConnect SARL · RCCM CI-ABJ-03-2025-B12-03666<br>Cocody-Angré Djibi 3, Abidjan, Côte d'Ivoire</div>
       </div>
       <div class="fcol">
-        <h5 data-fr="Plateformes" data-en="Platforms">Plateformes</h5>
+        <h5>Plateformes</h5>
         <ul>
           <li><a href="https://t.me/ChallengeFinancierbot" target="_blank">🤖 Bot CHALLENGER</a></li>
           <li><a href="https://coachmorgans.github.io/essai/" target="_blank">📖 Essai Autobiographique</a></li>
-          <li><a href="https://coachmorgans.github.io/tcl/" target="_blank">🛒 Portail TCL</a></li>
+          <li><a href="https://t.me/ChallengeFinancierbot" target="_blank">🛒 Portail TCL</a></li>
           <li><a href="https://coachmorgans.github.io/lms-cf/" target="_blank">🎓 LMS ChallengeFinancier™</a></li>
         </ul>
       </div>
       <div class="fcol">
-        <h5 data-fr="Landing Pages" data-en="Landing Pages">Landing Pages</h5>
+        <h5>Landing Pages</h5>
         <ul>
           <li><a href="https://coachmorgans.github.io/grande-reappropriation/" target="_blank">La Grande Réappropriation</a></li>
           <li><a href="https://coachmorgans.github.io/challengefinancier/" target="_blank">ChallengeFinancier™</a></li>
@@ -1327,24 +1085,24 @@ footer { background: var(--brun); color: var(--blanc); padding: 48px var(--px) 2
       <div class="fcol">
         <h5>Contact & Live</h5>
         <ul>
-          <li><a href="https://wa.me/2250767814333" target="_blank">💬 WhatsApp Admin</a></li>
+          <li><a href="https://wa.me/2250767560908" target="_blank">💬 WhatsApp Admin</a></li>
           <li><a href="https://www.youtube.com/@VoteConnect" target="_blank">▶ YouTube VoteConnect</a></li>
-          <li><a href="https://youtube.com/@LFA-TV-h5z" target="_blank">▶ YouTube LFA TV</a></li>
+          <li><a href="https://youtube.com/@voteconnect?si=iJhrKcktcZLeHQJb" target="_blank">▶ ChallengeF TV</a></li>
           <li><a href="https://t.me/ChallengeFinancierbot" target="_blank">📱 Telegram</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 VoteConnect SARL · NGD · <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
-      <div class="footer-motto" data-fr="Penser Global · Agir Local · Une Afrique UNIE" data-en="Think Global · Act Local · A UNITED Africa">Penser Global · Agir Local · Une Afrique UNIE</div>
+      <p>© 2026 VoteConnect SARL · NGD · Tous droits réservés</p>
+      <div class="footer-motto">Penser Global · Agir Local · Une Afrique UNIE</div>
     </div>
   </div>
 </footer>
 
 <script>
-/* ─── CONFIG ──────────────────────────────────────────── */
-const GS_URL  = 'https://script.google.com/macros/s/AKfycbzdqCRk06C35clJhQcDS1AN3eZvzq4JO5UjsRU1E7y1pDfTu-xHt6ppSM6pD0UnGn10/exec';
-const SOURCE  = 'LP_WADAGNI';
+/* ─── CONFIG ─────────────────────────────────────────── */
+const GS_URL = 'https://script.google.com/macros/s/AKfycbzdqCRk06C35clJhQcDS1AN3eZvzq4JO5UjsRU1E7y1pDfTu-xHt6ppSM6pD0UnGn10/exec';
+const SOURCE = 'LP_WADAGNI';
 
 // Codes Live valides
 const CODES_LIVE_VALIDES = [
@@ -1354,9 +1112,16 @@ const CODES_LIVE_VALIDES = [
   'LIVE-PPL-2026-OPEN'
 ];
 
-/* ─── COMPTEUR DÉLÉGATIONS PAYS NGD ──────────────────── */
-const DATE_FIN_DELEGATIONS = new Date('2026-06-30T23:59:59');
+/* ─── NORMALISATION TÉLÉPHONE ────────────────────────── */
+function normaliserTel(tel) {
+  let t = (tel || '').toString().trim().replace(/\s/g, '');
+  if (t.startsWith('+')) t = '00' + t.slice(1);
+  if (t.startsWith('225') && t.length === 11) t = '00' + t;
+  return t;
+}
 
+/* ─── COMPTEUR DÉLÉGATIONS ───────────────────────────── */
+const DATE_FIN_DELEGATIONS = new Date('2026-06-30T23:59:59');
 function majCompteurDelegations() {
   const now  = new Date();
   const diff = DATE_FIN_DELEGATIONS - now;
@@ -1369,26 +1134,160 @@ function majCompteurDelegations() {
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
-  const f = n => String(n).padStart(2,'0');
-  const dj = document.getElementById('dd-j');
-  const dh = document.getElementById('dd-h');
-  const dm = document.getElementById('dd-m');
-  const ds = document.getElementById('dd-s');
-  if (dj) dj.textContent = f(j);
-  if (dh) dh.textContent = f(h);
-  if (dm) dm.textContent = f(m);
-  if (ds) ds.textContent = f(s);
+  const f = n => String(n).padStart(2, '0');
+  const dj = document.getElementById('dd-j'); if (dj) dj.textContent = f(j);
+  const dh = document.getElementById('dd-h'); if (dh) dh.textContent = f(h);
+  const dm = document.getElementById('dd-m'); if (dm) dm.textContent = f(m);
+  const ds = document.getElementById('dd-s'); if (ds) ds.textContent = f(s);
 }
 majCompteurDelegations();
 setInterval(majCompteurDelegations, 1000);
 
+/* ─── PIN : navigation automatique entre cases ────────── */
+document.querySelectorAll('.cx-pin-digit').forEach((input, idx, all) => {
+  input.addEventListener('input', () => {
+    // Filtrer : ne garder que les chiffres
+    input.value = input.value.replace(/\D/g, '');
+    if (input.value) {
+      input.classList.add('filled');
+      // Passer à la case suivante
+      if (idx < all.length - 1) all[idx + 1].focus();
+    } else {
+      input.classList.remove('filled');
+    }
+  });
+  input.addEventListener('keydown', (e) => {
+    // Backspace : revenir à la case précédente si vide
+    if (e.key === 'Backspace' && !input.value && idx > 0) {
+      all[idx - 1].focus();
+      all[idx - 1].classList.remove('filled');
+    }
+  });
+  // Paste : répartir les chiffres
+  input.addEventListener('paste', (e) => {
+    e.preventDefault();
+    const digits = (e.clipboardData.getData('text') || '').replace(/\D/g, '').slice(0, 4);
+    digits.split('').forEach((d, i) => {
+      if (all[i]) { all[i].value = d; all[i].classList.add('filled'); }
+    });
+    if (all[digits.length - 1]) all[Math.min(digits.length, 3)].focus();
+  });
+});
+
+/* ─── CONNEXION MEMBRE — logique principale ──────────── */
+async function connecterMembre() {
+  const tel    = normaliserTel(document.getElementById('cx-tel').value);
+  const pin    = ['pin-1','pin-2','pin-3','pin-4'].map(id => document.getElementById(id).value).join('');
+  const msgEl  = document.getElementById('cx-msg');
+  const btn    = document.getElementById('btn-cx');
+  const btnTxt = document.getElementById('cx-btn-txt');
+
+  // Validation locale
+  if (!tel || tel.length < 8) {
+    afficherMsgCx('err', '❌ Veuillez saisir votre numéro de téléphone.');
+    return;
+  }
+  if (pin.length !== 4 || !/^\d{4}$/.test(pin)) {
+    afficherMsgCx('err', '❌ Veuillez saisir votre code PIN à 4 chiffres.');
+    return;
+  }
+
+  // Chargement
+  btn.disabled = true;
+  btnTxt.textContent = '⏳ Vérification...';
+  afficherMsgCx('loading', '⏳ Vérification de vos identifiants en cours...');
+
+  try {
+    // Étape 1 : vérifier que le téléphone existe dans CF-DB
+    const qsTel = new URLSearchParams({ route: 'verifier_telephone', telephone: tel }).toString();
+    const resTel = await fetch(`${GS_URL}?${qsTel}`);
+    const dataTel = await resTel.json();
+
+    if (!dataTel || !dataTel.ok || !dataTel.enregistre) {
+      afficherMsgCx('err',
+        '❌ Numéro non trouvé dans la base NGD.\n\nEnregistrez-vous ci-dessous ou vérifiez votre numéro.'
+      );
+      btn.disabled = false;
+      btnTxt.textContent = '🔓 Se connecter';
+      return;
+    }
+
+    // Étape 2 : vérifier le PIN
+    const qsPin = new URLSearchParams({ route: 'verifier_pin', telephone: tel, pin }).toString();
+    const resPin = await fetch(`${GS_URL}?${qsPin}`);
+    const dataPin = await resPin.json();
+
+    if (!dataPin || !dataPin.success) {
+      const tentatives = dataPin && dataPin.tentatives_restantes
+        ? ` (${dataPin.tentatives_restantes} tentative(s) restante(s))`
+        : '';
+      afficherMsgCx('err', `❌ Code PIN incorrect${tentatives}. Vérifiez vos 4 chiffres.`);
+      btn.disabled = false;
+      btnTxt.textContent = '🔓 Se connecter';
+      // Effacer les cases PIN
+      ['pin-1','pin-2','pin-3','pin-4'].forEach(id => {
+        const el = document.getElementById(id);
+        el.value = ''; el.classList.remove('filled');
+      });
+      document.getElementById('pin-1').focus();
+      return;
+    }
+
+    // ✅ CONNEXION RÉUSSIE
+    const prenom = dataTel.prenom || dataPin.prenom || '';
+    const nom    = dataTel.nom    || dataPin.nom    || '';
+    const idNgd  = dataTel.id_ngd || dataPin.id_ngd || '—';
+
+    // Sauvegarder en sessionStorage
+    sessionStorage.setItem('ppl_registered', '1');
+    sessionStorage.setItem('ppl_tel', tel);
+    sessionStorage.setItem('ppl_nom', `${prenom} ${nom}`.trim());
+    sessionStorage.setItem('ppl_id',  idNgd);
+
+    // Afficher le résultat
+    afficherMsgCx('ok', `✅ Connexion réussie ! Bienvenue ${prenom ? ', ' + prenom : ''} 🎉`);
+    document.getElementById('cx-nom-affiche').textContent = `${prenom} ${nom}`.trim() || 'Membre NGD';
+    document.getElementById('cx-id-affiche').textContent  = `ID NGD : ${idNgd}`;
+    document.getElementById('cx-resultat').classList.add('visible');
+
+    // Déverrouiller tous les boutons
+    debloquerBoutons();
+
+    // Faire défiler vers le résultat
+    setTimeout(() => {
+      document.getElementById('cx-resultat').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 300);
+
+  } catch (err) {
+    afficherMsgCx('err', '❌ Erreur réseau. Vérifiez votre connexion et réessayez.');
+    console.error('[CONNEXION]', err);
+  } finally {
+    btn.disabled = false;
+    btnTxt.textContent = '🔓 Se connecter';
+  }
+}
+
+function afficherMsgCx(type, texte) {
+  const el = document.getElementById('cx-msg');
+  el.className = 'cx-msg ' + type;
+  el.textContent = texte;
+}
+
+/* ─── RESET PIN — redirection WhatsApp Admin ──────────── */
+function resetPinLien() {
+  const tel   = document.getElementById('cx-tel').value.trim() || 'non renseigné';
+  const msg   = encodeURIComponent(
+    `Bonjour Coach Morgan's,\nJe souhaite réinitialiser mon code PIN Mi Sikah.\nMon numéro NGD : ${tel}\nMerci.`
+  );
+  window.open(`https://wa.me/2250767560908?text=${msg}`, '_blank');
+}
+
 /* ─── BOUTONS VERROUILLÉS ─────────────────────────────── */
 function debloquerBoutons() {
-  ['btn-tcl-w','btn-lpgr-w','btn-castingfm'].forEach(id => {
+  ['btn-tcl-w', 'btn-lpgr-w', 'btn-castingfm'].forEach(id => {
     const btn = document.getElementById(id);
     if (btn) btn.classList.add('unlocked');
   });
-  // Cacher les hints
   document.querySelectorAll('.btn-locked-hint').forEach(el => el.style.display = 'none');
   sessionStorage.setItem('ppl_registered', '1');
 }
@@ -1397,62 +1296,67 @@ function checkLocked(e, id) {
   const btn = document.getElementById(id);
   if (btn && !btn.classList.contains('unlocked')) {
     e.preventDefault();
-    document.getElementById('rejoindre').scrollIntoView({ behavior:'smooth', block:'start' });
+    // Rediriger vers la section connexion (plus pertinent que #rejoindre)
+    document.getElementById('connexion').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    afficherMsgCx('err', '🔒 Connectez-vous d\'abord pour accéder à cette plateforme.');
     return false;
   }
-  // ── TRACÉ AUDIENCE CASTINGFM ────────────────────────────
   if (id === 'btn-castingfm') {
     tracerAudience('ACCES_CASTINGFM', {
-      canal         : 'CastingFM_RadioKing',
-      lien          : 'https://link.radioking.com/castingfm',
-      horaire_acces : new Date().toLocaleString('fr-CI', { timeZone:'Africa/Abidjan' }),
-      lp_source     : 'LP_WADAGNI'
+      canal: 'CastingFM_RadioKing',
+      lien: 'https://link.radioking.com/castingfm',
+      horaire_acces: new Date().toLocaleString('fr-CI', { timeZone: 'Africa/Abidjan' }),
+      lp_source: 'LP_WADAGNI'
     });
   }
   return true;
 }
 
-// Restaurer si déjà inscrit
+// Restaurer si déjà connecté dans la session
 if (sessionStorage.getItem('ppl_registered') === '1') {
-  document.addEventListener('DOMContentLoaded', debloquerBoutons);
+  document.addEventListener('DOMContentLoaded', () => {
+    debloquerBoutons();
+    const nom   = sessionStorage.getItem('ppl_nom') || 'Membre NGD';
+    const idNgd = sessionStorage.getItem('ppl_id')  || '—';
+    const nomEl = document.getElementById('cx-nom-affiche');
+    const idEl  = document.getElementById('cx-id-affiche');
+    const res   = document.getElementById('cx-resultat');
+    if (nomEl) nomEl.textContent = nom;
+    if (idEl)  idEl.textContent  = `ID NGD : ${idNgd}`;
+    if (res)   res.classList.add('visible');
+  });
 }
 
 /* ─── LANGUE ──────────────────────────────────────────── */
 let lang = 'fr';
 function setLang(l) {
   lang = l;
-  document.getElementById('btn-fr').classList.toggle('active', l==='fr');
-  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
   document.documentElement.lang = l;
   document.querySelectorAll('[data-fr]').forEach(el => {
-    const t = el.getAttribute('data-'+l);
+    const t = el.getAttribute('data-' + l);
     if (t) el.innerHTML = t;
   });
 }
 
-/* ─── TRACÉ AUDIENCE TEMPS RÉEL → CF-DB v3.1 ─────────────
-   Feuille CONTACTS · route=contact
-   Type : ACCES_LIVE | ACCES_CASTINGFM
-   Données : canal · code_live · timestamp · source
-   Silencieux — aucun affichage utilisateur
-─────────────────────────────────────────────────────────── */
+/* ─── TRACÉ AUDIENCE ─────────────────────────────────── */
 async function tracerAudience(canal, infos) {
   try {
     await fetch(GS_URL, {
       method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        route     : 'contact',
-        source    : SOURCE,
-        sujet     : canal,                    // ACCES_LIVE | ACCES_CASTINGFM
-        message   : JSON.stringify(infos),    // détails canal
-        timestamp : new Date().toISOString(),
-        // Téléphone récupéré depuis sessionStorage si disponible
-        telephone : sessionStorage.getItem('ppl_tel') || 'non_identifie',
+        route:      'contact',
+        source:     SOURCE,
+        sujet:      canal,
+        message:    JSON.stringify(infos),
+        timestamp:  new Date().toISOString(),
+        telephone:  sessionStorage.getItem('ppl_tel') || 'non_identifie',
         nom_complet: sessionStorage.getItem('ppl_nom') || ''
       })
     });
-  } catch(e) { /* silencieux */ }
+  } catch (e) { /* silencieux */ }
 }
 
 /* ─── VÉRIFICATION CODE LIVE ──────────────────────────── */
@@ -1460,68 +1364,55 @@ function verifierCodeLive() {
   const code  = document.getElementById('code-live').value.trim().toUpperCase();
   const msg   = document.getElementById('acces-msg');
   const links = document.getElementById('acces-links');
-
   if (!code) {
     msg.className = 'acces-msg err';
-    msg.textContent = lang === 'fr' ? '❌ Veuillez saisir votre code.' : '❌ Please enter your code.';
+    msg.textContent = '❌ Veuillez saisir votre code.';
     return;
   }
-
   if (CODES_LIVE_VALIDES.includes(code)) {
     msg.className = 'acces-msg ok';
-    msg.textContent = lang === 'fr'
-      ? '✅ Code validé ! Accédez au Live ci-dessous.'
-      : '✅ Code validated! Access the Live below.';
+    msg.textContent = '✅ Code validé ! Accédez au Live ci-dessous.';
     links.classList.add('visible');
     sessionStorage.setItem('ppl_live_ok', '1');
-
-    // ── TRACÉ AUDIENCE COACHING LIVE ──────────────────────
     tracerAudience('ACCES_LIVE', {
-      code_utilise  : code,
-      canal         : 'YouTube_Telegram_Live',
-      horaire_acces : new Date().toLocaleString('fr-CI', { timeZone:'Africa/Abidjan' }),
-      lp_source     : 'LP_WADAGNI'
+      code_utilise: code, canal: 'YouTube_Telegram_Live',
+      horaire_acces: new Date().toLocaleString('fr-CI', { timeZone: 'Africa/Abidjan' }),
+      lp_source: 'LP_WADAGNI'
     });
-
   } else {
     msg.className = 'acces-msg err';
-    msg.textContent = lang === 'fr'
-      ? '❌ Code incorrect. Vérifiez votre WhatsApp ou Telegram.'
-      : '❌ Incorrect code. Check your WhatsApp or Telegram.';
+    msg.textContent = '❌ Code incorrect. Vérifiez votre WhatsApp ou Telegram.';
     links.classList.remove('visible');
   }
 }
-
-// Restaurer accès si déjà validé
 if (sessionStorage.getItem('ppl_live_ok') === '1') {
   document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('acces-links').classList.add('visible');
+    const el = document.getElementById('acces-links');
+    if (el) el.classList.add('visible');
   });
 }
 
-/* ─── PLACEHOLDER VILLE SELON ZONE ───────────────────── */
+/* ─── PLACEHOLDER VILLE ───────────────────────────────── */
 const PH_VILLES = {
   'Bénin':'Ex: Cotonou, Porto-Novo...', 'Burkina Faso':'Ex: Ouagadougou, Bobo...',
-  'Guinée-Bissau':'Ex: Bissau, Bafatá...', 'Mali':'Ex: Bamako, Sikasso...',
+  'Guinée-Bissau':'Ex: Bissau...', 'Mali':'Ex: Bamako, Sikasso...',
   'Niger':'Ex: Niamey, Zinder...', 'Sénégal':'Ex: Dakar, Saint-Louis...',
   'Togo':'Ex: Lomé, Sokodé...', 'Cameroun':'Ex: Yaoundé, Douala...',
-  'Centrafrique':'Ex: Bangui...', 'Congo':'Ex: Brazzaville, Pointe-Noire...',
-  'Gabon':'Ex: Libreville, Port-Gentil...', 'Guinée Équatoriale':'Ex: Malabo...',
-  'Tchad':'Ex: N\'Djamena...', 'Ghana':'Ex: Accra, Kumasi...',
-  'Nigeria':'Ex: Lagos, Abuja, Kano...'
+  'Centrafrique':'Ex: Bangui...', 'Congo':'Ex: Brazzaville...',
+  'Gabon':'Ex: Libreville...', 'Guinée Équatoriale':'Ex: Malabo...',
+  'Tchad':'Ex: N\'Djamena...', 'Ghana':'Ex: Accra, Kumasi...', 'Nigeria':'Ex: Lagos, Abuja...'
 };
 function majPlaceholderVille(zone) {
   const el = document.getElementById('ville-w');
   if (el && PH_VILLES[zone]) el.placeholder = PH_VILLES[zone];
 }
 
-/* ─── SOUMISSION FORMULAIRES → CF-DB v3.1 ────────────── */
+/* ─── SOUMISSION FORMULAIRES ENREGISTREMENT ──────────── */
 async function soumettreW(event, profil) {
   event.preventDefault();
   const form    = event.target;
-  const formId  = profil === 'animateur' ? 'form-anim-w' : 'form-del-w';
-  const subId   = profil === 'animateur' ? 'sub-anim-w'  : 'sub-del-w';
-  const msgId   = profil === 'animateur' ? 'msg-anim-w'  : 'msg-del-w';
+  const subId   = profil === 'animateur' ? 'sub-anim-w' : 'sub-del-w';
+  const msgId   = profil === 'animateur' ? 'msg-anim-w' : 'msg-del-w';
   const btn     = document.getElementById(subId);
   const btnTxt  = btn.querySelector('.btn-text');
   const btnLoad = btn.querySelector('.btn-loading');
@@ -1535,9 +1426,7 @@ async function soumettreW(event, profil) {
 
   const fd = new FormData(form);
   const payload = { profil, source: SOURCE, timestamp: new Date().toISOString() };
-  fd.forEach((v,k) => { payload[k] = v; });
-
-  // Champ zone_origine → pays_origine pour compatibilité CF-DB
+  fd.forEach((v, k) => { payload[k] = v; });
   if (payload.zone_origine) payload.pays_origine = payload.zone_origine;
 
   try {
@@ -1546,29 +1435,23 @@ async function soumettreW(event, profil) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
-
     msgEl.className = 'form-msg success';
     msgEl.textContent = profil === 'animateur'
-      ? '✅ Enregistrement Animateur NGD confirmé ! Vous recevrez votre code Live par WhatsApp.'
-      : '✅ Enregistrement Délégué-Pays NGD confirmé ! Vous recevrez votre code Live par WhatsApp.';
-
-    // Sauvegarder identité pour tracé audience
+      ? '✅ Enregistrement Animateur NGD confirmé ! Vous recevrez votre code PIN par WhatsApp.'
+      : '✅ Enregistrement Délégué-Pays NGD confirmé ! Vous recevrez votre code PIN par WhatsApp.';
     sessionStorage.setItem('ppl_tel', payload.telephone || '');
-    sessionStorage.setItem('ppl_nom', `${payload.prenom||''} ${payload.nom||''}`.trim());
+    sessionStorage.setItem('ppl_nom', `${payload.prenom || ''} ${payload.nom || ''}`.trim());
     form.reset();
-    // Déverrouiller accès Live + boutons TCL et LP GR
     sessionStorage.setItem('ppl_live_ok', '1');
     debloquerBoutons();
     setTimeout(() => {
-      document.getElementById('acces-links').classList.add('visible');
-      document.getElementById('live').scrollIntoView({ behavior:'smooth', block:'start' });
+      const acLk = document.getElementById('acces-links');
+      if (acLk) acLk.classList.add('visible');
+      document.getElementById('live').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 1800);
-
-  } catch(err) {
+  } catch (err) {
     msgEl.className = 'form-msg error';
-    msgEl.textContent = lang === 'fr'
-      ? '❌ Erreur réseau. Vérifiez votre connexion et réessayez.'
-      : '❌ Network error. Check your connection and try again.';
+    msgEl.textContent = '❌ Erreur réseau. Vérifiez votre connexion et réessayez.';
   } finally {
     btn.disabled = false;
     btnTxt.style.display  = 'inline';
@@ -1578,9 +1461,9 @@ async function soumettreW(event, profil) {
 
 /* ─── ANIMATIONS SCROLL ───────────────────────────────── */
 const obs = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => {
+  entries.forEach((e, i) => {
     if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('on'), i*70);
+      setTimeout(() => e.target.classList.add('on'), i * 70);
       obs.unobserve(e.target);
     }
   });
