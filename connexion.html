@@ -214,6 +214,59 @@ body::before{
 </head>
 <body>
 
+<!-- MODAL CASTINGFM -->
+<div id="modalCastingFM"
+     onclick="fermerModal(event)"
+     style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);
+            backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:linear-gradient(160deg,#2e1a08 0%,#1a0a00 100%);
+              border:2px solid var(--g3);border-radius:16px;max-width:420px;width:100%;
+              padding:32px 24px;position:relative;text-align:center;
+              box-shadow:0 24px 80px rgba(0,0,0,0.6);">
+    <button onclick="fermerModalBtn()"
+            style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,0.12);
+                   border:none;color:var(--wh);font-size:1.2rem;width:32px;height:32px;
+                   border-radius:50%;cursor:pointer;display:flex;align-items:center;
+                   justify-content:center;transition:background .2s;font-family:'Nunito',sans-serif;">✕</button>
+    <img src="https://i.ibb.co/DPJF7jX8/Portrait-Branding-1.png"
+         alt="Coach Morgan's — CastingFM"
+         style="width:110px;height:110px;border-radius:50%;object-fit:cover;
+                border:3px solid var(--g3);margin:0 auto 18px;display:block;"
+         onerror="this.style.display='none'">
+    <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;
+                color:var(--gL);margin-bottom:8px;"
+         data-fr="📻 CastingFM" data-en="📻 CastingFM">📻 CastingFM</div>
+    <p style="font-size:0.88rem;color:var(--tx);line-height:1.6;margin-bottom:14px;"
+       data-fr="La voix du Pouvoir Local<br>UEMOA · CEMAC · CEDEAO<br><br>Musique africaine, formation financière et débats citoyens, 24h/24 depuis Abidjan."
+       data-en="The voice of Local Power<br>UEMOA · CEMAC · ECOWAS<br><br>African music, financial training and citizen debates, 24/7 from Abidjan.">
+      La voix du Pouvoir Local<br>UEMOA · CEMAC · CEDEAO<br><br>Musique africaine, formation financière et débats citoyens, 24h/24 depuis Abidjan.
+    </p>
+    <div style="display:inline-block;background:var(--r);color:var(--wh);
+                font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;
+                padding:10px 22px;border-radius:8px;letter-spacing:0.05em;margin-bottom:18px;"
+         data-fr="🎙️ RDV 14 JUIL 2026 20H · ÉMISSION INAUGURALE"
+         data-en="🎙️ JULY 14, 2026 8PM · INAUGURAL BROADCAST">
+      🎙️ RDV 14 JUIL 2026 20H · ÉMISSION INAUGURALE
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <a href="https://link.radioking.com/castingfm" target="_blank"
+         onclick="fermerModalBtn()"
+         style="display:flex;align-items:center;justify-content:center;gap:6px;
+                background:var(--g3);color:var(--bg);font-family:'Playfair Display',serif;
+                font-weight:700;font-size:0.88rem;padding:10px 18px;border-radius:6px;
+                text-decoration:none;transition:opacity .15s;"
+         data-fr="📻 Écouter en direct" data-en="📻 Listen Live">📻 Écouter en direct</a>
+      <a href="https://t.me/ChallengeFinancierbot" target="_blank"
+         onclick="fermerModalBtn()"
+         style="display:flex;align-items:center;justify-content:center;gap:6px;
+                background:transparent;color:var(--wh);border:1.5px solid rgba(255,255,255,0.40);
+                font-family:'Playfair Display',serif;font-weight:600;font-size:0.88rem;
+                padding:10px 18px;border-radius:6px;text-decoration:none;transition:background .2s;"
+         data-fr="📱 Telegram" data-en="📱 Telegram">📱 Telegram</a>
+    </div>
+  </div>
+</div>
+
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="tb-logo" data-fr="COALITION 509 ÉLUS" data-en="COALITION 509 ELECTED">COALITION 509 ÉLUS</div>
@@ -373,20 +426,22 @@ body::before{
            data-fr="Plateforme de formation ChallengeFinancier™"
            data-en="ChallengeFinancier™ training platform">Plateforme de formation ChallengeFinancier™</div>
     </a>
-    <a class="mb-card orange" href="https://www.youtube.com/@ChallengeF_TV" target="_blank">
+    <a class="mb-card orange" href="https://youtube.com/@voteconnect?si=fv-3oCETmaypBGzG" target="_blank">
       <span class="mb-card-ico">📺</span>
       <div class="mb-card-title" data-fr="COACHING LIVE" data-en="COACHING LIVE">COACHING LIVE</div>
       <div class="mb-card-desc"
            data-fr="Sessions ChallengeF TV · Replays disponibles"
            data-en="ChallengeF TV sessions · Replays available">Sessions ChallengeF TV · Replays disponibles</div>
     </a>
-    <a class="mb-card orange" href="https://link.radioking.com/castingfm" target="_blank">
+    <button class="mb-card orange" onclick="ouvrirModal()"
+            style="border:1px solid var(--bd);background:var(--card);cursor:pointer;
+                   font-family:'Nunito',sans-serif;width:100%;">
       <span class="mb-card-ico">📻</span>
       <div class="mb-card-title" data-fr="CASTINGFM" data-en="CASTINGFM">CASTINGFM</div>
       <div class="mb-card-desc"
            data-fr="Radio Coalition Citoyenne · En direct"
            data-en="Citizens' Coalition Radio · Live stream">Radio Coalition Citoyenne · En direct</div>
-    </a>
+    </button>
     <a class="mb-card" href="https://coachmorgans.github.io/tcl/" target="_blank">
       <span class="mb-card-ico">🏛️</span>
       <div class="mb-card-title" data-fr="PORTAIL TCL" data-en="TCL PORTAL">PORTAIL TCL</div>
@@ -400,6 +455,21 @@ body::before{
 <div class="toast" id="toast"></div>
 
 <script>
+/* ── Modal CastingFM ── */
+function ouvrirModal() {
+  const m = document.getElementById('modalCastingFM');
+  m.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function fermerModalBtn() {
+  document.getElementById('modalCastingFM').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function fermerModal(e) {
+  if (e.target === document.getElementById('modalCastingFM')) fermerModalBtn();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fermerModalBtn(); });
+
 const GS_URL = 'https://script.google.com/macros/s/AKfycbzdqCRk06C35clJhQcDS1AN3eZvzq4JO5UjsRU1E7y1pDfTu-xHt6ppSM6pD0UnGn10/exec';
 let SESSION = { tel:null, prenom:null, id_ngd:null, region:null, commune:null };
 
