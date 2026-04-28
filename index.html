@@ -369,7 +369,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
 <!-- MODAL CASTINGFM -->
 <div class="modal-overlay" id="modalCastingFM" onclick="fermerModalCasting(event)">
   <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('modalCastingFM').classList.remove('visible');document.body.style.overflow=''">✕</button>
+    <button class="modal-close" onclick="document.getElementById('modalCastingFM').style.display='none';document.body.style.overflow=''">✕</button>
     <img src="https://i.ibb.co/DPJF7jX8/Portrait-Branding-1.png" alt="Coach Morgan's — CastingFM"
          class="modal-portrait"
          onerror="this.style.display='none'">
@@ -387,10 +387,10 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
     <div class="modal-btns">
       <a href="https://link.radioking.com/castingfm" target="_blank" class="btn-radio"
          data-fr="📻 Écouter en direct" data-en="📻 Listen Live"
-         onclick="document.getElementById('modalCastingFM').classList.remove('visible');document.body.style.overflow='';">📻 Écouter en direct</a>
+         onclick="document.getElementById('modalCastingFM').style.display='none';document.body.style.overflow='';">📻 Écouter en direct</a>
       <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-radio-out"
          data-fr="📱 Telegram" data-en="📱 Telegram"
-         onclick="document.getElementById('modalCastingFM').classList.remove('visible');document.body.style.overflow='';">📱 Telegram</a>
+         onclick="document.getElementById('modalCastingFM').style.display='none';document.body.style.overflow='';">📱 Telegram</a>
     </div>
   </div>
 </div>
@@ -1155,18 +1155,19 @@ if(sessionStorage.getItem('ppl_registered')==='1'){
 
 /* CORRECTION ③ — Modal CastingFM */
 function ouvrirModalCasting(){
-  document.getElementById('modalCastingFM').classList.add('visible');
+  const m=document.getElementById('modalCastingFM');
+  m.style.display='flex';
   document.body.style.overflow='hidden';
 }
 function fermerModalCasting(e){
   if(e.target===document.getElementById('modalCastingFM')){
-    document.getElementById('modalCastingFM').classList.remove('visible');
+    document.getElementById('modalCastingFM').style.display='none';
     document.body.style.overflow='';
   }
 }
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
-    document.getElementById('modalCastingFM').classList.remove('visible');
+    document.getElementById('modalCastingFM').style.display='none';
     document.body.style.overflow='';
   }
 });
