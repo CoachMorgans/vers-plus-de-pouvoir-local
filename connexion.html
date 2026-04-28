@@ -455,7 +455,14 @@ body::before{
 <div class="toast" id="toast"></div>
 
 <script>
-/* ── Modal CastingFM ── */
+/* ── Fix bfcache : réinitialiser scroll et modal au retour sur la page ── */
+window.addEventListener('pageshow', function() {
+  document.body.style.overflow = '';
+  const m = document.getElementById('modalCastingFM');
+  if (m) { m.style.display = 'none'; }
+});
+
+
 function ouvrirModal() {
   const m = document.getElementById('modalCastingFM');
   m.style.display = 'flex';
