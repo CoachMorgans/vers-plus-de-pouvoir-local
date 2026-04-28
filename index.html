@@ -369,7 +369,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
 <!-- MODAL CASTINGFM -->
 <div class="modal-overlay" id="modalCastingFM" onclick="fermerModalCasting(event)">
   <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('modalCastingFM').classList.remove('visible')">✕</button>
+    <button class="modal-close" onclick="document.getElementById('modalCastingFM').classList.remove('visible');document.body.style.overflow=''">✕</button>
     <img src="https://i.ibb.co/DPJF7jX8/Portrait-Branding-1.png" alt="Coach Morgan's — CastingFM"
          class="modal-portrait"
          onerror="this.style.display='none'">
@@ -1229,6 +1229,17 @@ async function soumettreW(event,profil){
     msgEl.className='form-msg error';msgEl.textContent='❌ Erreur réseau. Vérifiez votre connexion et réessayez.';
   }finally{btn.disabled=false;btnTxt.style.display='inline';btnLoad.style.display='none';}
 }
+
+/* ── Fix bfcache : réinitialiser scroll et modal au retour sur la page ── */
+window.addEventListener('pageshow', function(e) {
+  document.body.style.overflow = '';
+  document.body.style.position = '';
+  const modal = document.getElementById('modalCastingFM');
+  if (modal) {
+    modal.classList.remove('visible');
+    modal.style.display = 'none';
+  }
+});
 
 const obs=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*70);obs.unobserve(e.target);}});
