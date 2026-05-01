@@ -1048,8 +1048,8 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
 </footer>
 
 <script>
-const GS_URL = 'https://script.google.com/macros/s/AKfycbzdqCRk06C35clJhQcDS1AN3eZvzq4JO5UjsRU1E7y1pDfTu-xHt6ppSM6pD0UnGn10/exec';
-const SOURCE = 'LP_WADAGNI';
+const GS_URL = 'https://script.google.com/macros/s/AKfycbwI46jHy_eQP0sdwRfqoU9jt32KjL4muCLneCIl3z_OI6KT7hdtMf7FZP9Tt5g9EU2d/exec';
+const SOURCE = 'LP_PPL';
 const CODES_LIVE_VALIDES = ['LIVE-VEN-2026-NGD1','LIVE-SAM-2026-NGD2','LIVE-DIM-2026-NGD3','LIVE-PPL-2026-OPEN'];
 
 function normaliserTel(tel){
@@ -1215,7 +1215,7 @@ async function soumettreW(event,profil){
   const form=event.target,subId=profil==='animateur'?'sub-anim-w':'sub-del-w',msgId=profil==='animateur'?'msg-anim-w':'msg-del-w';
   const btn=document.getElementById(subId),btnTxt=btn.querySelector('.btn-text'),btnLoad=btn.querySelector('.btn-loading'),msgEl=document.getElementById(msgId);
   btn.disabled=true;btnTxt.style.display='none';btnLoad.style.display='inline';msgEl.className='form-msg';msgEl.textContent='';
-  const fd=new FormData(form),payload={profil,source:SOURCE,timestamp:new Date().toISOString()};
+  const fd=new FormData(form),payload={route:'enregistrement',profil,source:SOURCE,timestamp:new Date().toISOString()};
   fd.forEach((v,k)=>{payload[k]=v;});
   if(payload.zone_origine)payload.pays_origine=payload.zone_origine;
   try{
