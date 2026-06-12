@@ -310,15 +310,15 @@ body::before{
         <div class="cx-field">
           <label class="cx-lbl" for="inp-tel">
             <span class="cx-req">*</span>
-            <span data-fr="Votre numéro WhatsApp" data-en="Your WhatsApp number">Votre numéro WhatsApp</span>
+            <span data-fr="Votre numéro de tél. d'enregistrement NGD" data-en="Your NGD registration phone number">Votre numéro de tél. d'enregistrement NGD</span>
           </label>
           <input class="cx-input" type="tel" id="inp-tel"
-            placeholder="+225 07 XX XX XX XX"
+            placeholder="07 XX XX XX XX"
             onkeydown="if(event.key==='Enter')goStepTel()">
           <div style="font-size:.62em;color:var(--dim);margin-top:5px;letter-spacing:.5px"
-               data-fr="Format : +225 0X XX XX XX XX · Numéro enregistré dans l'écosystème NGD"
-               data-en="Format: +225 0X XX XX XX XX · Number registered in the NGD ecosystem">
-            Format : +225 0X XX XX XX XX · Numéro enregistré dans l'écosystème NGD
+               data-fr="Numéro enregistré dans l'écosystème NGD via le Bot CHALLENGER"
+               data-en="Number registered in the NGD ecosystem via Bot CHALLENGER">
+            Numéro enregistré dans l'écosystème NGD via le Bot CHALLENGER
           </div>
         </div>
         <div class="cx-loader" id="ld-tel">
@@ -478,7 +478,7 @@ function fermerModal(e) {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') fermerModalBtn(); });
 
 const GS_URL = 'https://script.google.com/macros/s/AKfycbwI46jHy_eQP0sdwRfqoU9jt32KjL4muCLneCIl3z_OI6KT7hdtMf7FZP9Tt5g9EU2d/exec';
-let SESSION = { tel:null, prenom:null, id_ngd:null, region:null, commune:null };
+let SESSION = { tel:null, prenom:null, nom:null, id_ngd:null, region:null, commune:null };
 
 /* ── Langue ── */
 let lang = 'fr';
@@ -589,9 +589,10 @@ async function goStepTel() {
   if (!resp || !resp.ok || !resp.enregistre) { showErr('err-tel', t.err_tel_404); return; }
   if (!resp.pin_actif) { showErr('err-tel', t.err_tel_pin); return; }
   SESSION.tel     = tel;
-  SESSION.prenom  = resp.prenom || '';
-  SESSION.id_ngd  = resp.id_ngd || '';
-  SESSION.region  = resp.region || resp.Region || resp.localite_region || '';
+  SESSION.prenom  = resp.prenom  || '';
+  SESSION.nom     = resp.nom     || '';
+  SESSION.id_ngd  = resp.id_ngd  || '';
+  SESSION.region  = resp.region  || resp.Region  || resp.localite_region  || '';
   SESSION.commune = resp.commune || resp.Commune || resp.localite_commune || '';
   document.getElementById('prenom-disp').textContent = resp.prenom || raw;
   document.getElementById('step-tel').style.display  = 'none';
@@ -618,8 +619,9 @@ async function goLogin() {
   setCxStep(3);
   toast(t.toast_ok);
   localStorage.setItem('ppl_session', JSON.stringify({
-    tel:SESSION.tel, prenom:SESSION.prenom, id_ngd:SESSION.id_ngd,
-    region:SESSION.region, commune:SESSION.commune, ts:Date.now()
+    tel:SESSION.tel, prenom:SESSION.prenom, nom:SESSION.nom,
+    id_ngd:SESSION.id_ngd, region:SESSION.region, commune:SESSION.commune,
+    ts:Date.now()
   }));
   lancerEspaceMembre();
 }
@@ -628,13 +630,17 @@ async function goLogin() {
 function lancerEspaceMembre() {
   document.getElementById('wrapper').style.display = 'none';
   document.getElementById('screen-membre').classList.add('on');
-  const prenom = SESSION.prenom || 'MEMBRE PPL';
-  document.getElementById('mb-name').textContent          = prenom.toUpperCase();
-  document.getElementById('mb-id').textContent            = SESSION.id_ngd ? `ID : ${SESSION.id_ngd}` : 'Coalition NGD';
-  document.getElementById('mb-profil-nom').textContent    = prenom;
+  const prenom = SESSION.prenom || '';
+  const nom    = SESSION.nom    || '';
+  const nomComplet = (prenom + ' ' + nom).trim() || 'MEMBRE PPL';
+  // En-tête : Prénom + Nom en majuscules
+  document.getElementById('mb-name').textContent           = nomComplet.toUpperCase();
+  document.getElementById('mb-id').textContent             = SESSION.id_ngd ? `ID : ${SESSION.id_ngd}` : 'Coalition NGD';
+  // Profil détaillé
+  document.getElementById('mb-profil-nom').textContent     = nomComplet;
   document.getElementById('mb-profil-region').textContent  = SESSION.region  || '—';
   document.getElementById('mb-profil-commune').textContent = SESSION.commune || '—';
-  document.getElementById('mb-profil-tel').textContent    = SESSION.tel ? '+'+SESSION.tel.replace(/^00/,'') : '—';
+  document.getElementById('mb-profil-tel').textContent     = SESSION.tel ? '+'+SESSION.tel.replace(/^00/,'') : '—';
 }
 
 function resetToTel() {
@@ -642,12 +648,12 @@ function resetToTel() {
   document.getElementById('step-tel').style.display = 'block';
   ['p1','p2','p3','p4'].forEach(id=>{ document.getElementById(id).value=''; });
   hideErr('err-pin'); hideErr('err-tel'); setCxStep(1);
-  SESSION = { tel:null, prenom:null, id_ngd:null, region:null, commune:null };
+  SESSION = { tel:null, prenom:null, nom:null, id_ngd:null, region:null, commune:null };
 }
 
 function doLogout() {
   localStorage.removeItem('ppl_session');
-  SESSION = { tel:null, prenom:null, id_ngd:null, region:null, commune:null };
+  SESSION = { tel:null, prenom:null, nom:null, id_ngd:null, region:null, commune:null };
   document.getElementById('screen-membre').classList.remove('on');
   document.getElementById('wrapper').style.display = 'flex';
   resetToTel();
@@ -659,7 +665,7 @@ function doLogout() {
   try {
     const s = JSON.parse(localStorage.getItem('ppl_session') || 'null');
     if (!s || !s.tel || (Date.now()-s.ts) > 86400000) return;
-    SESSION = { tel:s.tel, prenom:s.prenom, id_ngd:s.id_ngd, region:s.region||'', commune:s.commune||'' };
+    SESSION = { tel:s.tel, prenom:s.prenom, nom:s.nom||'', id_ngd:s.id_ngd, region:s.region||'', commune:s.commune||'' };
     lancerEspaceMembre();
     toast(TXT[lang].toast_resto + (s.prenom||'') + ' !');
   } catch(e) {}
