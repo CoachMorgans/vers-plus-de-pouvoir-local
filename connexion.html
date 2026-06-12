@@ -524,7 +524,19 @@ function toast(msg) {
   t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 3500);
 }
-function normaliserTel(tel) { return tel.replace(/\s/g,'').replace(/\+/g,'00'); }
+function normaliserTel(tel) {
+  // Supprimer espaces, tirets, points
+  let t = (tel||'').toString().trim().replace(/[\s\-\.]/g,'');
+  // +225... → 225...
+  if (t.startsWith('+')) t = t.slice(1);
+  // 00225... → 225...
+  if (t.startsWith('00')) t = t.slice(2);
+  // 07XXXXXXXX (10 chiffres CI) → 2250XXXXXXXXX
+  if (/^0\d{9}$/.test(t)) t = '225' + t.slice(1);
+  // 7XXXXXXXXX (9 chiffres) → 2257XXXXXXXXX
+  if (/^[0-9]\d{8}$/.test(t) && !t.startsWith('225')) t = '225' + t;
+  return t;
+}
 async function cfdb(route, params={}) {
   const qs = Object.entries({route,...params})
     .map(([k,v])=>`${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
