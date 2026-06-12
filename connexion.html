@@ -594,7 +594,7 @@ async function goStepTel() {
   SESSION.id_ngd  = resp.id_ngd  || '';
   SESSION.region  = resp.region  || resp.Region  || resp.localite_region  || '';
   SESSION.commune = resp.commune || resp.Commune || resp.localite_commune || '';
-  document.getElementById('prenom-disp').textContent = resp.prenom || raw;
+  document.getElementById('prenom-disp').textContent = resp.prenom || resp.nom || raw;
   document.getElementById('step-tel').style.display  = 'none';
   document.getElementById('step-pin').style.display  = 'block';
   setCxStep(2);
