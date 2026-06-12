@@ -665,9 +665,14 @@ function doLogout() {
   try {
     const s = JSON.parse(localStorage.getItem('ppl_session') || 'null');
     if (!s || !s.tel || (Date.now()-s.ts) > 86400000) return;
+    // Si region ou commune vides → supprimer session et forcer reconnexion
+    if (!s.region || !s.commune) {
+      localStorage.removeItem('ppl_session');
+      return;
+    }
     SESSION = { tel:s.tel, prenom:s.prenom, nom:s.nom||'', id_ngd:s.id_ngd, region:s.region||'', commune:s.commune||'' };
     lancerEspaceMembre();
-    toast(TXT[lang].toast_resto + (s.prenom||'') + ' !');
+    toast(TXT[lang].toast_resto + (s.prenom||s.nom||'') + ' !');
   } catch(e) {}
 })();
 </script>
