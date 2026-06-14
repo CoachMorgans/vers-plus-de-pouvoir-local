@@ -174,6 +174,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--brun);display:flex;align-
 .acces-msg{margin-top:10px;font-size:0.82rem;display:none;padding:8px 12px;border-radius:6px;}
 .acces-msg.ok{background:#e8f5ee;color:var(--vert);display:block;}
 .acces-msg.err{background:#fce8e8;color:var(--rouge);display:block;}
+.acces-msg.loading{background:var(--or-pale);color:var(--brun);display:block;}
 .acces-links{margin-top:14px;display:flex;flex-direction:column;gap:8px;display:none;}
 .acces-links.visible{display:flex;}
 .acces-lien{display:flex;align-items:center;gap:10px;background:var(--gris-clair);border-radius:8px;padding:12px 14px;font-size:0.85rem;font-weight:600;color:var(--brun);border:1.5px solid #e0d8c8;transition:border-color .2s;}
@@ -468,7 +469,6 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
         <div class="hstat"><div class="hstat-val">Mi Sikah</div><div class="hstat-lbl" data-fr="Dispositif Monétaire Citoyen" data-en="Citizen Monetary Device">Dispositif Monétaire</div></div>
         <div class="hstat"><div class="hstat-val">24h/7j</div><div class="hstat-lbl" data-fr="CastingFM & ChallengeF TV" data-en="CastingFM & ChallengeF TV">CastingFM & ChallengeF TV</div></div>
       </div>
-      <!-- CORRECTION ① — Countdown 27 Avr → 30 Sep 2026 + Investiture 24-25 Oct 2026 -->
       <div class="countdown-delegations" id="cdDelegations">
         <div class="cd-del-label"
              data-fr="⏳ Inscriptions — Délégations Pays NGD"
@@ -623,7 +623,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
   </div>
 </section>
 
-<!-- COACHING LIVE — CORRECTION ② : ChallengeF TV -->
+<!-- COACHING LIVE -->
 <section class="section live-section" id="live">
   <div class="section-inner">
     <p class="section-kicker" data-fr="Coaching & Formation Live" data-en="Coaching & Live Training">Coaching & Formation Live</p>
@@ -650,7 +650,6 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
         </div>
       </div>
       <div class="live-hero-btns">
-        <!-- CORRECTION ② — ChallengeF TV au lieu de YouTube VoteConnect -->
         <a href="https://www.youtube.com/@ChallengeF_TV" target="_blank" class="btn-rouge"
            data-fr="▶ ChallengeF TV — Live" data-en="▶ ChallengeF TV — Live">▶ ChallengeF TV — Live</a>
         <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-bleu"
@@ -682,7 +681,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
         Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session.
       </p>
       <div class="acces-form">
-        <input type="text" id="code-live" placeholder="Ex: LIVE-VEN-2026-XXXX" maxlength="20">
+        <input type="text" id="code-live" placeholder="Ex: LIVE-VEN-2026-NGD1 ou LIVE-SAM1-14062026-4HBJ" maxlength="24">
         <button class="btn-deverrouiller" onclick="verifierCodeLive()" data-fr="🔓 Déverrouiller" data-en="🔓 Unlock">🔓 Déverrouiller</button>
       </div>
       <div class="acces-msg" id="acces-msg"></div>
@@ -693,7 +692,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
       </div>
     </div>
 
-    <!-- CASTINGFM — CORRECTION ③ : Modal portrait + RDV 14 Juil 2026 20H -->
+    <!-- CASTINGFM -->
     <div class="radio-card" id="radio">
       <div class="radio-header">
         <div class="radio-logo">
@@ -711,7 +710,6 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
          data-en="African music, citizen debates, financial training, CFA and Bitcoin news, <strong class='hi-or'>NGD</strong> field reports. Non-stop, from Abidjan for all of Africa.">
         Musique africaine, débats citoyens, formation financière, actualités FCFA et Bitcoin, témoignages terrain <strong class="hi-or">NGD</strong>. Non-stop, depuis Abidjan pour toute l'Afrique.
       </p>
-      <!-- RDV ÉMISSION INAUGURALE -->
       <div style="background:rgba(201,168,76,0.15);border:1px solid var(--or);border-radius:8px;padding:10px 14px;margin-top:12px;display:flex;align-items:center;gap:10px;">
         <span style="font-size:1.3rem;">🎙️</span>
         <div>
@@ -723,7 +721,6 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
         </div>
       </div>
       <div class="radio-btns">
-        <!-- Bouton ouvre le modal -->
         <button class="btn-radio" onclick="ouvrirModalCasting()"
                 data-fr="📻 Écouter en direct" data-en="📻 Listen Live">📻 Écouter en direct</button>
         <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-radio-out"
@@ -1000,7 +997,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
   </div>
 </section>
 
-<!-- FOOTER — CORRECTION ④ : ChallengeF TV + LFA TV -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
@@ -1032,7 +1029,6 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
         <h5 data-fr="Contact & Médias" data-en="Contact & Media">Contact & Médias</h5>
         <ul>
           <li><a href="https://wa.me/2250767560908" target="_blank">💬 WhatsApp Admin</a></li>
-          <!-- CORRECTION ④ — ChallengeF TV + LFA TV -->
           <li><a href="https://www.youtube.com/@ChallengeF_TV" target="_blank">📺 ChallengeF TV</a></li>
           <li><a href="https://youtube.com/@LFA-TV-h5z" target="_blank">📺 LFA TV</a></li>
           <li><a href="https://link.radioking.com/castingfm" target="_blank">📻 CastingFM</a></li>
@@ -1050,32 +1046,17 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
 <script>
 const GS_URL = 'https://script.google.com/macros/s/AKfycbwI46jHy_eQP0sdwRfqoU9jt32KjL4muCLneCIl3z_OI6KT7hdtMf7FZP9Tt5g9EU2d/exec';
 const SOURCE = 'LP_PPL';
-const CODES_LIVE_VALIDES = new Set([
-  'LIVE-VEN-2026-NGD1',
-  'LIVE-SAM-2026-NGD2',
-  'LIVE-SAM-2026-NGD3',
-  'LIVE-DIM-2026-NGD4',
-  'LIVE-DIM-2026-NGD5',
-  'LIVE-PPL-2026-OPEN'
-]);
 let LIVE_YT_URL = 'https://www.youtube.com/@ChallengeF_TV';
 
 function normaliserTel(tel){
-  // Nettoyer : supprimer espaces, tirets, points
   let t=(tel||'').toString().trim().replace(/[\s\-\.]/g,'');
-  // +225... → 00225...
   if(t.startsWith('+'))t='00'+t.slice(1);
-  // 00225XXXXXXXXX (13 chars) → garder tel quel = format cible
-  // 225XXXXXXXXX (12 chars sans 00) → ajouter 00
   if(/^225\d{9,10}$/.test(t))t='00'+t;
-  // 07XXXXXXXX ou 05XXXXXXXX (10 chiffres CI) → 002250XXXXXXXXX
   if(/^0\d{9}$/.test(t))t='00225'+t.slice(1);
-  // 7XXXXXXXX (9 chiffres) → 002257XXXXXXXXX
   if(/^[0-9]\d{8}$/.test(t)&&!t.startsWith('00'))t='00225'+t;
   return t;
 }
 
-/* CORRECTION ① — Date fin 30 Sept 2026, investiture 24-25 Oct 2026 */
 const DATE_FIN_DELEGATIONS = new Date('2026-10-10T23:59:59');
 function majCompteurDelegations(){
   const now=new Date(),diff=DATE_FIN_DELEGATIONS-now;
@@ -1169,7 +1150,7 @@ if(sessionStorage.getItem('ppl_registered')==='1'){
   });
 }
 
-/* CORRECTION ③ — Modal CastingFM */
+/* Modal CastingFM */
 function ouvrirModalCasting(){
   const m=document.getElementById('modalCastingFM');
   m.style.display='flex';
@@ -1188,7 +1169,7 @@ document.addEventListener('keydown',e=>{
   }
 });
 
-/* CORRECTION ⑤ — Langue */
+/* Langue */
 let lang='fr';
 function setLang(l){
   lang=l;
@@ -1206,6 +1187,10 @@ async function tracerAudience(canal,infos){
   catch(e){}
 }
 
+// ══════════════════════════════════════════════════════════════════════════════
+// COACHING LIVE — Traçabilité complète : TOUT code (fixe ou temporaire) passe
+// systématiquement par verifier_code_live côté CF-DB (aucun bypass local).
+// ══════════════════════════════════════════════════════════════════════════════
 async function verifierCodeLive(){
   const code = (document.getElementById('code-live').value || '').trim().toUpperCase();
   const msg   = document.getElementById('acces-msg');
@@ -1215,23 +1200,18 @@ async function verifierCodeLive(){
   if (!code) {
     msg.className = 'acces-msg err';
     msg.textContent = '❌ Veuillez saisir votre code.';
+    msg.style.display = 'block';
     return;
   }
 
-  // 1️⃣ Vérification locale instantanée — clés fixes
-  if (CODES_LIVE_VALIDES.has(code)) {
-    afficherAccesLive(msg, links, code);
-    return;
-  }
-
-  // 2️⃣ Vérification CF-DB — clés temporaires générées par l'Admin Bot
   if (btn) { btn.disabled = true; btn.textContent = '⏳ Vérification...'; }
   msg.className = 'acces-msg loading';
   msg.textContent = '⏳ Vérification du code en cours...';
   msg.style.display = 'block';
 
   try {
-    const url = GS_URL + '?route=verifier_code_live&code=' + encodeURIComponent(code) + '&_t=' + Date.now();
+    const tel = sessionStorage.getItem('ppl_tel') || '';
+    const url = GS_URL + '?route=verifier_code_live&code=' + encodeURIComponent(code) + '&telephone=' + encodeURIComponent(tel) + '&_t=' + Date.now();
     const resp = await fetch(url, { cache: 'no-store' });
     const data = await resp.json();
 
@@ -1241,11 +1221,13 @@ async function verifierCodeLive(){
     } else {
       msg.className = 'acces-msg err';
       msg.textContent = '❌ Code invalide ou expiré. Vérifiez votre WhatsApp ou Telegram.';
+      msg.style.display = 'block';
       links.classList.remove('visible');
     }
   } catch(e) {
     msg.className = 'acces-msg err';
     msg.textContent = '⚠️ Erreur réseau. Réessayez ou contactez : wa.me/+2250767560908';
+    msg.style.display = 'block';
   }
 
   if (btn) { btn.disabled = false; btn.textContent = '🔓 Déverrouiller'; }
@@ -1256,7 +1238,6 @@ function afficherAccesLive(msg, links, code) {
   msg.textContent = '✅ Code validé ! Accédez au Live ci-dessous.';
   msg.style.display = 'block';
 
-  // Injecter le lecteur YouTube embedded dans acces-links
   const ytId = extraireYtId(LIVE_YT_URL);
   const embedHtml = ytId
     ? '<div style="margin-bottom:14px;border-radius:10px;overflow:hidden;">'
@@ -1265,7 +1246,6 @@ function afficherAccesLive(msg, links, code) {
       + 'style="width:100%;aspect-ratio:16/9;display:block;"></iframe></div>'
     : '';
 
-  // Remplacer le contenu de acces-links
   links.innerHTML = embedHtml
     + '<a href="' + LIVE_YT_URL + '" target="_blank" class="acces-lien"><span class="al-ico">▶</span><span>ChallengeF TV — Live · Coach Morgan\'s</span></a>'
     + '<a href="https://t.me/ChallengeFinancierbot" target="_blank" class="acces-lien"><span class="al-ico">📱</span><span>Telegram — Bot CHALLENGER · Canal NGD</span></a>'
