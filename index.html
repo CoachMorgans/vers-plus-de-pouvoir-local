@@ -380,11 +380,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
        data-en="The voice of Local Power<br>UEMOA · CEMAC · ECOWAS<br><br>African music, financial training and citizen debates, 24/7 from Abidjan.">
       La voix du Pouvoir Local<br>UEMOA · CEMAC · CEDEAO<br><br>Musique africaine, formation financière et débats citoyens, 24h/24 depuis Abidjan.
     </p>
-    <div class="modal-rdv"
-         data-fr="🎙️ RDV 14 JUIL 2026 20H · ÉMISSION INAUGURALE"
-         data-en="🎙️ JULY 14, 2026 8PM · INAUGURAL BROADCAST">
-      🎙️ RDV 14 JUIL 2026 20H · ÉMISSION INAUGURALE
-    </div>
+    <div class="modal-rdv" data-fr="📻 EN DIRECT 24h/24 · 7j/7" data-en="📻 LIVE 24/7">📻 EN DIRECT 24h/24 · 7j/7</div>
     <div class="modal-btns">
       <a href="https://link.radioking.com/castingfm" target="_blank" class="btn-radio"
          data-fr="📻 Écouter en direct" data-en="📻 Listen Live"
@@ -453,7 +449,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
       </p>
       <div class="hero-btns">
         <a href="https://coachmorgans.github.io/vers-plus-de-pouvoir-local/connexion.html" class="btn-or" data-fr="🔓 Espace Membre" data-en="🔓 Member Space">🔓 Espace Membre</a>
-        <a href="#rejoindre" class="btn-outline-blanc" data-fr="🌱 Rejoindre NGD" data-en="🌱 Join NGD">🌱 Rejoindre NGD</a>
+        <a href="https://t.me/ChallengeFinancierbot?start=ngd" target="_blank" class="btn-outline-blanc" data-fr="🌱 Rejoindre NGD — gratuit" data-en="🌱 Join NGD — free">🌱 Rejoindre NGD — gratuit</a>
         <a href="#live" class="btn-outline-blanc" data-fr="🔴 Accéder au Live" data-en="🔴 Join the Live">🔴 Accéder au Live</a>
       </div>
     </div>
@@ -470,13 +466,9 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
         <div class="hstat"><div class="hstat-val">24h/7j</div><div class="hstat-lbl" data-fr="CastingFM & ChallengeF TV" data-en="CastingFM & ChallengeF TV">CastingFM & ChallengeF TV</div></div>
       </div>
       <div class="countdown-delegations" id="cdDelegations">
-        <div class="cd-del-label"
-             data-fr="⏳ Inscriptions — Délégations Pays NGD"
-             data-en="⏳ Registrations — NGD Country Delegations">⏳ Inscriptions — Délégations Pays NGD</div>
-        <div class="cd-del-dates"
-             data-fr="10 Juin → 10 Octobre 2026"
-             data-en="June 10 → October 10, 2026">10 Juin → 10 Octobre 2026</div>
-        <div class="cd-del-timer">
+        <div class="cd-del-label" data-fr="🚐 L'Appel de Tiassalé — prochaine étape de la Caravane" data-en="🚐 The Call of Tiassalé — next Caravan stop">🚐 L'Appel de Tiassalé — prochaine étape de la Caravane</div>
+        <div class="cd-del-dates" id="dd-etape">Tiassalé</div>
+        <div class="cd-del-timer" id="ddTimer">
           <div class="cd-bloc"><span class="cd-val" id="dd-j">00</span><span class="cd-lbl" data-fr="Jours" data-en="Days">Jours</span></div>
           <span class="cd-sep">:</span>
           <div class="cd-bloc"><span class="cd-val" id="dd-h">00</span><span class="cd-lbl">H</span></div>
@@ -485,11 +477,8 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
           <span class="cd-sep">:</span>
           <div class="cd-bloc"><span class="cd-val" id="dd-s">00</span><span class="cd-lbl">Sec</span></div>
         </div>
-        <div class="cd-del-next"
-             data-fr="🎖️ 24-25 Octobre 2026 · Cérémonie d'Investiture Bureau Exécutif UEMOA-NGD & CEMAC-NGD"
-             data-en="🎖️ Oct 24-25, 2026 · Investiture Ceremony — UEMOA-NGD & CEMAC-NGD Executive Bureau">
-          🎖️ 24-25 Octobre 2026 · Cérémonie d'Investiture Bureau Exécutif UEMOA-NGD & CEMAC-NGD
-        </div>
+        <div class="cd-del-next"><a id="dd-lien" href="https://t.me/ChallengeFinancierbot?start=caravane" target="_blank" style="color:inherit;text-decoration:underline;" data-fr="📲 M'inscrire à l'atelier dans le Bot CHALLENGER" data-en="📲 Register for the workshop in Bot CHALLENGER">📲 M'inscrire à l'atelier dans le Bot CHALLENGER</a></div>
+        <div class="cd-del-next" id="cd-invest" data-fr="🎖️ 24-25 Octobre 2026 · Cérémonie d'Investiture Bureau Exécutif UEMOA-NGD et CEMAC-NGD" data-en="🎖️ Oct 24-25, 2026 · Investiture Ceremony — UEMOA-NGD and CEMAC-NGD Executive Bureau">🎖️ 24-25 Octobre 2026 · Cérémonie d'Investiture Bureau Exécutif UEMOA-NGD et CEMAC-NGD</div>
       </div>
     </div>
   </div>
@@ -628,11 +617,7 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
   <div class="section-inner">
     <p class="section-kicker" data-fr="Coaching & Formation Live" data-en="Coaching & Live Training">Coaching & Formation Live</p>
     <h2 class="section-title" data-fr="ChallengeF TV · Telegram · Chaque semaine" data-en="ChallengeF TV · Telegram · Every week">ChallengeF TV · Telegram · Chaque semaine</h2>
-    <p class="section-sub"
-       data-fr="Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Accès par code reçu par WhatsApp ou Telegram après enregistrement NGD."
-       data-en="Coach Morgan's hosts live civic, financial and political training sessions. Access code received by WhatsApp or Telegram after NGD registration.">
-      Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Accès par code reçu par WhatsApp ou Telegram après enregistrement NGD.
-    </p>
+    <p class="section-sub" data-fr="Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Abonnés NGD : activez le rappel automatique dans le Bot CHALLENGER, le lien du Live vous arrive 30 min avant et au démarrage." data-en="Coach Morgan's hosts live civic, financial and political training sessions. NGD subscribers: turn on the automatic reminder in Bot CHALLENGER and get the Live link 30 min before and at the start.">Coach Morgan's anime des sessions Live de formation citoyenne, financière et politique. Abonnés NGD : activez le rappel automatique dans le Bot CHALLENGER, le lien du Live vous arrive 30 min avant et au démarrage.</p>
     <div class="live-hero-card">
       <div class="live-hero-top">
         <div class="live-logo-wrap">
@@ -652,8 +637,8 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
       <div class="live-hero-btns">
         <a href="https://www.youtube.com/@ChallengeF_TV" target="_blank" class="btn-rouge"
            data-fr="▶ ChallengeF TV — Live" data-en="▶ ChallengeF TV — Live">▶ ChallengeF TV — Live</a>
-        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-bleu"
-           data-fr="📱 Telegram Bot CHALLENGER" data-en="📱 Telegram Bot CHALLENGER">📱 Telegram Bot CHALLENGER</a>
+        <a href="https://t.me/ChallengeFinancierbot?start=live" target="_blank" class="btn-bleu"
+           data-fr="🔔 Rappel automatique dans le Bot" data-en="🔔 Automatic reminder in the Bot">🔔 Rappel automatique dans le Bot</a>
         <a href="https://coachmorgans.github.io/vers-plus-de-pouvoir-local/connexion.html" class="btn-or"
            data-fr="🔓 Espace Membre" data-en="🔓 Member Space">🔓 Espace Membre</a>
       </div>
@@ -675,21 +660,15 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
       </div>
     </div>
     <div class="acces-live" id="acces">
-      <h4 data-fr="🔓 Accéder au Live avec votre code" data-en="🔓 Access the Live with your code">🔓 Accéder au Live avec votre code</h4>
-      <p data-fr="Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session."
-         data-en="After your NGD registration, you receive a code by WhatsApp or Telegram before each session.">
-        Après votre enregistrement NGD, vous recevez un code par WhatsApp ou Telegram avant chaque session.
-      </p>
-      <div class="acces-form">
-        <input type="text" id="code-live" placeholder="Ex: LIVE-VEN-2026-NGD1 ou LIVE-SAM1-14062026-4HBJ" maxlength="24">
-        <button class="btn-deverrouiller" onclick="verifierCodeLive()" data-fr="🔓 Déverrouiller" data-en="🔓 Unlock">🔓 Déverrouiller</button>
-      </div>
-      <div class="acces-msg" id="acces-msg"></div>
-      <div class="acces-links" id="acces-links">
-        <a href="https://www.youtube.com/@ChallengeF_TV" target="_blank" class="acces-lien"><span class="al-ico">▶</span><span data-fr="ChallengeF TV — Live · Coach Morgan's" data-en="ChallengeF TV — Live · Coach Morgan's">ChallengeF TV — Live · Coach Morgan\'s</span></a>
-        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="acces-lien"><span class="al-ico">📱</span><span data-fr="Telegram — Bot CHALLENGER · Canal NGD" data-en="Telegram — Bot CHALLENGER · NGD Channel">Telegram — Bot CHALLENGER · Canal NGD</span></a>
+      <h4 data-fr="🔔 Recevez le lien du Live dans Telegram" data-en="🔔 Get the Live link in Telegram">🔔 Recevez le lien du Live dans Telegram</h4>
+      <p data-fr="1. Ouvrez le Bot CHALLENGER · 2. Coalition → 📺 Coaching Live (votre PIN NGD) · 3. Activez le rappel. C'est tout : plus aucun code à saisir." data-en="1. Open Bot CHALLENGER · 2. Coalition → 📺 Live Coaching (your NGD PIN) · 3. Turn on the reminder. That's it: no more codes to enter.">1. Ouvrez le Bot CHALLENGER · 2. Coalition → 📺 Coaching Live (votre PIN NGD) · 3. Activez le rappel. C'est tout : plus aucun code à saisir.</p>
+      <div class="acces-links visible" id="acces-links">
+        <a href="https://t.me/ChallengeFinancierbot?start=live" target="_blank" class="acces-lien"><span class="al-ico">🔔</span><span data-fr="Activer mon rappel Live — Bot CHALLENGER" data-en="Turn on my Live reminder — Bot CHALLENGER">Activer mon rappel Live — Bot CHALLENGER</span></a>
+        <a href="https://www.youtube.com/@ChallengeF_TV/live" target="_blank" class="acces-lien"><span class="al-ico">▶</span><span data-fr="ChallengeF TV — le direct en cours" data-en="ChallengeF TV — current live stream">ChallengeF TV — le direct en cours</span></a>
+        <a href="https://www.youtube.com/@ChallengeF_TV/streams" target="_blank" class="acces-lien"><span class="al-ico">📼</span><span data-fr="Replays des Lives" data-en="Live replays">Replays des Lives</span></a>
         <a href="https://wa.me/2250767560908" target="_blank" class="acces-lien"><span class="al-ico">💬</span><span data-fr="WhatsApp Admin — Support Live" data-en="WhatsApp Admin — Live Support">WhatsApp Admin — Support Live</span></a>
       </div>
+      <div class="acces-msg" id="acces-msg"></div>
     </div>
 
     <!-- CASTINGFM -->
@@ -713,22 +692,17 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
       <div style="background:rgba(201,168,76,0.15);border:1px solid var(--or);border-radius:8px;padding:10px 14px;margin-top:12px;display:flex;align-items:center;gap:10px;">
         <span style="font-size:1.3rem;">🎙️</span>
         <div>
-          <div style="font-size:0.72rem;font-weight:700;color:var(--or);letter-spacing:0.06em;text-transform:uppercase;"
-               data-fr="ÉMISSION INAUGURALE" data-en="INAUGURAL BROADCAST">ÉMISSION INAUGURALE</div>
-          <div style="font-size:0.9rem;font-weight:700;color:#fff;"
-               data-fr="RDV 14 Juillet 2026 · 20H00 · EN DIRECT"
-               data-en="TUNE IN July 14, 2026 · 8PM · LIVE">RDV 14 Juillet 2026 · 20H00 · EN DIRECT</div>
+          <div style="font-size:0.72rem;font-weight:700;color:var(--or);letter-spacing:0.06em;text-transform:uppercase;" data-fr="COACHING LIVE CHAQUE SEMAINE" data-en="LIVE COACHING EVERY WEEK">COACHING LIVE CHAQUE SEMAINE</div>
+          <div style="font-size:0.9rem;font-weight:700;color:#fff;" data-fr="Ven 19h · Sam 9h et 18h · Dim 9h et 18h — ChallengeF TV" data-en="Fri 7PM · Sat 9AM and 6PM · Sun 9AM and 6PM — ChallengeF TV">Ven 19h · Sam 9h et 18h · Dim 9h et 18h — ChallengeF TV</div>
         </div>
       </div>
       <div class="radio-btns">
         <button class="btn-radio" onclick="ouvrirModalCasting()"
                 data-fr="📻 Écouter en direct" data-en="📻 Listen Live">📻 Écouter en direct</button>
-        <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-radio-out"
-           data-fr="📱 Programmer sur Telegram" data-en="📱 Schedule on Telegram">📱 Programmer sur Telegram</a>
+        <a href="https://t.me/ChallengeFinancierbot?start=live" target="_blank" class="btn-radio-out"
+           data-fr="🔔 Rappel Live dans le Bot" data-en="🔔 Live reminder in the Bot">🔔 Rappel Live dans le Bot</a>
       </div>
-      <p class="btn-locked-hint" style="color:rgba(255,255,255,0.55);margin-top:8px;"
-         data-fr="🎙️ RDV 14 Juil 2026 20H · Émission Inaugurale CastingFM"
-         data-en="🎙️ July 14, 2026 8PM · CastingFM Inaugural Broadcast">🎙️ RDV 14 Juil 2026 20H · Émission Inaugurale CastingFM</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);margin-top:8px;font-style:italic;" data-fr="📻 CastingFM en continu · 📺 ChallengeF TV en direct chaque week-end" data-en="📻 CastingFM non-stop · 📺 ChallengeF TV live every weekend">📻 CastingFM en continu · 📺 ChallengeF TV en direct chaque week-end</p>
     </div>
   </div>
 </section>
@@ -750,9 +724,9 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
       <div class="marche-card fu"><div class="marche-icon">🏛️</div><h4 data-fr="Colistier 2028" data-en="2028 Running-mate">Colistier 2028</h4><div class="marche-val">1%</div><p data-fr="Cashback supplémentaire si Colistier NGD dans votre circonscription" data-en="Additional cashback if an NGD running-mate is in your constituency">Cashback supplémentaire si Colistier NGD dans votre circonscription</p></div>
     </div>
     <div style="text-align:center;margin-top:28px;">
-      <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="btn-or btn-locked" id="btn-tcl-w" onclick="return checkLocked(event,'btn-tcl-w')"
-         data-fr="🛒 Accéder au Portail TCL via Bot" data-en="🛒 Access the TCL Portal via Bot">🛒 Accéder au Portail TCL via Bot</a>
-      <p class="btn-locked-hint" data-fr="🔒 S'active après connexion membre ou enregistrement NGD" data-en="🔒 Unlocks after member login or NGD registration">🔒 S'active après connexion membre ou enregistrement NGD</p>
+      <a href="https://t.me/ChallengeFinancierbot?start=tcl" target="_blank" class="btn-or" id="btn-tcl-w"
+         data-fr="🛒 Ouvrir TCL 509 dans le Bot" data-en="🛒 Open TCL 509 in the Bot">🛒 Ouvrir TCL 509 dans le Bot</a>
+      <p class="btn-locked-hint" data-fr="Covoiturage 509 · Repas · Courses · Recharges · Quincaillerie · Artisans — réservé aux Abonnés NGD (PIN)" data-en="509 Carpooling · Meals · Groceries · Top-ups · Hardware · Builders — for NGD subscribers (PIN)">Covoiturage 509 · Repas · Courses · Recharges · Quincaillerie · Artisans — réservé aux Abonnés NGD (PIN)</p>
     </div>
   </div>
 </section>
@@ -821,27 +795,23 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
           <div class="cx-plateformes">
             <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="cx-plateforme-btn"><span class="cpb-ico">🤖</span><span data-fr="Bot CHALLENGER — Tour de Contrôle" data-en="Bot CHALLENGER — Control Tower">Bot CHALLENGER — Tour de Contrôle</span><span class="cpb-arrow">→</span></a>
             <button onclick="ouvrirModalCasting()" class="cx-plateforme-btn" style="background:none;border:1px solid rgba(255,255,255,0.15);width:100%;text-align:left;cursor:pointer;"><span class="cpb-ico">📻</span><span data-fr="CastingFM — Radio 24h/7j" data-en="CastingFM — Radio 24/7">CastingFM — Radio 24h/7j</span><span class="cpb-arrow">→</span></button>
-            <a href="https://www.youtube.com/@ChallengeF_TV" target="_blank" class="cx-plateforme-btn"><span class="cpb-ico">📺</span><span data-fr="ChallengeF TV — Coaching Live" data-en="ChallengeF TV — Coaching Live">ChallengeF TV — Coaching Live</span><span class="cpb-arrow">→</span></a>
-            <a href="https://t.me/ChallengeFinancierbot" target="_blank" class="cx-plateforme-btn"><span class="cpb-ico">🛒</span><span data-fr="Portail TCL — 3 Boutiques en 1" data-en="TCL Portal — 3 Shops in 1">Portail TCL — 3 Boutiques en 1</span><span class="cpb-arrow">→</span></a>
+            <a href="https://t.me/ChallengeFinancierbot?start=live" target="_blank" class="cx-plateforme-btn"><span class="cpb-ico">📺</span><span data-fr="ChallengeF TV — Coaching Live" data-en="ChallengeF TV — Coaching Live">ChallengeF TV — Coaching Live</span><span class="cpb-arrow">→</span></a>
+            <a href="https://t.me/ChallengeFinancierbot?start=tcl" target="_blank" class="cx-plateforme-btn"><span class="cpb-ico">🛒</span><span data-fr="Portail TCL — 3 Boutiques en 1" data-en="TCL Portal — 3 Shops in 1">Portail TCL — 3 Boutiques en 1</span><span class="cpb-arrow">→</span></a>
             <a href="https://coachmorgans.github.io/lms-cf/" target="_blank" class="cx-plateforme-btn"><span class="cpb-ico">📚</span><span data-fr="LMS ChallengeFinancier™ — Formation" data-en="LMS ChallengeFinancier™ — Training">LMS ChallengeFinancier™ — Formation</span><span class="cpb-arrow">→</span></a>
           </div>
         </div>
       </div>
       <div class="connexion-info-card">
         <h3 data-fr="5 Plateformes déverrouillées à la connexion" data-en="5 Platforms unlocked upon login">5 Plateformes déverrouillées à la connexion</h3>
-        <div class="cx-info-item"><div class="cx-info-ico">🤖</div><div class="cx-info-txt"><h4>Bot CHALLENGER</h4><p data-fr="Tour de Contrôle unique — TCL, Mi Sikah, LMS, Essai NGD" data-en="Unique Control Tower — TCL, Mi Sikah, LMS, NGD Essay">Tour de Contrôle unique — TCL, Mi Sikah, LMS, Essai NGD</p></div></div>
+        <div class="cx-info-item"><div class="cx-info-ico">🤖</div><div class="cx-info-txt"><h4>Bot CHALLENGER</h4><p data-fr="Tour de Contrôle unique — TCL 509, Mi Sikah, Académie 509, Coaching Live" data-en="Single Control Tower — TCL 509, Mi Sikah, Academy 509, Live Coaching">Tour de Contrôle unique — TCL 509, Mi Sikah, Académie 509, Coaching Live</p></div></div>
         <div class="cx-info-item"><div class="cx-info-ico">📻</div><div class="cx-info-txt"><h4>CastingFM</h4><p data-fr="Web Radio 24h/7j — UEMOA · CEMAC · CEDEAO" data-en="Web Radio 24/7 — UEMOA · CEMAC · ECOWAS">Web Radio 24h/7j — UEMOA · CEMAC · CEDEAO</p></div></div>
         <div class="cx-info-item"><div class="cx-info-ico">📺</div><div class="cx-info-txt"><h4 data-fr="ChallengeF TV — Coaching Live" data-en="ChallengeF TV — Coaching Live">ChallengeF TV — Coaching Live</h4><p data-fr="Ven 19h–20h · Sam 9h–11h / 18h–20h · Dim 9h–11h / 18h–20h" data-en="Fri 7–8PM · Sat 9–11AM / 6–8PM · Sun 9–11AM / 6–8PM">Ven 19h–20h · Sam 9h–11h / 18h–20h · Dim 9h–11h / 18h–20h</p></div></div>
         <div class="cx-info-item"><div class="cx-info-ico">🛒</div><div class="cx-info-txt"><h4 data-fr="Portail TCL — 3 Boutiques en 1" data-en="TCL Portal — 3 Shops in 1">Portail TCL — 3 Boutiques en 1</h4><p data-fr="Recharges · Courses · Resto · Transport · Quincaillerie + CashBack 2,5%" data-en="Top-ups · Groceries · Restaurant · Transport · Hardware + 2.5% CashBack">Recharges · Courses · Resto · Transport · Quincaillerie + CashBack 2,5%</p></div></div>
         <div class="cx-info-item"><div class="cx-info-ico">📚</div><div class="cx-info-txt"><h4>LMS ChallengeFinancier™</h4><p data-fr="Formation certifiante · Bitcoin · Finances décentralisées" data-en="Certified training · Bitcoin · Decentralized Finance">Formation certifiante · Bitcoin · Finances décentralisées</p></div></div>
         <div style="margin-top:4px;padding:14px;background:rgba(201,168,76,0.12);border-radius:8px;border:1px solid rgba(201,168,76,0.25);">
-          <p style="font-size:0.83rem;color:rgba(255,255,255,0.75);line-height:1.5;"
-             data-fr="Pas encore membre NGD ? Enregistrez-vous gratuitement ci-dessous pour obtenir votre code PIN Mi Sikah."
-             data-en="Not yet an NGD member? Register for free below to get your Mi Sikah PIN code.">
-            Pas encore membre NGD ? Enregistrez-vous gratuitement ci-dessous pour obtenir votre code PIN Mi Sikah.
-          </p>
-          <a href="#rejoindre" class="btn-or" style="display:inline-block;margin-top:10px;font-size:0.88rem;padding:9px 18px;"
-             data-fr="🌱 S'enregistrer maintenant" data-en="🌱 Register Now">🌱 S'enregistrer maintenant</a>
+          <p style="font-size:0.83rem;color:rgba(255,255,255,0.75);line-height:1.5;" data-fr="Pas encore membre NGD ? Créez gratuitement votre Profil NGD et votre code PIN dans le Bot CHALLENGER." data-en="Not yet an NGD member? Create your free NGD Profile and PIN in Bot CHALLENGER.">Pas encore membre NGD ? Créez gratuitement votre Profil NGD et votre code PIN dans le Bot CHALLENGER.</p>
+          <a href="https://t.me/ChallengeFinancierbot?start=ngd" target="_blank" class="btn-or" style="display:inline-block;margin-top:10px;font-size:0.88rem;padding:9px 18px;"
+             data-fr="📋 Créer mon Profil NGD" data-en="📋 Create my NGD Profile">📋 Créer mon Profil NGD</a>
         </div>
       </div>
     </div>
@@ -884,13 +854,10 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
     <div class="lpgr-card">
       <div class="lpgr-text">
         <h3 data-fr="La Grande Réappropriation — NGD · Club des 8" data-en="La Grande Réappropriation — NGD · Club of 8">La Grande Réappropriation — NGD · Club des 8</h3>
-        <p data-fr="Accédez à l'écosystème complet VoteConnect : Essai Autobiographique, Portail TCL, LMS ChallengeFinancier™, Bot CHALLENGER. Enregistrement NGD obligatoire."
-           data-en="Access the full VoteConnect ecosystem: Autobiographical Essay, TCL Portal, LMS ChallengeFinancier™, Bot CHALLENGER. NGD registration required.">
-          Accédez à l'écosystème complet VoteConnect : Essai Autobiographique, Portail TCL, LMS ChallengeFinancier™, Bot CHALLENGER. Enregistrement NGD obligatoire.
-        </p>
+        <p data-fr="L'Appel de Tiassalé, la Caravane Nationale et le parcours de l'Écosystème en 3 étapes : Profil NGD gratuit, TCL 509 + Mi Sikah, Académie 509 + Coalition 509." data-en="The Call of Tiassalé, the National Caravan and the 3-step Ecosystem journey: free NGD Profile, TCL 509 + Mi Sikah, Academy 509 + 509 Coalition.">L'Appel de Tiassalé, la Caravane Nationale et le parcours de l'Écosystème en 3 étapes : Profil NGD gratuit, TCL 509 + Mi Sikah, Académie 509 + Coalition 509.</p>
       </div>
       <a href="https://coachmorgans.github.io/grande-reappropriation/" target="_blank"
-         class="btn-vert btn-locked" id="btn-lpgr-w" onclick="return checkLocked(event,'btn-lpgr-w')"
+         class="btn-vert" id="btn-lpgr-w"
          data-fr="🌱 Accéder à la LP GR" data-en="🌱 Access LP GR">🌱 Accéder à la LP GR</a>
     </div>
   </div>
@@ -899,13 +866,9 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
 <!-- FORMULAIRES ENREGISTREMENT -->
 <section class="section enreg-section" id="rejoindre">
   <div class="section-inner">
-    <p class="section-kicker" data-fr="Étape Initiale Obligatoire" data-en="Mandatory Initial Step">Étape Initiale Obligatoire</p>
+    <p class="section-kicker" data-fr="Option Web — Pré-enregistrement" data-en="Web option — Pre-registration">Option Web — Pré-enregistrement</p>
     <h2 class="section-title" data-fr="Choisissez votre profil — Enregistrez-vous" data-en="Choose your profile — Register">Choisissez votre profil — Enregistrez-vous</h2>
-    <p class="section-sub"
-       data-fr="L'enregistrement déverrouille l'accès au Coaching Live, à la Web Radio <strong class='hi-or'>CastingFM</strong> et à l'écosystème VoteConnect."
-       data-en="Registration unlocks access to Coaching Live, Web Radio <strong class='hi-or'>CastingFM</strong>, and the VoteConnect ecosystem.">
-      L'enregistrement déverrouille l'accès au Coaching Live, à la Web Radio <strong class="hi-or">CastingFM</strong> et à l'écosystème VoteConnect.
-    </p>
+    <p class="section-sub" data-fr="Le plus simple : créez votre Profil NGD directement dans le <a href='https://t.me/ChallengeFinancierbot?start=ngd' target='_blank' class='hi-or'>Bot CHALLENGER</a>. Vous préférez commencer ici ? Pré-enregistrez-vous, puis activez votre compte (PIN) dans le Bot." data-en="The simplest way: create your NGD Profile directly in <a href='https://t.me/ChallengeFinancierbot?start=ngd' target='_blank' class='hi-or'>Bot CHALLENGER</a>. Prefer to start here? Pre-register, then activate your account (PIN) in the Bot.">Le plus simple : créez votre Profil NGD directement dans le <a href='https://t.me/ChallengeFinancierbot?start=ngd' target='_blank' class='hi-or'>Bot CHALLENGER</a>. Vous préférez commencer ici ? Pré-enregistrez-vous, puis activez votre compte (PIN) dans le Bot.</p>
     <div class="enreg-grid">
       <div class="enreg-card fu">
         <div class="enreg-ico ico-ci">🌱</div>
@@ -1013,8 +976,9 @@ footer{background:var(--brun);color:var(--blanc);padding:48px var(--px) 26px;}
         <h5 data-fr="Plateformes" data-en="Platforms">Plateformes</h5>
         <ul>
           <li><a href="https://t.me/ChallengeFinancierbot" target="_blank">🤖 Bot CHALLENGER</a></li>
-          <li><a href="https://coachmorgans.github.io/essai/" target="_blank">📖 Essai Autobiographique</a></li>
-          <li><a href="https://t.me/ChallengeFinancierbot" target="_blank">🛒 Portail TCL</a></li>
+          <li><a href="https://t.me/ChallengeFinancierbot?start=formation" target="_blank" data-fr="🎓 Académie 509" data-en="🎓 Academy 509">🎓 Académie 509</a></li>
+          <li><a href="https://t.me/ChallengeFinancierbot?start=live" target="_blank" data-fr="📺 Coaching Live" data-en="📺 Live Coaching">📺 Coaching Live</a></li>
+          <li><a href="https://t.me/ChallengeFinancierbot?start=tcl" target="_blank">🛒 TCL 509</a></li>
           <li><a href="https://coachmorgans.github.io/lms-cf/" target="_blank">🎓 LMS ChallengeFinancier™</a></li>
         </ul>
       </div>
@@ -1057,20 +1021,28 @@ function normaliserTel(tel){
   return t;
 }
 
-const DATE_FIN_DELEGATIONS = new Date('2026-10-10T23:59:59');
-function majCompteurDelegations(){
-  const now=new Date(),diff=DATE_FIN_DELEGATIONS-now;
-  if(diff<=0){
-    const el=document.getElementById('cdDelegations');
-    if(el)el.innerHTML='<div class="cd-del-next">🎖️ Inscriptions clôturées — 24-25 Oct 2026 : Cérémonie d\'Investiture UEMOA-NGD & CEMAC-NGD</div>';
-    return;
-  }
+
+const ETAPES_CARAVANE=[["A01", "Tiassalé", "Agnéby-Tiassa", "2026-10-16"], ["A02", "N'Douci", "Agnéby-Tiassa", "2026-10-23"], ["A03", "Taabo", "Agnéby-Tiassa", "2026-10-30"], ["A04", "Sikensi", "Agnéby-Tiassa", "2026-11-06"], ["A05", "Agboville", "Agnéby-Tiassa", "2026-11-13"], ["A06", "Rubino", "Agnéby-Tiassa", "2026-11-20"], ["A07", "Azaguié", "Agnéby-Tiassa", "2026-11-27"], ["A08", "Jacqueville", "Grands-Ponts", "2026-12-04"], ["A09", "Dabou", "Grands-Ponts", "2026-12-11"], ["A10", "Grand-Lahou", "Grands-Ponts", "2026-12-18"], ["A11", "Divo", "Lôh-Djiboua", "2027-01-08"], ["A12", "Hiré", "Lôh-Djiboua", "2027-01-15"], ["B01", "Anyama", "District d'Abidjan", "2027-01-15"], ["A13", "Guitry", "Lôh-Djiboua", "2027-01-22"], ["B02", "Abobo", "District d'Abidjan", "2027-01-22"], ["A14", "Lakota", "Lôh-Djiboua", "2027-01-29"], ["B03", "Adjamé", "District d'Abidjan", "2027-01-29"], ["A15", "Zikisso", "Lôh-Djiboua", "2027-02-05"], ["B04", "Attécoubé", "District d'Abidjan", "2027-02-05"], ["A16", "Gagnoa", "Gôh", "2027-02-12"], ["B05", "Yopougon", "District d'Abidjan", "2027-02-12"], ["A17", "Ouragahio", "Gôh", "2027-02-19"], ["B06", "Songon", "District d'Abidjan", "2027-02-19"], ["A18", "Guibéroua", "Gôh", "2027-02-26"], ["B07", "Plateau", "District d'Abidjan", "2027-02-26"], ["A19", "Diégonéfla", "Gôh", "2027-03-05"], ["B08", "Cocody", "District d'Abidjan", "2027-03-05"], ["A20", "Oumé", "Gôh", "2027-03-12"], ["B09", "Bingerville", "District d'Abidjan", "2027-03-12"], ["A21", "Yamoussoukro", "District de Yamoussoukro", "2027-03-19"], ["B10", "Treichville", "District d'Abidjan", "2027-03-19"], ["A22", "Attiégouakro", "District de Yamoussoukro", "2027-04-02"], ["B11", "Marcory", "District d'Abidjan", "2027-04-02"], ["A23", "Djébonoua", "Gbêkê", "2027-04-09"], ["B12", "Koumassi", "District d'Abidjan", "2027-04-09"], ["A24", "Bouaké", "Gbêkê", "2027-04-16"], ["B13", "Port-Bouët", "District d'Abidjan", "2027-04-16"], ["A25", "Brobo", "Gbêkê", "2027-04-23"], ["B14", "Bonoua", "Sud-Comoé", "2027-04-23"], ["A26", "Diabo", "Gbêkê", "2027-04-30"], ["B15", "Grand-Bassam", "Sud-Comoé", "2027-04-30"], ["A27", "Botro", "Gbêkê", "2027-05-07"], ["B16", "Assinie-Mafia", "Sud-Comoé", "2027-05-07"], ["A28", "Béoumi", "Gbêkê", "2027-05-21"], ["B17", "Adiaké", "Sud-Comoé", "2027-05-21"], ["A29", "Bodokro", "Gbêkê", "2027-05-28"], ["B18", "Tiapoum", "Sud-Comoé", "2027-05-28"], ["A30", "Sakassou", "Gbêkê", "2027-06-04"], ["B19", "Maféré", "Sud-Comoé", "2027-06-04"], ["A31", "M'Bahiakro", "Iffou", "2027-06-11"], ["B20", "Aboisso", "Sud-Comoé", "2027-06-11"], ["A32", "Prikro", "Iffou", "2027-06-18"], ["B21", "Ayamé", "Sud-Comoé", "2027-06-18"], ["A33", "Ouellé", "Iffou", "2027-06-25"], ["B22", "Alépé", "Mé", "2027-06-25"], ["A34", "Ettrokro", "Iffou", "2027-07-02"], ["B23", "Yakassé-Attobrou", "Mé", "2027-07-02"], ["A35", "Daoukro", "Iffou", "2027-07-09"], ["B24", "Adzopé", "Mé", "2027-07-09"], ["A36", "Agnibilékrou", "Indénié-Djuablin", "2027-07-16"], ["B25", "Agou", "Mé", "2027-07-16"], ["A37", "Niablé", "Indénié-Djuablin", "2027-07-23"], ["B26", "Akoupé", "Mé", "2027-07-23"], ["A38", "Bettié", "Indénié-Djuablin", "2027-07-30"], ["B27", "Afféry", "Mé", "2027-07-30"], ["A39", "Abengourou", "Indénié-Djuablin", "2027-08-06"], ["A40", "Arrah", "Moronou", "2027-08-13"], ["A41", "Bongouanou", "Moronou", "2027-08-20"], ["A42", "M'Batto", "Moronou", "2027-08-27"], ["A43", "Anoumaba", "Moronou", "2027-09-03"], ["A44", "Tiémélékro", "Moronou", "2027-09-10"], ["A45", "Dimbokro", "N'Zi", "2027-09-17"], ["A46", "Bocanda", "N'Zi", "2027-09-24"], ["A47", "Kouassi-Kouassikro", "N'Zi", "2027-10-01"], ["A48", "Didiévi", "Bélier", "2027-10-08"], ["A49", "Tié-N'Diékro", "Bélier", "2027-10-15"], ["A50", "Tiébissou", "Bélier", "2027-10-22"], ["A51", "Djékanou", "Bélier", "2027-10-29"], ["A52", "Kokumbo", "Bélier", "2027-11-05"], ["A53", "Toumodi", "Bélier", "2027-11-12"]];
+const MOIS_FR=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+const MOIS_EN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function weekendEtape(v,l){const d=new Date(v+'T00:00:00Z'),f=new Date(d.getTime()+2*864e5),M=l==='en'?MOIS_EN:MOIS_FR;return d.getUTCMonth()===f.getUTCMonth()?`${d.getUTCDate()}–${f.getUTCDate()} ${M[d.getUTCMonth()]} ${d.getUTCFullYear()}`:`${d.getUTCDate()} ${M[d.getUTCMonth()]} – ${f.getUTCDate()} ${M[f.getUTCMonth()]} ${f.getUTCFullYear()}`;}
+function prochaineEtape(){const n=Date.now();return ETAPES_CARAVANE.find(e=>Date.parse(e[3]+'T00:00:00Z')+3*864e5>n)||null;}
+function majCompteur(){
+  const el=document.getElementById('ddTimer');if(!el)return;
+  const e=prochaineEtape(),l=(typeof lang!=='undefined'?lang:'fr');
+  const et=document.getElementById('dd-etape'),ln=document.getElementById('dd-lien');
+  if(!e){el.innerHTML='<div class="countdown-ended">'+(l==='en'?'🗳️ Caravan completed — see you at the polls in 2028!':'🗳️ Caravane terminée — rendez-vous aux urnes en 2028 !')+'</div>';if(et)et.textContent='';return;}
+  if(et)et.textContent=`${e[1]} · ${e[2]} · ${weekendEtape(e[3],l)}`;
+  if(ln)ln.href='https://t.me/ChallengeFinancierbot?start='+e[0];
+  const diff=Date.parse(e[3]+'T00:00:00Z')-Date.now();
+  if(diff<=0){el.innerHTML='<div class="countdown-ended">'+(l==='en'?'🚐 Workshop in progress in '+e[1]+'!':'🚐 Atelier en cours à '+e[1]+' !')+'</div>';return;}
   const j=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
   const f=n=>String(n).padStart(2,'0');
-  ['j','h','m','s'].forEach((k,i)=>{const el=document.getElementById('dd-'+k);if(el)el.textContent=f([j,h,m,s][i]);});
+  [['j',j],['h',h],['m',m],['s',s]].forEach(([k,v])=>{const c=document.getElementById('dd-'+k);if(c)c.textContent=f(v);});
 }
-majCompteurDelegations();
-setInterval(majCompteurDelegations,1000);
+majCompteur();
+setInterval(majCompteur,1000);
+if(Date.now()>Date.parse('2026-10-26T00:00:00Z')){const iv=document.getElementById('cd-invest');if(iv)iv.style.display='none';}
 
 /* PIN INPUT */
 document.querySelectorAll('.cx-pin-digit').forEach((input,idx,all)=>{
@@ -1170,7 +1142,7 @@ document.addEventListener('keydown',e=>{
 });
 
 /* Langue */
-let lang='fr';
+var lang='fr';
 function setLang(l){
   lang=l;
   document.getElementById('btn-fr').classList.toggle('active',l==='fr');
@@ -1180,6 +1152,7 @@ function setLang(l){
     const t=el.getAttribute('data-'+l);
     if(t)el.innerHTML=t;
   });
+  majCompteur();
 }
 
 async function tracerAudience(canal,infos){
@@ -1188,90 +1161,8 @@ async function tracerAudience(canal,infos){
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
-// COACHING LIVE — Traçabilité complète : TOUT code (fixe ou temporaire) passe
-// systématiquement par verifier_code_live côté CF-DB (aucun bypass local).
-// ══════════════════════════════════════════════════════════════════════════════
-async function verifierCodeLive(){
-  const code = (document.getElementById('code-live').value || '').trim().toUpperCase();
-  const msg   = document.getElementById('acces-msg');
-  const links = document.getElementById('acces-links');
-  const btn   = document.querySelector('.btn-deverrouiller');
-
-  if (!code) {
-    msg.className = 'acces-msg err';
-    msg.textContent = '❌ Veuillez saisir votre code.';
-    msg.style.display = 'block';
-    return;
-  }
-
-  if (btn) { btn.disabled = true; btn.textContent = '⏳ Vérification...'; }
-  msg.className = 'acces-msg loading';
-  msg.textContent = '⏳ Vérification du code en cours...';
-  msg.style.display = 'block';
-
-  try {
-    const tel = sessionStorage.getItem('ppl_tel') || '';
-    const url = GS_URL + '?route=verifier_code_live&code=' + encodeURIComponent(code) + '&telephone=' + encodeURIComponent(tel) + '&_t=' + Date.now();
-    const resp = await fetch(url, { cache: 'no-store' });
-    const data = await resp.json();
-
-    if (data.ok && data.valide) {
-      if (data.youtube_url) LIVE_YT_URL = data.youtube_url;
-      afficherAccesLive(msg, links, code);
-    } else {
-      msg.className = 'acces-msg err';
-      msg.textContent = '❌ Code invalide ou expiré. Vérifiez votre WhatsApp ou Telegram.';
-      msg.style.display = 'block';
-      links.classList.remove('visible');
-    }
-  } catch(e) {
-    msg.className = 'acces-msg err';
-    msg.textContent = '⚠️ Erreur réseau. Réessayez ou contactez : wa.me/+2250767560908';
-    msg.style.display = 'block';
-  }
-
-  if (btn) { btn.disabled = false; btn.textContent = '🔓 Déverrouiller'; }
-}
-
-function afficherAccesLive(msg, links, code) {
-  msg.className = 'acces-msg ok';
-  msg.textContent = '✅ Code validé ! Accédez au Live ci-dessous.';
-  msg.style.display = 'block';
-
-  const ytId = extraireYtId(LIVE_YT_URL);
-  const embedHtml = ytId
-    ? '<div style="margin-bottom:14px;border-radius:10px;overflow:hidden;">'
-      + '<iframe src="https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0" '
-      + 'frameborder="0" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen '
-      + 'style="width:100%;aspect-ratio:16/9;display:block;"></iframe></div>'
-    : '';
-
-  links.innerHTML = embedHtml
-    + '<a href="' + LIVE_YT_URL + '" target="_blank" class="acces-lien"><span class="al-ico">▶</span><span>ChallengeF TV — Live · Coach Morgan\'s</span></a>'
-    + '<a href="https://t.me/ChallengeFinancierbot" target="_blank" class="acces-lien"><span class="al-ico">📱</span><span>Telegram — Bot CHALLENGER · Canal NGD</span></a>'
-    + '<a href="https://wa.me/2250767560908" target="_blank" class="acces-lien"><span class="al-ico">💬</span><span>WhatsApp Admin — Support Live</span></a>';
-
-  links.classList.add('visible');
-  sessionStorage.setItem('ppl_live_ok', '1');
-  sessionStorage.setItem('ppl_live_url', LIVE_YT_URL);
-  links.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  tracerAudience('ACCES_LIVE', { code_utilise: code, lp_source: 'LP_PPL' });
-}
-
-function extraireYtId(url) {
-  if (!url) return null;
-  const m = url.match(/(?:youtube\.com\/(?:live\/|watch\?v=)|youtu\.be\/)([A-Za-z0-9_\-]{11})/);
-  return m ? m[1] : null;
-}
-if(sessionStorage.getItem('ppl_live_ok')==='1'){
-  document.addEventListener('DOMContentLoaded',()=>{
-    const savedUrl = sessionStorage.getItem('ppl_live_url');
-    if (savedUrl) LIVE_YT_URL = savedUrl;
-    const msg = document.getElementById('acces-msg');
-    const links = document.getElementById('acces-links');
-    if (msg && links) afficherAccesLive(msg, links, 'SESSION');
-  });
-}
+// COACHING LIVE (v10.44) : le lien du Live est envoyé par le Bot CHALLENGER (rappel automatique) — plus de code à saisir.
+// ════════════════════════════════════════════════════════════════════════
 
 const PH_VILLES={'Bénin':'Ex: Cotonou, Porto-Novo...','Burkina Faso':'Ex: Ouagadougou, Bobo...','Guinée-Bissau':'Ex: Bissau...','Mali':'Ex: Bamako, Sikasso...','Niger':'Ex: Niamey, Zinder...','Sénégal':'Ex: Dakar, Saint-Louis...','Togo':'Ex: Lomé, Sokodé...','Cameroun':'Ex: Yaoundé, Douala...','Centrafrique':'Ex: Bangui...','Congo':'Ex: Brazzaville...','Gabon':'Ex: Libreville...','Guinée Équatoriale':'Ex: Malabo...','Tchad':'Ex: N\'Djamena...','Ghana':'Ex: Accra, Kumasi...','Nigeria':'Ex: Lagos, Abuja...'};
 function majPlaceholderVille(zone){const el=document.getElementById('ville-w');if(el&&PH_VILLES[zone])el.placeholder=PH_VILLES[zone];}
@@ -1287,10 +1178,10 @@ async function soumettreW(event,profil){
   try{
     await fetch(GS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
     msgEl.className='form-msg success';
-    msgEl.textContent=profil==='animateur'?'✅ Enregistrement Animateur NGD confirmé ! Vous recevrez votre code PIN par WhatsApp.':'✅ Enregistrement Délégué-Pays NGD confirmé ! Vous recevrez votre code PIN par WhatsApp.';
+    msgEl.innerHTML=(lang==='en'?'✅ Pre-registration received! Last step: ':'✅ Pré-enregistrement reçu ! Dernière étape : ')+'<a href="https://t.me/ChallengeFinancierbot?start=activer" target="_blank" style="color:inherit;text-decoration:underline;font-weight:700">'+(lang==='en'?'activate your account (PIN) in Bot CHALLENGER':'activez votre compte (PIN) dans le Bot CHALLENGER')+'</a>.';
     sessionStorage.setItem('ppl_tel',payload.telephone||'');
     sessionStorage.setItem('ppl_nom',`${payload.prenom||''} ${payload.nom||''}`.trim());
-    form.reset();sessionStorage.setItem('ppl_live_ok','1');debloquerBoutons();
+    form.reset();debloquerBoutons();
     setTimeout(()=>{const acLk=document.getElementById('acces-links');if(acLk)acLk.classList.add('visible');document.getElementById('live').scrollIntoView({behavior:'smooth',block:'start'});},1800);
   }catch(err){
     msgEl.className='form-msg error';msgEl.textContent='❌ Erreur réseau. Vérifiez votre connexion et réessayez.';
